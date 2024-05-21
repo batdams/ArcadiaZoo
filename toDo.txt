@@ -1,0 +1,6 @@
+Git - une branche main
+    - une branch dev -> test -> merge to main
+
+
+
+Manuel utilisation en pdf
