@@ -1,0 +1,176 @@
+// Réinitialisation des marges du navigateur
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ajuste la taille totale en tenant compte des padding et border */
+}
+
+header {
+    color: $color2;
+}
+
+// Desktop Styles
+@media screen and (min-width: 900px) {
+    header {
+        background-color: $color1;
+        display: flex;
+        padding-left: 14rem;
+        height: 64px;
+        align-items: center;
+        .navMenu {
+            display: flex;
+            box-sizing: border-box;
+            align-items: center;
+            .logo {
+                position: fixed;
+                top: 1rem;
+                left: 4rem;
+                img {
+                    width: 128px;
+                    height: auto;
+                    border-radius: 10px;
+                }
+            }
+            nav {
+                font-family: $fontSerif;
+                display: flex;
+                padding-left: 1rem;
+                ul {
+                    display: flex;
+                    li {
+                        list-style-type: none;
+                        padding-right: 2rem;
+                        a {
+                            text-decoration: none;
+                            color: $color2;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            &:hover {
+                                color: $color7;
+                            }
+                        }
+                        .selected {
+                            border-top: solid 2px $color7;
+                            border-bottom: solid 2px $color7;
+                            color: $color7;
+                            padding: 0.5rem;
+                        }
+                    }
+                }
+            }
+            .hours {
+                font-family: $fontNoSerif;
+                font-size: smaller;
+            }
+            .connexion {
+                text-transform: uppercase;
+                position: absolute;
+                right: 1rem;
+                font-family: $fontNoSerif;
+                font-size: smaller;
+                font-weight: 600;
+            }
+        }
+        .burgerMenu {
+            display: none;
+        }
+    }
+}
+// Mobile Styles
+@media screen and (max-width: 900px) {
+    header {
+        background-color: $color1;
+        text-align: center;
+        display: flex;
+        height: 64px;
+        justify-content: center;
+        .navMenu {
+            display: flex;
+            box-sizing: border-box;
+            align-items: center;
+            .logo {
+                position: fixed;
+                top: 1rem;
+                left: 1rem;
+                img {
+                    width: 128px;
+                    height: auto;
+                    border-radius: 10px;
+                }
+            }
+            .navList {
+                display: none;
+            }
+            .connexion {
+                display: none;
+            }
+        }
+        .navMenuMobile {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color1Transparency;
+            font-family: $fontSerif;
+            .navList {
+                display: inline;
+                text-align: center;
+                .linkList {
+                    padding-top: 6rem;
+                    li {
+                        list-style-type: none;
+                        @each $property, $value in $liStyles {
+                            #{$property}: $value;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: $color2;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            &:hover {
+                                color: $color7;
+                            }
+                        }
+                        .selected {
+                            color: $color7;
+                            padding: 0.5rem;
+                        }
+                    }
+                }
+            }
+            .hours {
+                display: none;
+            }
+            .connexion {
+                display: block;
+                text-transform: uppercase;
+                font-family: $fontSerif;
+                font-size: smaller;
+                font-weight: 600;
+                padding-top: 6rem;
+            }
+        }
+        .burgerMenu {
+            display: block; /* Afficher le bouton burger */
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, 0.0);
+            border-color: rgba(0, 0, 0, 0.0);
+            color: $color7;
+            font-size: xx-large;
+            top: 1rem; /* Ajustez la position selon vos besoins */
+            right: 1rem; /* Ajustez la position selon vos besoins */
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .burgerMenu::before {
+            content: "\2630";
+        }
+        .crossIcon::before {
+            content: "\2716";
+        }
+    }
+}

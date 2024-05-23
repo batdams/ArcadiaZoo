@@ -1,0 +1,49 @@
+// Global Styles
+.section1 {
+    background: url("../pictures/fox2.jpg");
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover;
+    height: calc(100vh - 64px);
+    .presentationArcadia {
+        h1 {
+            color: $color7;
+            font-family: $fontSerif;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding-bottom: 0,8rem;
+        }
+        p {
+            font-family: $fontNoSerif;
+            font-weight: 700;
+            span {
+                text-transform: uppercase;
+                font-weight: 900;
+            }
+        }
+    }
+}
+// Desktop Styles
+@media screen and (min-width: 900px) {
+    .section1 {
+        .presentationArcadia {
+            padding: 2rem 5rem 0rem 30rem;
+            font-size: 2rem;
+            p {
+                span {
+                    color: $color4;
+                }
+            }
+        }
+    }
+}
+// Mobile Styles
+@media screen and (max-width: 900px) {
+    .section1 {
+        .presentationArcadia {
+            padding: 20rem 2rem 0rem 5rem;
+            p {
+                color: $color2;
+            }
+        }
+    }
+}

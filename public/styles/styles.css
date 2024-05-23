@@ -1,0 +1,210 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ajuste la taille totale en tenant compte des padding et border */
+}
+
+header {
+  color: #ffffff;
+}
+
+@media screen and (min-width: 900px) {
+  header {
+    background-color: #122638;
+    display: flex;
+    padding-left: 14rem;
+    height: 64px;
+    align-items: center;
+  }
+  header .navMenu {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  header .navMenu .logo {
+    position: fixed;
+    top: 1rem;
+    left: 4rem;
+  }
+  header .navMenu .logo img {
+    width: 128px;
+    height: auto;
+    border-radius: 10px;
+  }
+  header .navMenu nav {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    display: flex;
+    padding-left: 1rem;
+  }
+  header .navMenu nav ul {
+    display: flex;
+  }
+  header .navMenu nav ul li {
+    list-style-type: none;
+    padding-right: 2rem;
+  }
+  header .navMenu nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  header .navMenu nav ul li a:hover {
+    color: #95DA82;
+  }
+  header .navMenu nav ul li .selected {
+    border-top: solid 2px #95DA82;
+    border-bottom: solid 2px #95DA82;
+    color: #95DA82;
+    padding: 0.5rem;
+  }
+  header .navMenu .hours {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+  }
+  header .navMenu .connexion {
+    text-transform: uppercase;
+    position: absolute;
+    right: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    font-weight: 600;
+  }
+  header .burgerMenu {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  header {
+    background-color: #122638;
+    text-align: center;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+  }
+  header .navMenu {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  header .navMenu .logo {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+  }
+  header .navMenu .logo img {
+    width: 128px;
+    height: auto;
+    border-radius: 10px;
+  }
+  header .navMenu .navList {
+    display: none;
+  }
+  header .navMenu .connexion {
+    display: none;
+  }
+  header .navMenuMobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 38, 56, 0.9);
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  header .navMenuMobile .navList {
+    display: inline;
+    text-align: center;
+  }
+  header .navMenuMobile .navList .linkList {
+    padding-top: 6rem;
+  }
+  header .navMenuMobile .navList .linkList li {
+    list-style-type: none;
+    padding-top: 3rem;
+  }
+  header .navMenuMobile .navList .linkList li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  header .navMenuMobile .navList .linkList li a:hover {
+    color: #95DA82;
+  }
+  header .navMenuMobile .navList .linkList li .selected {
+    color: #95DA82;
+    padding: 0.5rem;
+  }
+  header .navMenuMobile .hours {
+    display: none;
+  }
+  header .navMenuMobile .connexion {
+    display: block;
+    text-transform: uppercase;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: smaller;
+    font-weight: 600;
+    padding-top: 6rem;
+  }
+  header .burgerMenu {
+    display: block; /* Afficher le bouton burger */
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    color: #95DA82;
+    font-size: xx-large;
+    top: 1rem; /* Ajustez la position selon vos besoins */
+    right: 1rem; /* Ajustez la position selon vos besoins */
+    z-index: 1000;
+    cursor: pointer;
+  }
+  header .burgerMenu::before {
+    content: "☰";
+  }
+  header .crossIcon::before {
+    content: "✖";
+  }
+}
+.section1 {
+  background: url("../pictures/fox2.jpg"); /* pour anciens Chrome et Safari */
+  background-size: cover;
+  height: calc(100vh - 64px);
+}
+.section1 .presentationArcadia h1 {
+  color: #95DA82;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-bottom: 0, 8rem;
+}
+.section1 .presentationArcadia p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+.section1 .presentationArcadia p span {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+@media screen and (min-width: 900px) {
+  .section1 .presentationArcadia {
+    padding: 2rem 5rem 0rem 30rem;
+    font-size: 2rem;
+  }
+  .section1 .presentationArcadia p span {
+    color: #004700;
+  }
+}
+@media screen and (max-width: 900px) {
+  .section1 .presentationArcadia {
+    padding: 20rem 2rem 0rem 5rem;
+  }
+  .section1 .presentationArcadia p {
+    color: #ffffff;
+  }
+}/*# sourceMappingURL=styles.css.map */

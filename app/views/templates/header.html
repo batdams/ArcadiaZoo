@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div>ARCADIA</div>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Habitats</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <div>Today's Hours</div>
-            <div>Connexion</div>
-        </nav>
+        <div class="navMenu" id="navMenu">
+            <div class="logo"><a href="index.php"><img src="pictures/logo.png" alt="Logo Arcadia"></a></div>
+            <nav class="navList">
+                <ul class="linkList">
+                    <li><a href="#" class="selected">Accueil</a></li>
+                    <li><a href="#">Habitats</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hours">Horaires du jour :</div>
+            <div class="connexion">Connexion</div>
+        </div>
+        <button class="burgerMenu" id="burgerMenu"></button>
     </header>
     <main>

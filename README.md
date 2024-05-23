@@ -10,8 +10,11 @@ ARCADIA ZOO APP
                                        - Profil employé : Modération des avis visiteurs, modifier services du zoo, création de rapports alimentations 
 
  Instructions pour le déploiement en local :
-   Prérequis : PHP installé. commande shell : php -S localhost:1611     navigateur : ouvrir "localhost:1611/public/index.php"
-    Les étapes nécessaires pour installer et configurer votre projet localement. Incluez les dépendances et les prérequis, ainsi que les commandes spécifiques à exécuter pour installer et démarrer le projet.
+   Prérequis : PHP 8 ou +
+   Instructions : cloner repository git
+                  commande shell : php -S localhost:5000     
+                  navigateur : ouvrir "localhost:5000/public/index.php"
+   Les étapes nécessaires pour installer et configurer votre projet localement. Incluez les dépendances et les prérequis, ainsi que les commandes spécifiques à exécuter pour installer et démarrer le projet.
 
     Utilisation: Des instructions sur la façon d'utiliser votre projet une fois qu'il est installé. Cela peut inclure des exemples de commandes à exécuter, des configurations à ajuster, etc.
 
