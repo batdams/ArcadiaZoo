@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "MaPolice";
+  src: url("../fonts/CabinSketch-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MaPoliceTexte";
+  src: url("../fonts/Fredoka-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +19,10 @@
 
 header {
   color: #ffffff;
+}
+header .navMenu .hours {
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 900px) {
@@ -51,17 +67,18 @@ header {
     text-transform: uppercase;
   }
   header .navMenu nav ul li a:hover {
-    color: #95DA82;
+    color: #408e2a;
   }
   header .navMenu nav ul li .selected {
-    border-top: solid 2px #95DA82;
-    border-bottom: solid 2px #95DA82;
-    color: #95DA82;
+    border-top: solid 2px #408e2a;
+    border-bottom: solid 2px #408e2a;
+    color: #408e2a;
     padding: 0.5rem;
   }
-  header .navMenu .hours {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: smaller;
+  header .navMenu .hours img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.3rem;
   }
   header .navMenu .connexion {
     text-transform: uppercase;
@@ -90,16 +107,21 @@ header {
   }
   header .navMenu .logo {
     position: fixed;
-    top: 1rem;
+    top: 0.7rem;
     left: 1rem;
   }
   header .navMenu .logo img {
-    width: 128px;
+    width: 64px;
     height: auto;
     border-radius: 10px;
   }
   header .navMenu .navList {
     display: none;
+  }
+  header .navMenu .hours img {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.2rem;
   }
   header .navMenu .connexion {
     display: none;
@@ -132,10 +154,10 @@ header {
     text-transform: uppercase;
   }
   header .navMenuMobile .navList .linkList li a:hover {
-    color: #95DA82;
+    color: #408e2a;
   }
   header .navMenuMobile .navList .linkList li .selected {
-    color: #95DA82;
+    color: #408e2a;
     padding: 0.5rem;
   }
   header .navMenuMobile .hours {
@@ -156,9 +178,9 @@ header {
     height: 3rem;
     background-color: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
-    color: #95DA82;
+    color: #408e2a;
     font-size: xx-large;
-    top: 1rem; /* Ajustez la position selon vos besoins */
+    top: 0.4rem; /* Ajustez la position selon vos besoins */
     right: 1rem; /* Ajustez la position selon vos besoins */
     z-index: 1000;
     cursor: pointer;
@@ -175,36 +197,404 @@ header {
   background-size: cover;
   height: calc(100vh - 64px);
 }
-.section1 .presentationArcadia h1 {
-  color: #95DA82;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding-bottom: 0, 8rem;
-}
 .section1 .presentationArcadia p {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "MaPoliceTexte";
   font-weight: 700;
 }
 .section1 .presentationArcadia p span {
+  font-family: "MaPolice";
   text-transform: uppercase;
   font-weight: 900;
+}
+
+.sectionHabitats h1 {
+  color: rgb(0, 71, 0);
+  font-family: "MaPolice";
+  text-transform: uppercase;
+  padding-bottom: 0, 8rem;
+}
+.sectionHabitats .habitatListDiv .invisibleDiv {
+  opacity: 0;
+}
+.sectionHabitats .habitatListDiv .habitatDiv {
+  font-family: "MaPoliceTexte";
+}
+.sectionHabitats .habitatListDiv .habitatDiv img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+.sectionHabitats .habitatListDiv .habitatTextDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(18, 38, 56, 0.9);
+  color: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+.sectionHabitats .habitatListDiv .habitatTextDiv a {
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: rgb(0, 102, 102);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem;
+  font-size: large;
+  font-weight: 700;
+}
+.sectionHabitats .habitatListDiv .habitatTextDiv a:hover {
+  border: 1px solid rgba(18, 38, 56, 0.9);
+  background-color: rgba(18, 38, 56, 0.9);
+}
+.sectionHabitats .habitatListDiv .habitatTextDiv p {
+  padding: 1rem;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sectionHabitats .habitatListDiv .habitatTextDiv h4 {
+  text-transform: uppercase;
+}
+.sectionHabitats .habitatListDiv .habitatTextDiv ul {
+  list-style-type: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sectionHabitats .pointer {
+  cursor: pointer;
+}
+
+.sectionServices {
+  text-align: center;
+}
+.sectionServices h1 {
+  color: rgb(0, 71, 0);
+  font-family: "MaPolice";
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+.sectionServices .carroussel {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  overflow: hidden;
+}
+.sectionServices .carroussel .carrousselUnits {
+  font-family: "MaPoliceTexte";
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.sectionServices .carroussel .carrousselUnits img, .sectionServices .carroussel .carrousselUnits div {
+  min-width: 200px;
+  max-width: 600px;
+  width: 100%;
+  height: auto; /* Faire en sorte que l'image prenne 100% de la largeur de la div parente */
+  border-radius: 30px;
+}
+
+.sectionEcology {
+  text-align: center;
+}
+.sectionEcology h1 {
+  color: rgb(0, 71, 0);
+  font-family: "MaPolice";
+  text-transform: uppercase;
+  padding-bottom: 4rem;
+}
+.sectionEcology .ecologyMenu {
+  padding-left: 6rem;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+.sectionEcology .ecologyMenu #menu .menuBtn {
+  background-color: rgb(0, 71, 0);
+  color: #ffffff;
+  font-family: "MaPoliceTexte";
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 10rem;
+  height: 10rem;
+  border: 0.3rem solid rgb(0, 71, 0);
+  border-radius: 100%;
+  list-style-type: none;
+}
+.sectionEcology .ecologyMenu #menu .menuBtn:hover {
+  background-color: #3d6600;
+  cursor: pointer;
+}
+.sectionEcology .ecologyMenu #menu .items {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.sectionEcology .ecologyMenu #menu .items .menuItem {
+  position: relative;
+}
+.sectionEcology .ecologyMenu #menu .items .menuItem .itemBtn {
+  pointer-events: auto;
+  background-color: rgb(0, 71, 0);
+  color: #ffffff;
+  border: 0.3rem solid rgb(0, 71, 0);
+  border-radius: 100%;
+}
+.sectionEcology .ecologyMenu #menu .items .menuItem .itemBtn:hover {
+  background-color: #3d6600;
+  cursor: pointer;
+}
+.sectionEcology .ecologyMenu #menu .items .item1 {
+  right: 4rem;
+}
+.sectionEcology .ecologyMenu #menu .items .item1 button {
+  width: 2rem;
+  height: 2rem;
+}
+.sectionEcology .ecologyMenu #menu .items .item2 {
+  bottom: 5rem;
+  right: 7rem;
+}
+.sectionEcology .ecologyMenu #menu .items .item2 button {
+  width: 3rem;
+  height: 3rem;
+}
+.sectionEcology .ecologyMenu #menu .items .item3 {
+  bottom: 13rem;
+  right: 8rem;
+}
+.sectionEcology .ecologyMenu #menu .items .item3 button {
+  width: 4rem;
+  height: 4rem;
+}
+.sectionEcology .ecologyMenu #menu .items .item4 {
+  bottom: 23rem;
+  right: 6rem;
+}
+.sectionEcology .ecologyMenu #menu .items .item4 button {
+  width: 5rem;
+  height: 5rem;
+}
+.sectionEcology .ecologyMenu #menu .itemsShow {
+  opacity: 1;
+}
+.sectionEcology .ecologyMenu .encart {
+  padding-left: 3rem;
+  width: 50%;
+  font-family: "MaPoliceTexte";
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 900px) {
   .section1 .presentationArcadia {
     padding: 2rem 5rem 0rem 30rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .section1 .presentationArcadia p span {
-    color: #004700;
+    color: rgb(0, 71, 0);
+  }
+  .sectionHabitats {
+    background: url("../pictures/giraf.jpg"); /* pour anciens Chrome et Safari */
+    background-size: cover;
+    text-align: center;
+    height: 100vh;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .sectionHabitats h1 {
+    padding-top: 3rem;
+  }
+  .sectionHabitats .habitatListDiv {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: end;
+    display: flex;
+  }
+  .sectionHabitats .habitatListDiv .habitatDiv {
+    flex: 1 1 600px;
+    max-width: 600px;
+    padding: 1rem;
+  }
+  .sectionServices h1 {
+    font-size: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .sectionServices .carroussel .carrousselUnits {
+    font-size: 1rem;
+  }
+  .sectionEcology h1 {
+    padding-top: 3rem;
+    font-size: 3rem;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 480px) and (max-width: 900px) {
   .section1 .presentationArcadia {
-    padding: 20rem 2rem 0rem 5rem;
+    padding: 17rem 2rem 0rem 5rem;
+    font-size: 1.5rem;
   }
   .section1 .presentationArcadia p {
     color: #ffffff;
   }
+  .section1 .presentationArcadia p span {
+    color: rgb(0, 71, 0);
+  }
+  .sectionHabitats {
+    background: url("../pictures/giraf.jpg"); /* pour anciens Chrome et Safari */
+    background-size: cover;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .sectionHabitats h1 {
+    padding-top: 1rem;
+    font-size: larger;
+  }
+  .sectionHabitats .habitatListDiv {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: end;
+    display: flex;
+  }
+  .sectionHabitats .habitatListDiv .habitatDiv {
+    flex: 1 1 500px;
+    max-width: 500px;
+    padding: 1rem;
+  }
+  .sectionServices h1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .sectionServices .carroussel .carrousselUnits {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section1 .presentationArcadia {
+    padding: 12rem 2rem 0rem 5rem;
+    font-size: 1.1rem;
+  }
+  .section1 .presentationArcadia p {
+    color: #ffffff;
+  }
+  .sectionHabitats {
+    text-align: center;
+  }
+  .sectionHabitats h1 {
+    color: rgb(0, 71, 0);
+    padding-top: 1rem;
+  }
+  .sectionHabitats .habitatListDiv {
+    display: block;
+    text-align: center;
+  }
+  .sectionHabitats .habitatListDiv .habitatDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+  }
+  .sectionHabitats .habitatListDiv .habitatDiv img {
+    width: 150px;
+    height: auto;
+  }
+  .sectionHabitats .habitatListDiv .savaneDiv {
+    padding-right: 2rem;
+  }
+  .sectionHabitats .habitatListDiv .jungleDiv {
+    padding-left: 2rem;
+  }
+  .sectionHabitats .habitatListDiv .canadianForestDiv {
+    padding-right: 2rem;
+  }
+  .sectionEcology h1 {
+    padding-bottom: 4rem;
+  }
+  .sectionEcology .ecologyMenu #menu .menuBtn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 6rem;
+    height: 6rem;
+  }
+  .sectionEcology .ecologyMenu #menu .items .item1 {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .sectionEcology .ecologyMenu #menu .items .item1 button {
+    width: 2rem;
+    height: 2rem;
+  }
+  .sectionEcology .ecologyMenu #menu .items .item2 {
+    bottom: 5rem;
+    right: 3rem;
+  }
+  .sectionEcology .ecologyMenu #menu .items .item2 button {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+  .sectionEcology .ecologyMenu #menu .items .item3 {
+    bottom: 10rem;
+    right: 4rem;
+  }
+  .sectionEcology .ecologyMenu #menu .items .item3 button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .sectionEcology .ecologyMenu #menu .items .item4 {
+    bottom: 16rem;
+    right: 4rem;
+  }
+  .sectionEcology .ecologyMenu #menu .items .item4 button {
+    width: 3.1rem;
+    height: 3.1rem;
+  }
+  .sectionEcology .ecologyMenu .encart {
+    display: none;
+  }
+}
+footer {
+  background-color: #122638;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+footer .infosArcadiaDIV {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.2rem;
+}
+footer .infosArcadiaDIV a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+}
+footer .infosArcadiaDIV a:hover {
+  color: #408e2a;
+}
+footer .CGUDIV {
+  padding: 0.2rem;
+}
+footer .CGUDIV a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+}
+footer .CGUDIV a:hover {
+  color: #408e2a;
 }/*# sourceMappingURL=styles.css.map */

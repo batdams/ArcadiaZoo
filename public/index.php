@@ -2,6 +2,7 @@
 
 // Inclusion des classes
 require_once '../app/controllers/HomeController.php';
+require_once '../app/controllers/ConnexionController.php';
 require_once '../app/views/ViewManager.php';
 
 // Ajout du routeur
@@ -12,6 +13,9 @@ $router = new \routing\Router();
 
 // Définition de la route initiale
 $router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
+
+// création de nouvelles routes 
+$router->addRoute('GET', '/public/connexion', 'ConnexionController', 'index');
 
 // Récupération des informations de la requête via la super variable $_SERVER 
 $method = $_SERVER['REQUEST_METHOD'];

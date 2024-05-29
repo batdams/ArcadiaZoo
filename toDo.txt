@@ -1,6 +1,9 @@
 Git - une branche main
     - une branch dev -> test -> merge to main
 
-
+Réorganiser header.scss
 
 Manuel utilisation en pdf
+
+Action écolo:
+Le zoo Arcadia se distingue par son engagement écologique exemplaire, étant entièrement autonome en énergie grâce à l'utilisation de panneaux solaires et d'éoliennes. La gestion de l'eau y est également 100% verte, avec un système innovant de récupération des eaux de pluie et de filtration naturelle à travers des bassins plantés de roseaux. Tous les déchets produits sont soit recyclés, soit valorisés en compost pour nos jardins. Enfin, la nourriture destinée aux animaux est exclusivement locale, provenant de fermes partenaires qui pratiquent une agriculture durable. Arcadia incarne ainsi une harmonie parfaite entre préservation de la biodiversité et respect de l'environnement.

@@ -4,9 +4,15 @@
     padding: 0;
     box-sizing: border-box; /* Ajuste la taille totale en tenant compte des padding et border */
 }
-
+// Global styles
 header {
     color: $color2;
+    .navMenu {
+        .hours {
+            display: flex;
+            align-items: center;
+        }
+    }
 }
 
 // Desktop Styles
@@ -59,8 +65,11 @@ header {
                 }
             }
             .hours {
-                font-family: $fontNoSerif;
-                font-size: smaller;
+                img {
+                    width: 2rem;
+                    height: 2rem;
+                    margin-right: 0.3rem;
+                }
             }
             .connexion {
                 text-transform: uppercase;
@@ -76,7 +85,7 @@ header {
         }
     }
 }
-// Mobile Styles
+// Tablet & Mobile Styles
 @media screen and (max-width: 900px) {
     header {
         background-color: $color1;
@@ -90,16 +99,23 @@ header {
             align-items: center;
             .logo {
                 position: fixed;
-                top: 1rem;
+                top: 0.7rem;
                 left: 1rem;
                 img {
-                    width: 128px;
+                    width: 64px;
                     height: auto;
                     border-radius: 10px;
                 }
             }
             .navList {
                 display: none;
+            }
+            .hours {
+                img {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    margin-right: 0.2rem;
+                }
             }
             .connexion {
                 display: none;
@@ -161,7 +177,7 @@ header {
             border-color: rgba(0, 0, 0, 0.0);
             color: $color7;
             font-size: xx-large;
-            top: 1rem; /* Ajustez la position selon vos besoins */
+            top: 0.4rem; /* Ajustez la position selon vos besoins */
             right: 1rem; /* Ajustez la position selon vos besoins */
             z-index: 1000;
             cursor: pointer;

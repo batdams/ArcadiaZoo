@@ -2,14 +2,28 @@
 $color1: #122638;
 $color2: #ffffff;
 $color3: #006600;
-$color4: #004700;
-$color5: #006666;
+$color4: rgb(0, 71, 0);
+$color5: rgb(0, 102, 102);
 $color6: #3d6600;
-$color7: #95DA82;
+$color7: #408e2a;
+$color8: #bbaea6;
 
 $color1Transparency: rgba(18, 38, 56, 0.9);
+$color5Transparency: rgba(0, 102, 102, 0.6);
 
 // Font-familly
+@font-face {
+    font-family: 'MaPolice';
+    src: url('../fonts/CabinSketch-Regular.ttf') format('truetype');
+    font-weight: normal; // Définissez le poids de la police
+    font-style: normal; // Définissez le style de la police (normal par défaut)
+}
+@font-face {
+    font-family: 'MaPoliceTexte';
+    src: url('../fonts/Fredoka-Regular.ttf') format('truetype');
+    font-weight: normal; // Définissez le poids de la police
+    font-style: normal; // Définissez le style de la police (normal par défaut)
+}
 $fontSerif:  Georgia, 'Times New Roman', Times, serif;
 $fontNoSerif: Arial, Helvetica, sans-serif;
 
