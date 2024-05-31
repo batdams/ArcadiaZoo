@@ -81,12 +81,28 @@ header .navMenu .hours {
     margin-right: 0.3rem;
   }
   header .navMenu .connexion {
+    text-decoration: none;
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    color: #ffffff;
     text-transform: uppercase;
     position: absolute;
     right: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     font-size: smaller;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .navMenu .connexion:hover {
+    background-color: #408e2a;
+  }
+  header .navMenu .connexion img {
+    width: 1.5rem;
+    height: auto;
   }
   header .burgerMenu {
     display: none;
@@ -137,15 +153,16 @@ header .navMenu .hours {
     font-family: Georgia, "Times New Roman", Times, serif;
   }
   header .navMenuMobile .navList {
-    display: inline;
+    display: flex;
     text-align: center;
+    justify-content: center;
   }
   header .navMenuMobile .navList .linkList {
-    padding-top: 6rem;
+    padding-top: 4rem;
   }
   header .navMenuMobile .navList .linkList li {
     list-style-type: none;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
   }
   header .navMenuMobile .navList .linkList li a {
     text-decoration: none;
@@ -164,12 +181,25 @@ header .navMenu .hours {
     display: none;
   }
   header .navMenuMobile .connexion {
-    display: block;
-    text-transform: uppercase;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: #ffffff;
     font-size: smaller;
     font-weight: 600;
-    padding-top: 6rem;
+    margin: 6rem auto 0;
+  }
+  header .navMenuMobile .connexion:hover {
+    background-color: #408e2a;
+  }
+  header .navMenuMobile .connexion img {
+    display: block;
+    width: 1.5rem;
+    height: auto;
   }
   header .burgerMenu {
     display: block; /* Afficher le bouton burger */
@@ -562,6 +592,70 @@ header .navMenu .hours {
     display: none;
   }
 }
+.section1Connexion {
+  background: url("../pictures/fox2.jpg"); /* pour anciens Chrome et Safari */
+  background-size: cover;
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section1Connexion .connexionDIV {
+  text-transform: uppercase;
+  width: 22rem;
+}
+.section1Connexion .connexionDIV form {
+  max-width: 360px;
+  text-align: center;
+  padding: 0.5rem;
+}
+.section1Connexion .connexionDIV form input {
+  font-family: "MaPoliceTexte";
+  background: #f2f2f2;
+  width: 100%;
+  border-radius: 2rem;
+  border: 0;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.section1Connexion .connexionDIV form button {
+  font-family: "MaPoliceTexte";
+  text-transform: uppercase;
+  background: #408e2a;
+  width: 100%;
+  border-radius: 2rem;
+  border: 0;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.section1Connected {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.section1Connected .dashboardDIV {
+  width: 75%;
+  padding: 3rem 0.5rem 3rem 0.5rem;
+}
+.section1Connected .dashboardDIV .managerDIV {
+  border-radius: 10px;
+  background-color: #006600;
+  height: 64px;
+  margin: 1rem 0rem 1rem 0rem;
+}
+.section1Connected .dashboardDIV .managerDIV:hover {
+  background-color: #408e2a;
+  cursor: pointer;
+}
+.section1Connected .dashboardDIV .managerHide {
+  display: none;
+}
+
 footer {
   background-color: #122638;
   color: #ffffff;

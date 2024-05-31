@@ -20,7 +20,7 @@ class ViewManager
      */
     public function loadHeaderLogged()
     {
-        include_once 'app/views/templates/headerLogged.php';
+        include_once '../app/views/templates/headerLogged.html';
     }
 
     /**
@@ -50,7 +50,7 @@ class ViewManager
     public function render($view)
     {
             // Vérification si l'utilisateur est connecté
-            if (isset($_SESSION['role']) && $_SESSION['role'] == 'user') {
+            if (isset($_SESSION['role']) && (($_SESSION['role'] == 'vet') || ($_SESSION['role'] == 'superAdmin') || ($_SESSION['role'] == 'employee'))) {
                 // Charge le header pour un utilisateur connecté
                 $this->loadHeaderLogged();
             } else {

@@ -1,7 +1,31 @@
 import {initializeHeader} from "./header.js";
 import {initializeHomeBody} from "./homeBody.js";
+import {initializeConnectedAdminBody} from "./connectedAdminBody.js";
+import {initializeConnectedVetBody} from "./connectedVetBody.js";
+import {initializeConnectedEmployeeBody} from "./connectedEmployeeBody.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeHeader();
-    initializeHomeBody();
+    // Identification page actuelle
+    const mainElement = document.querySelector('main');
+    if (mainElement) {
+        const mainId = mainElement.id;
+        // Initialisation du script spécifique à la page
+        switch (mainId) {
+            case 'home':
+                initializeHomeBody();
+                break;
+            case 'connectedAdmin':
+                initializeConnectedAdminBody();
+                break;
+            case 'connectedVet':
+                initializeConnectedVetBody();
+                break;
+            case 'connectedEmployee':
+                initializeConnectedEmployeeBody();
+                break;
+            default:
+                console.log('No specific initialization for this page.');
+        }
+    }
 });

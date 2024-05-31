@@ -1,9 +1,12 @@
 <?php
+session_start();
+// Récupération de la config pour la connexion à la BDD
+require_once '../app/config/config.php';
 
 // Inclusion des classes
 require_once '../app/controllers/HomeController.php';
-require_once '../app/controllers/ConnexionController.php';
 require_once '../app/views/ViewManager.php';
+require_once '../app/controllers/AuthController.php';
 
 // Ajout du routeur
 require_once '../app/models/Router.php';
@@ -15,7 +18,10 @@ $router = new \routing\Router();
 $router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
 
 // création de nouvelles routes 
-$router->addRoute('GET', '/public/connexion', 'ConnexionController', 'index');
+$router->addRoute('GET', '/public/connexion', 'HomeController', 'connexion');
+$router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
+$router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
+$router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnect');
 
 // Récupération des informations de la requête via la super variable $_SERVER 
 $method = $_SERVER['REQUEST_METHOD'];
@@ -34,6 +40,11 @@ $viewManager = new \views\ViewManager();
 // Appel du contrôleur associé à la requête
 $controllerClassName = $handler['controller'];
 $controllerClassName = '\controllers\\' . $controllerClassName;
-$action = $handler['action'];
 $controller = new $controllerClassName($viewManager);
-$controller->$action();
+$action = $handler['action'];
+$pdo = new PDO($mySQLDSN, $config['username'], $config['password']);
+if ($controllerClassName == 'HomeController') {
+    $controller->$action();
+} else {
+    $controller->$action($pdo);
+}
