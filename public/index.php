@@ -7,6 +7,7 @@ require_once '../app/config/config.php';
 require_once '../app/controllers/HomeController.php';
 require_once '../app/views/ViewManager.php';
 require_once '../app/controllers/AuthController.php';
+require_once '../app/controllers/AnimalController.php';
 
 // Ajout du routeur
 require_once '../app/models/Router.php';

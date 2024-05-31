@@ -21,7 +21,7 @@ class AuthController extends Controller
    */
   public function userConnect($pdo)
   {
-    $sql = 'SELECT * FROM users WHERE email = :email';
+    $sql = 'SELECT * FROM app_user WHERE email = :email';
     $stmt = $pdo->prepare($sql);
     $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
     if (isset($_POST["email"]) && isset($_POST["password"])) {
@@ -44,12 +44,15 @@ class AuthController extends Controller
             $this->viewManager->render('bodies/connectedVet.html');
           } else if ($_SESSION['role'] === 3){
             $_SESSION['role'] = 'employee';
+            \Animal::getAllAnimals($pdo);
             setcookie("user", "employee", time() + 3600, '/'); // création cookie vet
-            $this->viewManager->render('bodies/connectedEmployee.html');
+            $this->viewManager->render('bodies/connectedEmployee.php');
           }        
         } else {
           echo 'Utilisateur non inscrit ou erreur dans l\'adresse mail';
         }
+//        $animalController = new AnimalController($pdo);
+//        $animalController->showAnimals();
       }
     }
   }
@@ -83,7 +86,7 @@ class AuthController extends Controller
     } else if ($_SESSION['role'] === 'vet'){
       $this->viewManager->render('bodies/connectedVet.html');
     } else if ($_SESSION['role'] === 'employee'){
-      $this->viewManager->render('bodies/connectedEmployee.html');
+      $this->viewManager->render('bodies/connectedEmployee.php');
     } else {
           echo 'Utilisateur non inscrit ou erreur dans l\'adresse mail';
     };
