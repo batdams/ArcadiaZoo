@@ -544,7 +544,7 @@ header .navMenu .hours {
   .sectionHabitats .habitatListDiv .jungleDiv {
     padding-left: 2rem;
   }
-  .sectionHabitats .habitatListDiv .canadianForestDiv {
+  .sectionHabitats .habitatListDiv .swampDiv {
     padding-right: 2rem;
   }
   .sectionEcology h1 {
@@ -654,6 +654,104 @@ header .navMenu .hours {
 }
 .section1Connected .dashboardDIV .managerHide {
   display: none;
+}
+
+#habitats {
+  height: calc(100vh - 128px);
+}
+#habitats .section1Living {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+#habitats .section1Living .livingsList {
+  width: 75%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+#habitats .section1Living .livingsList .savaneLiving, #habitats .section1Living .livingsList .jungleLiving, #habitats .section1Living .livingsList .swampLiving {
+  flex: 1 1 200px;
+  min-width: 100px;
+  max-width: 150px;
+  padding: 0.5rem;
+}
+#habitats .section1Living .livingsList .savaneLiving img, #habitats .section1Living .livingsList .jungleLiving img, #habitats .section1Living .livingsList .swampLiving img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+#habitats .section1Living .livingsList .savaneLiving img:hover, #habitats .section1Living .livingsList .jungleLiving img:hover, #habitats .section1Living .livingsList .swampLiving img:hover {
+  transform: scale(1.1);
+}
+#habitats .livingDescription {
+  text-align: center;
+}
+#habitats .livingDescription h4 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: rgb(0, 71, 0);
+}
+#habitats .livingDescription .lvgCorps {
+  display: flex;
+}
+#habitats .livingDescription .lvgCorps .lvgAnimalList {
+  font-family: "MaPoliceTexte";
+}
+
+@media screen and (max-width: 900px) {
+  #habitats .livingDescription h4 {
+    font-size: 1.2rem;
+  }
+}
+#services {
+  height: calc(100vh - 128px);
+}
+#services .section1Service {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+#services .section1Service .servicesList {
+  width: 75%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+#services .section1Service .servicesList .service {
+  background-color: rgb(0, 71, 0);
+  border-radius: 20px;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+#services .section1Service .servicesList .service:hover {
+  background-color: #408e2a;
+}
+#services .section1Service .servicesList .service h6 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
+#contact {
+  height: calc(100vh - 128px);
+}
+#contact .section1Contact {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+#contact .section1Contact .contactDIV {
+  width: 75%;
+}
+#contact .section1Contact .contactDIV h1 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: #3d6600;
 }
 
 footer {

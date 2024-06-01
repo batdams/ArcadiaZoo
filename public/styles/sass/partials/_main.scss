@@ -348,7 +348,7 @@
             .jungleDiv {
                 padding-left: 2rem;
             }
-            .canadianForestDiv {
+            .swampDiv {
                 padding-right: 2rem;
             }
         }
@@ -472,6 +472,119 @@
         }
         .managerHide {
             display: none;
+        }
+    }
+}
+
+// HABITATS PAGE  ------------------------------------------------------------------------------------------------------------------------
+// Global Styles  -------------------------------------------------------------------------------------------------------------------------
+#habitats {
+    height: calc(100vh - 128px);
+    .section1Living {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        .livingsList {
+            width: 75%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            .savaneLiving, .jungleLiving, .swampLiving {
+                flex: 1 1 200px;
+                min-width: 100px;
+                max-width: 150px;
+                padding: 0.5rem;
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 20px;
+                    padding: 0.5rem;
+                    transition: transform 0.3s ease;
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+    .livingDescription {
+        text-align: center;
+        h4 {
+            font-family: 'MaPolice';
+            font-size: 2rem;
+            color: $color4;
+        }
+        .lvgCorps {
+            display: flex;
+            .lvgAnimalList {
+                font-family: 'MaPoliceTexte';
+            }
+        }
+    }
+}
+// Mobile Styles  -------------------------------------------------------------------------------------------------------------------------
+@media screen and (max-width: 900px) {
+    #habitats {
+        .livingDescription {
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+// SERVICES PAGE  ------------------------------------------------------------------------------------------------------------------------
+// Global Styles  -------------------------------------------------------------------------------------------------------------------------
+#services {
+    height: calc(100vh - 128px);
+    .section1Service {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        .servicesList {
+            width: 75%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            .service {
+                background-color: $color4;
+                border-radius: 20px;
+                margin: 0.5rem;
+                cursor: pointer;
+                &:hover {
+                    background-color: $color7;
+                }
+                    h6 {
+                        font-family: 'MaPolice';
+                        font-size: 2rem;
+                        color: $color2;
+                        padding: 0.5rem;
+                    }
+            }
+        }
+    }
+}
+// Mobile Styles  -------------------------------------------------------------------------------------------------------------------------
+@media screen and (max-width: 900px) {
+
+}
+
+// CONTACT PAGE  ------------------------------------------------------------------------------------------------------------------------
+// Global Styles  -------------------------------------------------------------------------------------------------------------------------
+#contact {
+    height: calc(100vh - 128px);
+    .section1Contact {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        .contactDIV {
+            width: 75%;
+            h1 {
+                font-family: 'MaPolice';
+                font-size: 2rem;
+                color: $color6;
+            }
         }
     }
 }

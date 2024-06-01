@@ -5,6 +5,9 @@ require_once '../app/config/config.php';
 
 // Inclusion des classes
 require_once '../app/controllers/HomeController.php';
+require_once '../app/controllers/HabitatController.php';
+require_once '../app/controllers/ServiceController.php';
+require_once '../app/controllers/ContactController.php';
 require_once '../app/views/ViewManager.php';
 require_once '../app/controllers/AuthController.php';
 require_once '../app/controllers/AnimalController.php';
@@ -18,12 +21,14 @@ $router = new \routing\Router();
 // Définition de la route initiale
 $router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
 
-// création de nouvelles routes 
+// création de nouvelles routes
+$router->addRoute('GET', '/public/habitats', 'HabitatController', 'index');
+$router->addRoute('GET', '/public/services', 'ServiceController', 'index');
+$router->addRoute('GET', '/public/contact', 'ContactController', 'index');
 $router->addRoute('GET', '/public/connexion', 'HomeController', 'connexion');
 $router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
 $router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
 $router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnect');
-
 // Récupération des informations de la requête via la super variable $_SERVER 
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];

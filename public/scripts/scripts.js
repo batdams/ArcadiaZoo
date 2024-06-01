@@ -1,5 +1,6 @@
 import {initializeHeader} from "./header.js";
 import {initializeHomeBody} from "./homeBody.js";
+import {initializeHabitatsBody} from "./habitatsBody.js";
 import {initializeConnectedAdminBody} from "./connectedAdminBody.js";
 import {initializeConnectedVetBody} from "./connectedVetBody.js";
 import {initializeConnectedEmployeeBody} from "./connectedEmployeeBody.js";
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mainId = mainElement.id;
         // Initialisation du script spécifique à la page
         switch (mainId) {
-            case 'home':
+            case 'accueil':
                 initializeHomeBody();
                 break;
             case 'connectedAdmin':
@@ -23,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'connectedEmployee':
                 initializeConnectedEmployeeBody();
+                break;
+            case 'habitats':
+                initializeHabitatsBody();
                 break;
             default:
                 console.log('No specific initialization for this page.');

@@ -19,7 +19,7 @@ class HomeController extends Controller
     $this->viewManager->render('bodies/home.html');
     }
 
-        /**
+    /**
      * Affiche la page de connexion
      * 
      * Cette méthode affiche la page de connexion de l'application.
