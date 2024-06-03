@@ -413,7 +413,7 @@
     background: url("../pictures/fox2.jpg");
     -webkit-background-size: cover; /* pour anciens Chrome et Safari */
     background-size: cover;
-    height: calc(100vh - 64px);
+    height: calc(100vh - 128px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -454,6 +454,7 @@
 // CONNECTED PAGE  ------------------------------------------------------------------------------------------------------------------------
 // Global Styles ------------------------------------------------------------------------------------------------------------------------
 .section1Connected {
+    min-height: calc(100vh - 128px);
     display: flex;
     text-align: center;
     justify-content: center;
@@ -564,6 +565,14 @@
             }
         }
     }
+    .servicesDescription {
+        text-align: center;
+        h4 {
+            font-family: 'MaPolice';
+            font-size: 2rem;
+            color: $color4;
+        }
+    }
 }
 // Mobile Styles  -------------------------------------------------------------------------------------------------------------------------
 @media screen and (max-width: 900px) {
@@ -573,17 +582,91 @@
 // CONTACT PAGE  ------------------------------------------------------------------------------------------------------------------------
 // Global Styles  -------------------------------------------------------------------------------------------------------------------------
 #contact {
-    height: calc(100vh - 128px);
     .section1Contact {
-        display: flex;
-        text-align: center;
-        justify-content: center;
+    height: calc(100vh - 128px);
+    background: url("../pictures/fox2.jpg");
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
         .contactDIV {
-            width: 75%;
+            text-transform: uppercase;
+            width: 25rem;
+            height: 75%;
+            text-align: center;
             h1 {
                 font-family: 'MaPolice';
                 font-size: 2rem;
                 color: $color6;
+            }
+            .contactFormDIV {
+                text-align: center;
+                font-family: 'MaPoliceTexte';
+                form {
+                    text-align: center;
+                    padding: 0.5rem;
+                    input {
+                        font-family: 'MaPoliceTexte';
+                        background: #f2f2f2;
+                        width: 100%;
+                        border-radius: 2rem;
+                        border: 0;
+                        margin-bottom: 0.5rem;
+                        padding: 1rem;
+                        box-sizing: border-box;
+                        font-size: 1rem;
+                    }
+                    textarea {
+                        font-family: 'MaPoliceTexte';
+                        background: #f2f2f2;
+                        width: 100%;
+                        height: 6rem;
+                        border-radius: 2rem;
+                        border: 0;
+                        margin-bottom: 0.5rem;
+                        padding: 1rem;
+                        box-sizing: border-box;
+                        font-size: 1rem;
+                    }
+                    button {
+                        font-family: 'MaPoliceTexte';
+                        text-transform: uppercase;
+                        background: $color7;
+                        width: 100%;
+                        border-radius: 2rem;
+                        border: 0;
+                        padding: 1rem;
+                        color: $color2;
+                        font-size: 1rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+// Mobile Styles  -------------------------------------------------------------------------------------------------------------------------
+@media screen and (max-width: 900px) {
+    #contact {
+        .section1Contact {
+            .contactDIV {
+                text-transform: uppercase;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                h1 {
+                    font-size: 1.5rem;
+                }
+                .contactFormDIV {
+                    form {
+                        input {
+                            height: 1.5rem;
+                            padding: 0.7rem;
+                        }
+                    }
+                }
             }
         }
     }

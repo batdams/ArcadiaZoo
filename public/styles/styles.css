@@ -595,7 +595,7 @@ header .navMenu .hours {
 .section1Connexion {
   background: url("../pictures/fox2.jpg"); /* pour anciens Chrome et Safari */
   background-size: cover;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 128px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -634,6 +634,7 @@ header .navMenu .hours {
 }
 
 .section1Connected {
+  min-height: calc(100vh - 128px);
   display: flex;
   text-align: center;
   justify-content: center;
@@ -736,24 +737,94 @@ header .navMenu .hours {
   color: #ffffff;
   padding: 0.5rem;
 }
-
-#contact {
-  height: calc(100vh - 128px);
-}
-#contact .section1Contact {
-  display: flex;
+#services .servicesDescription {
   text-align: center;
+}
+#services .servicesDescription h4 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: rgb(0, 71, 0);
+}
+
+#contact .section1Contact {
+  height: calc(100vh - 128px);
+  background: url("../pictures/fox2.jpg"); /* pour anciens Chrome et Safari */
+  background-size: cover;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 #contact .section1Contact .contactDIV {
-  width: 75%;
+  text-transform: uppercase;
+  width: 25rem;
+  height: 75%;
+  text-align: center;
 }
 #contact .section1Contact .contactDIV h1 {
   font-family: "MaPolice";
   font-size: 2rem;
   color: #3d6600;
 }
+#contact .section1Contact .contactDIV .contactFormDIV {
+  text-align: center;
+  font-family: "MaPoliceTexte";
+}
+#contact .section1Contact .contactDIV .contactFormDIV form {
+  text-align: center;
+  padding: 0.5rem;
+}
+#contact .section1Contact .contactDIV .contactFormDIV form input {
+  font-family: "MaPoliceTexte";
+  background: #f2f2f2;
+  width: 100%;
+  border-radius: 2rem;
+  border: 0;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+#contact .section1Contact .contactDIV .contactFormDIV form textarea {
+  font-family: "MaPoliceTexte";
+  background: #f2f2f2;
+  width: 100%;
+  height: 6rem;
+  border-radius: 2rem;
+  border: 0;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+#contact .section1Contact .contactDIV .contactFormDIV form button {
+  font-family: "MaPoliceTexte";
+  text-transform: uppercase;
+  background: #408e2a;
+  width: 100%;
+  border-radius: 2rem;
+  border: 0;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
 
+@media screen and (max-width: 900px) {
+  #contact .section1Contact .contactDIV {
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  #contact .section1Contact .contactDIV h1 {
+    font-size: 1.5rem;
+  }
+  #contact .section1Contact .contactDIV .contactFormDIV form input {
+    height: 1.5rem;
+    padding: 0.7rem;
+  }
+}
 footer {
   background-color: #122638;
   color: #ffffff;

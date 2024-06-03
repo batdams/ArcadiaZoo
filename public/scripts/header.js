@@ -15,6 +15,8 @@ export function initializeHeader () {
     navListLink.forEach((element) => {
         if(element.innerText ==  pageId) {
             element.classList.add('selected');
-        }
+        } /*else if ((element.innerText = 'Votre espace') && pageId === 'connexion' || pageId === 'connectedVet' || pageId === 'connectedAdmin' || pageId === 'connectedEmployee') {
+            element.classList.add('selected');
+        }*/
     });
 }
