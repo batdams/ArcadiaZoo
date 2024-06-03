@@ -29,6 +29,8 @@ $router->addRoute('GET', '/public/connexion', 'HomeController', 'connexion');
 $router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
 $router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
 $router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnect');
+$router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
+
 // Récupération des informations de la requête via la super variable $_SERVER 
 $method = $_SERVER['REQUEST_METHOD'];
 $uri = $_SERVER['REQUEST_URI'];
@@ -49,8 +51,9 @@ $controllerClassName = '\controllers\\' . $controllerClassName;
 $controller = new $controllerClassName($viewManager);
 $action = $handler['action'];
 $pdo = new PDO($mySQLDSN, $config['username'], $config['password']);
-if ($controllerClassName == 'HomeController') {
+$controller->$action($pdo);
+/*if ($controllerClassName == 'HomeController') {
     $controller->$action();
 } else {
     $controller->$action($pdo);
-}
+}*/

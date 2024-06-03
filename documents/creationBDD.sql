@@ -60,3 +60,17 @@ CREATE TABLE animal_habitat (
 INSERT INTO breed (breed_name) VALUES ('Félin');
 INSERT INTO animal (name, breed_id, img_path, habitat) VALUES ('Lion', 1, 'URLinvalide', 'Savane');
 INSERT INTO animal (name, breed_id, img_path, habitat) VALUES ('Jaguar', 1, 'URLinvalide', 'Savane');
+
+/*3ème étape services*/
+
+CREATE TABLE service (
+	service_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(50) NOT NULL,
+	img_path VARCHAR(255) NOT NULL,
+	description TEXT NOT NULL,
+	create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+/* TEST services TEST */
+INSERT INTO service (title, img_path, description) VALUES ('Forest', '../../../public/pictures/services/savaneLion.jpg', 'La foret canadienne, majestueuse, pleine de vie');

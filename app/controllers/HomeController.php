@@ -4,6 +4,7 @@ namespace controllers;
 
 // Inclusion des classes
 require_once '../app/controllers/Controller.php';
+require_once '../app/controllers/ServiceController.php';
 
 class HomeController extends Controller
 {
@@ -14,9 +15,11 @@ class HomeController extends Controller
      * 
      * @return void
      */
-    public function index(): void
+    public function index($pdo): void
     { 
-    $this->viewManager->render('bodies/home.html');
+    // Utilisation de la fct static displayService()
+    $services = ServiceController::displayService($pdo);
+    $this->viewManager->renderData('bodies/home.php', $services);
     }
 
     /**

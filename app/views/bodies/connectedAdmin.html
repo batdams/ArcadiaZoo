@@ -34,7 +34,17 @@
                 <h4>Gestion des services</h4>
             </div>
             <div id="servicesManagerBody" class="managerHide">
-                Voici l'espace de création, modification et suppression des services
+                Voici l'espace de création, modification et suppression des services<br>
+                <form method="POST" action="/public/addService" enctype="multipart/form-data">
+                    <label for="title">Titre du service</label>
+                    <input type="text" name="title" id="title">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description">
+                    </textarea>
+                    <label for="img">Image</label>
+                    <input type="file" name="img" id="img">
+                <button type="submit">Envoyez</button>
+                </form>
             </div>
         </div>
     </section>
