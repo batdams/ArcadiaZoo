@@ -648,9 +648,74 @@ header .navMenu .hours {
   background-color: #006600;
   height: 64px;
   margin: 1rem 0rem 1rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .section1Connected .dashboardDIV .managerDIV:hover {
   background-color: #408e2a;
+  cursor: pointer;
+}
+.section1Connected .dashboardDIV #animalsManager h4, .section1Connected .dashboardDIV #animalsReportsManager h4, .section1Connected .dashboardDIV #habitatsReportsManager h4, .section1Connected .dashboardDIV #servicesManager h4, .section1Connected .dashboardDIV #accountsManager h4, .section1Connected .dashboardDIV #hoursManager h4 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: #ffffff;
+}
+.section1Connected .dashboardDIV #servicesManagerBody, .section1Connected .dashboardDIV #accountsManagerBody {
+  text-align: center;
+  font-family: "MaPoliceTexte";
+}
+.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV {
+  margin: 1rem;
+  padding: 1rem;
+  border: solid 1px #006600;
+  border-radius: 10px;
+}
+.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV h4, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV h4 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: #006600;
+}
+.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV form, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV form {
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV form input, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV form input {
+  text-align: center;
+  font-family: "MaPoliceTexte";
+  background: #f2f2f2;
+  width: 100%;
+  border-radius: 2rem;
+  border: 0;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV form textarea, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV form textarea {
+  font-family: "MaPoliceTexte";
+  background: #f2f2f2;
+  width: 100%;
+  height: 6rem;
+  border-radius: 2rem;
+  border: 0;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV form button, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV form button {
+  font-family: "MaPoliceTexte";
+  text-transform: uppercase;
+  background: #408e2a;
+  width: 50%;
+  border-radius: 2rem;
+  border: 0;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #ffffff;
+  font-size: 1rem;
   cursor: pointer;
 }
 .section1Connected .dashboardDIV .managerHide {

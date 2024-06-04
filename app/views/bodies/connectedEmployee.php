@@ -1,5 +1,4 @@
 <main id="connectedEmployee">
-    <?php var_dump($animal);?>
     <section class="section1Connected">
         <div class="dashboardDIV">
             <div id="reviewManager" class="managerDIV">
@@ -42,7 +41,29 @@
                 <h4>Gestion des services</h4>
             </div>
             <div id="servicesManagerBody" class="managerHide">
-                Voici l'espace de création, modification et suppression des services
+            <div class="serviceAddDIV serviceDIV">
+                <div class="serviceModifDIV serviceDIV">
+                    <h4>Modification d'un service</h4>
+                    <label for="serviceSelect">Liste des services</label>
+                    <select name="services" id="serviceSelect">
+                        <option value="">Choisissez un service</option>
+                    <?php
+                        foreach($data as $title) {
+                            echo '<option value="' . $title[0] . '">' . $title[0] . '</option>';
+                        }
+                    ?>
+                    </select>
+                    <form method="POST" action="/public/modifService" enctype="multipart/form-data">
+                        <label for="titleModif">Titre du service</label>
+                        <input type="text" name="titleModif" id="titleModif">
+                        <label for="descriptionModif">Description</label>
+                        <textarea name="descriptionModif" id="descriptionModif">
+                        </textarea>
+                        <label for="imgModif">Image</label>
+                        <input type="file" name="imgModif" id="imgModif">
+                    <button type="submit" class="btnModif">Modifier</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>

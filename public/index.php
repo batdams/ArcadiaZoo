@@ -30,6 +30,8 @@ $router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
 $router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
 $router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnect');
 $router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
+$router->addRoute('POST', '/public/modifService', 'ServiceController', 'modifService');
+$router->addRoute('POST', '/public/delService', 'ServiceController', 'delService');
 
 // Récupération des informations de la requête via la super variable $_SERVER 
 $method = $_SERVER['REQUEST_METHOD'];

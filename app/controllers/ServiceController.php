@@ -59,12 +59,12 @@ class ServiceController extends Controller
     // Préparation de la requête SQL (Mise en mémoire pour la manipuler via PDOStatement)
     $stmt = $pdo->prepare($sql);
     // Vérification de la présence des données
-    if (isset($_POST['title']) && isset($_FILES['img']) && isset($_POST['description'])) {
+    if (isset($_POST['titleAdd']) && isset($_FILES['imgAdd']) && isset($_POST['descriptionAdd'])) {
         // Récupération des données via les superglobales $_POST $_FILES
         //Récupération des données de l'image
-        $imgName = $_FILES['img']['name']; // Nom du fichier
-        $imgTempName = $_FILES['img']['tmp_name']; // Dossier temporaire
-        $imgError = $_FILES['img']['error']; // Valeur d'erreur de l'image
+        $imgName = $_FILES['imgAdd']['name']; // Nom du fichier
+        $imgTempName = $_FILES['imgAdd']['tmp_name']; // Dossier temporaire
+        $imgError = $_FILES['imgAdd']['error']; // Valeur d'erreur de l'image
         //Enregistrement image dans dossier services
         if($imgError === 0) {
             $destination = '../public/pictures/services/' . $imgName;
@@ -72,9 +72,9 @@ class ServiceController extends Controller
         } else {
             echo "Erreur lors de l'enregistrement de l'image";
         }
-        $title = $_POST['title'];
+        $title = $_POST['titleAdd'];
         $img_path = '../public/pictures/services/' . $imgName;
-        $description = $_POST['description'];
+        $description = $_POST['descriptionAdd'];
         // Liaison des données aux marqueurs nommés
         $stmt->bindValue(':title', $title, \PDO::PARAM_STR);
         $stmt->bindValue(':img_path', $img_path, \PDO::PARAM_STR);
@@ -86,6 +86,85 @@ class ServiceController extends Controller
             } else {
             // En cas d'erreur lors de l'execution
             echo 'ERREUR INSERTION SERVICE';
+            }
+        }
+    }
+
+    /**
+     * Modifie un service
+     * 
+     * Cette méthode modifie un service.
+     * 
+     * @param PDO $pdo Instance PDO pour la connexion à la base de données
+     * @return void
+     */
+    public function modifService($pdo): void
+    {
+        // Requête SQL pour récupérer les services
+        $sql = "UPDATE service
+                SET title = :title, description = :description, img_path = :img_path
+                WHERE service_id = 7;
+                ";
+        // Préparation de la requête SQL
+        $stmt = $pdo->prepare($sql);
+        // Vérification de la présence des données
+        if (isset($_POST['titleModif']) && isset($_FILES['imgModif']) && isset($_POST['descriptionModif'])) {
+            // Récupération des données via les superglobales $_POST $_FILES
+            //Récupération des données de l'image
+            $imgName = $_FILES['imgModif']['name']; // Nom du fichier
+            $imgTempName = $_FILES['imgModif']['tmp_name']; // Dossier temporaire
+            $imgError = $_FILES['imgModif']['error']; // Valeur d'erreur de l'image
+            //Enregistrement image dans dossier services
+            if($imgError === 0) {
+                $destination = '../public/pictures/services/' . $imgName;
+                move_uploaded_file($imgTempName, $destination);
+            } else {
+                echo "Erreur lors de l'enregistrement de l'image";
+            }
+            $title = $_POST['titleModif'];
+            $img_path = '../public/pictures/services/' . $imgName;
+            $description = $_POST['descriptionModif'];
+            // Liaison des données aux marqueurs nommés
+            $stmt->bindValue(':title', $title, \PDO::PARAM_STR);
+            $stmt->bindValue(':img_path', $img_path, \PDO::PARAM_STR);
+            $stmt->bindValue(':description', $description, \PDO::PARAM_STR);
+            // Execution de la requête
+            if ($stmt->execute()) {
+                // Redirection vers la page Admin
+                $this->viewManager->render('bodies/connectedAdmin.php');
+            } else {
+                // En cas d'erreur lors de l'execution
+                echo 'ERREUR INSERTION SERVICE';
+            }
+        }
+    }
+
+    /**
+     * supprime un service
+     * 
+     * Cette méthode supprime un service.
+     * 
+     * @param PDO $pdo Instance PDO pour la connexion à la base de données
+     * @return void
+     */
+    public function delService($pdo): void
+    {
+        // Requête SQL pour récupérer les services
+        $sql = "DELETE FROM service WHERE title = :title;";
+        // Préparation de la requête SQL
+        $stmt = $pdo->prepare($sql);
+        // Vérification de la présence des données
+        if (isset($_POST['delItem'])) {
+            $delItem = $_POST['delItem'];
+            // Liaison des données aux marqueurs nommés
+            $stmt->bindValue(':title', $delItem, \PDO::PARAM_STR);
+            // Execution de la requête
+            if ($stmt->execute()) {
+                // Redirection vers la page Admin
+                $this->viewManager->render('bodies/connectedAdmin.php');
+            } else {
+                // En cas d'erreur lors de l'execution
+                echo 'ERREUR INSERTION SERVICE';
             }
         }
     }

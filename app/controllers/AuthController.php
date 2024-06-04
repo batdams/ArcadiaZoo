@@ -4,6 +4,7 @@ namespace controllers;
 
 // Inclusion des classes
 require_once '../app/controllers/Controller.php';
+require_once '../app/controllers/ServiceController.php';
 require_once '../app/models/User.php';
 
 use \PDO; // Ajout de l'utilisation de la classe PDO
@@ -34,10 +35,11 @@ class AuthController extends Controller
           $_SESSION['mail'] = $user->getEmail();
           $_SESSION['role'] = $user->getRole_id();
           $_SESSION['name'] = $user->getFirstname();
+          $services = ServiceController::displayService($pdo);
           if($_SESSION['mail'] === "josebu@arcadia.com"){
             $_SESSION['role'] = 'superAdmin';
             setcookie("user", "administrateur", time() + 3600, '/'); // création cookie superAdmin
-          $this->viewManager->render('bodies/connectedAdmin.html');
+          $this->viewManager->renderData('bodies/connectedAdmin.php', $services);
           } else if ($_SESSION['role'] === 2){
             $_SESSION['role'] = 'vet';
             setcookie("user", "vet", time() + 3600, '/'); // création cookie vet
@@ -46,7 +48,7 @@ class AuthController extends Controller
             $_SESSION['role'] = 'employee';
             \Animal::getAllAnimals($pdo);
             setcookie("user", "employee", time() + 3600, '/'); // création cookie vet
-            $this->viewManager->render('bodies/connectedEmployee.php');
+            $this->viewManager->renderData('bodies/connectedEmployee.php', $services);
           }        
         } else {
           echo 'Utilisateur non inscrit ou erreur dans l\'adresse mail';
@@ -68,7 +70,7 @@ class AuthController extends Controller
   {
     unset($_SESSION['role']);
     setcookie("user", "", time() - 3600, '/');
-    $this->viewManager->render('bodies/home.html');
+    $this->viewManager->render('bodies/home.php');
   }
 
     /**
@@ -79,14 +81,16 @@ class AuthController extends Controller
    * @param PDO $pdo Une instance de PDO pour la connexion à la base de données.
    * @return void
    */
-  public function userVerifConnect()
+  public function userVerifConnect($pdo)
   { 
     if($_SESSION['role'] === 'superAdmin') {
-      $this->viewManager->render('bodies/connectedAdmin.html');
+      $services = ServiceController::displayService($pdo);
+      $this->viewManager->renderData('bodies/connectedAdmin.php', $services);
     } else if ($_SESSION['role'] === 'vet'){
       $this->viewManager->render('bodies/connectedVet.html');
     } else if ($_SESSION['role'] === 'employee'){
-      $this->viewManager->render('bodies/connectedEmployee.php');
+      $services = ServiceController::displayService($pdo);
+      $this->viewManager->renderData('bodies/connectedEmployee.php', $services);
     } else {
           echo 'Utilisateur non inscrit ou erreur dans l\'adresse mail';
     };
