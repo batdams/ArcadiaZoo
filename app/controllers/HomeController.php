@@ -5,6 +5,7 @@ namespace controllers;
 // Inclusion des classes
 require_once '../app/controllers/Controller.php';
 require_once '../app/controllers/ServiceController.php';
+require_once '../app/controllers/HabitatController.php';
 
 class HomeController extends Controller
 {
@@ -18,8 +19,9 @@ class HomeController extends Controller
     public function index($pdo): void
     { 
     // Utilisation de la fct static displayService()
-    $services = ServiceController::displayService($pdo);
-    $this->viewManager->renderData('bodies/home.php', $services);
+    $data = ['services' => ServiceController::displayService($pdo)];
+    $data['habitats'] = HabitatController::displayHabitat($pdo);
+    $this->viewManager->renderData('bodies/home.php', $data);
     }
 
     /**

@@ -71,6 +71,24 @@ export function initializeHomeBody () {
                                         <li>Écureuil roux</li>
                                     </ul>`;
                 }
+                else if (element.classList.contains('maraisDiv')) {
+                    divElt.innerHTML = `
+                                    <a href="habitat.php">Le marais</a>
+                                    <p>Le marais</p>
+                                    <h4>Animaux :</h4>
+                                    <ul>
+                                        <li>Alligator américain</li>
+                                        <li>Grand Héron</li>
+                                        <li>Rat musqué</li>
+                                        <li>Grenouille Léopard</li>
+                                        <li>Serpent d'eau du Nord</li>
+                                        <li>Tortue peinte</li>
+                                        <li>Ibis blanc</li>
+                                        <li>Crapaud d'Amérique</li>
+                                        <li>Rat des marais</li>
+                                        <li>Poisson-chat</li>
+                                    </ul>`;
+                }
                 divElt.classList.add('habitatTextDiv');
             }
         });

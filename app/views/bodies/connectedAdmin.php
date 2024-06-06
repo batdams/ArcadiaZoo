@@ -26,13 +26,23 @@
                 <h4>Gestion des comptes</h4>
             </div>
             <div id="accountsManagerBody" class="managerHide">
-            <div class="serviceAddDIV serviceDIV">
+                <div class="accountAddDIV serviceDIV">
                     <h4>Ajout d'un compte</h4>
                     <form method="POST" action="/public/addAccount" enctype="multipart/form-data">
+                        <label for="firstnameAccount">Prénom</label>
+                        <input type="text" name="firstnameAccount" id="firstnameAccount">
+                        <label for="lastnameAccount">Nom</label>
+                        <input type="text" name="lastnameAccount" id="lastnameAccount">
                         <label for="emailAccount">Courriel</label>
-                        <input type="text" name="emailAccount" id="emailAccount">
+                        <input type="mail" name="emailAccount" id="emailAccount">
                         <label for="pwdAccount">Mot de passe</label>
                         <input type="text" name="pwdAccount" id="pwdAccount">
+                        <fieldset>
+                            <label for="vetAccount">Vétérinaire</label>
+                            <input type="radio" name="accountRole" id="vetAccount" value="2">
+                            <label for="employeeAccount">Employé</label>
+                            <input type="radio" name="accountRole" id="employeeAccount" value="3">
+                        </fieldset>
                     <button type="submit" class="btnAdd">Envoyer</button>
                     </form>
                 </div>
@@ -56,9 +66,6 @@
                 </div>
                 <div class="serviceModifDIV serviceDIV">
                     <h4>Modification d'un service</h4>
-                    <?php
-
-                    ?>
                     <label for="serviceSelect">Liste des services</label>
                     <select name="services" id="serviceSelect">
                         <option value="">Choisissez un service</option>
@@ -67,7 +74,6 @@
                             $serviceTitle = $service->getTitle();
                             $serviceDescription = $service->getDescription();
                             $serviceImgPath = $service->getImgPath();
-                            // echo '<option value="' . $serviceTitle . '">' . $serviceTitle . '</option>';
                             echo '<option value="' . $serviceTitle . '" data-description="' . htmlspecialchars($serviceDescription) . '" data-img="' . htmlspecialchars($serviceImgPath) . '">' . $serviceTitle . '</option>';
                         }
                     ?>
@@ -92,6 +98,68 @@
                             <option value="">Choisissez un service</option>
                             <?php
                                 foreach($data as $service) {
+                                    echo '<option value="' . $service->getTitle() . '">' . $service->getTitle() . '</option>';
+                                }
+                            ?>
+                        </select>
+                        <br>
+                        <button type="submit">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+            <!-- CHANGER SERVICES PAR HABITAT-->
+            <div id="habitatManager" class="managerDIV">
+                <h4>Gestion des habitats</h4>
+            </div>
+            <div id="habitatsManagerBody" class="managerHide">
+                <div class="habitatAddDIV habitatDIV">
+                    <h4>Ajout d'un habitat</h4>
+                    <form method="POST" action="/public/addHabitat" enctype="multipart/form-data">
+                        <label for="nameAdd">nom de l'habitat</label>
+                        <input type="text" name="nameAdd" id="nameAdd">
+                        <label for="habitatDescriptionAdd">Description de l'habitat</label>
+                        <textarea name="habitatDescriptionAdd" id="habitatDescriptionAdd">
+                        </textarea>
+                        <label for="imgHabitatAdd">Image</label>
+                        <input type="file" name="imgHabitatAdd" id="imgHabitatAdd">
+                    <button type="submit" class="btnHabitatAdd">Ajouter</button>
+                    </form>
+                </div>
+                <div class="habitatModifDIV habitatDIV">
+                    <h4>Modification d'un habitat</h4>
+                    <label for="habitatSelect">Liste des habitats</label>
+                    <select name="habitatSelect" id="habitatSelect">
+                        <option value="">Choisissez un habitat</option>
+                    <?php
+                    /*
+                        foreach($data as $habitat) {
+                            $serviceTitle = $service->getTitle();
+                            $serviceDescription = $service->getDescription();
+                            $serviceImgPath = $service->getImgPath();
+                            echo '<option value="' . $serviceTitle . '" data-description="' . htmlspecialchars($serviceDescription) . '" data-img="' . htmlspecialchars($serviceImgPath) . '">' . $serviceTitle . '</option>';
+                        }*/
+                    ?>
+                    </select>
+                    <form method="POST" action="/public/modifHabitat" enctype="multipart/form-data">
+                        <label for="habitatModif">Titre de l'habitat</label>
+                        <input type="text" name="habitatModif" id="habitatModif">
+                        <label for="habitatDescriptionModif">Description</label>
+                        <textarea name="habitatDescriptionModif" id="habitatDescriptionModif">
+                        </textarea>
+                        <img id="actualHabitatImg" src="" alt="" style="width: 150px; height: auto"><br>
+                        <label for="imgHabitatModif">Image actuelle</label>
+                        <input type="file" name="imgHabitatModif" id="imgHabitatModif">
+                    <button type="submit" class="btnHabitatModif">Modifier</button>
+                    </form>
+                </div>
+                <div class="habitatSuppDIV habitatDIV">
+                    <h4>Suppression d'un habitat</h4>
+                    <form method="POST" action="/public/delHabitat" enctype="multipart/form-data">
+                        <label for="habitatSelect">Liste des habitats</label>
+                        <select name="delHabitat" id="habitatSelect">
+                            <option value="">Choisissez un habitat</option>
+                            <?php
+                                foreach($data as $habitat) {
                                     echo '<option value="' . $service->getTitle() . '">' . $service->getTitle() . '</option>';
                                 }
                             ?>

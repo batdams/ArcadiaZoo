@@ -43,13 +43,16 @@
             <div id="servicesManagerBody" class="managerHide">
             <div class="serviceAddDIV serviceDIV">
                 <div class="serviceModifDIV serviceDIV">
-                    <h4>Modification d'un service</h4>
+                <h4>Modification d'un service</h4>
                     <label for="serviceSelect">Liste des services</label>
                     <select name="services" id="serviceSelect">
                         <option value="">Choisissez un service</option>
                     <?php
-                        foreach($data as $title) {
-                            echo '<option value="' . $title[0] . '">' . $title[0] . '</option>';
+                        foreach($data as $service) {
+                            $serviceTitle = $service->getTitle();
+                            $serviceDescription = $service->getDescription();
+                            $serviceImgPath = $service->getImgPath();
+                            echo '<option value="' . $serviceTitle . '" data-description="' . htmlspecialchars($serviceDescription) . '" data-img="' . htmlspecialchars($serviceImgPath) . '">' . $serviceTitle . '</option>';
                         }
                     ?>
                     </select>
@@ -59,7 +62,8 @@
                         <label for="descriptionModif">Description</label>
                         <textarea name="descriptionModif" id="descriptionModif">
                         </textarea>
-                        <label for="imgModif">Image</label>
+                        <img id="actualImg" src="" alt="" style="width: 150px; height: auto"><br>
+                        <label for="imgModif">Image actuelle</label>
                         <input type="file" name="imgModif" id="imgModif">
                     <button type="submit" class="btnModif">Modifier</button>
                     </form>

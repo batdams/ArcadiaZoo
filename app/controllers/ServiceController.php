@@ -7,7 +7,6 @@ require_once '../app/controllers/Controller.php';
 require_once "../app/models/Service.php";
 
 class ServiceController extends Controller
-
 {
     /**
      * Mise à jour des services pour l'affichage
@@ -82,7 +81,7 @@ class ServiceController extends Controller
         // Execution de la requête
         if ($stmt->execute()) {
             // Redirection vers la page Admin
-            $this->viewManager->render('bodies/connectedAdmin.html');
+            $this->viewManager->render('bodies/connectedAdmin.php');
             } else {
             // En cas d'erreur lors de l'execution
             echo 'ERREUR INSERTION SERVICE';

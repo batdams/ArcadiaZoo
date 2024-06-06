@@ -43,7 +43,7 @@ class AuthController extends Controller
           } else if ($_SESSION['role'] === 2){
             $_SESSION['role'] = 'vet';
             setcookie("user", "vet", time() + 3600, '/'); // création cookie vet
-            $this->viewManager->render('bodies/connectedVet.html');
+            $this->viewManager->render('bodies/connectedVet.php');
           } else if ($_SESSION['role'] === 3){
             $_SESSION['role'] = 'employee';
             \Animal::getAllAnimals($pdo);
@@ -87,7 +87,7 @@ class AuthController extends Controller
       $services = ServiceController::displayService($pdo);
       $this->viewManager->renderData('bodies/connectedAdmin.php', $services);
     } else if ($_SESSION['role'] === 'vet'){
-      $this->viewManager->render('bodies/connectedVet.html');
+      $this->viewManager->render('bodies/connectedVet.php');
     } else if ($_SESSION['role'] === 'employee'){
       $services = ServiceController::displayService($pdo);
       $this->viewManager->renderData('bodies/connectedEmployee.php', $services);

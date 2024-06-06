@@ -7,7 +7,9 @@ require_once '../app/config/config.php';
 require_once '../app/controllers/HomeController.php';
 require_once '../app/controllers/HabitatController.php';
 require_once '../app/controllers/ServiceController.php';
+require_once '../app/controllers/UserController.php';
 require_once '../app/controllers/ContactController.php';
+
 require_once '../app/views/ViewManager.php';
 require_once '../app/controllers/AuthController.php';
 require_once '../app/controllers/AnimalController.php';
@@ -22,16 +24,21 @@ $router = new \routing\Router();
 $router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
 
 // création de nouvelles routes
+// HabitatController
 $router->addRoute('GET', '/public/habitats', 'HabitatController', 'index');
+// ServiceController
+$router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
+$router->addRoute('POST', '/public/modifService', 'ServiceController', 'modifService');
+$router->addRoute('POST', '/public/delService', 'ServiceController', 'delService');
 $router->addRoute('GET', '/public/services', 'ServiceController', 'index');
+// UserController
+$router->addRoute('POST', '/public/addAccount', 'UserController', 'addUser');
+
 $router->addRoute('GET', '/public/contact', 'ContactController', 'index');
 $router->addRoute('GET', '/public/connexion', 'HomeController', 'connexion');
 $router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
 $router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
 $router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnect');
-$router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
-$router->addRoute('POST', '/public/modifService', 'ServiceController', 'modifService');
-$router->addRoute('POST', '/public/delService', 'ServiceController', 'delService');
 
 // Récupération des informations de la requête via la super variable $_SERVER 
 $method = $_SERVER['REQUEST_METHOD'];

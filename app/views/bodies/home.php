@@ -2,7 +2,7 @@
     <section class="section1">
         <div class="presentationArcadia">
             <p>
-                <span>S'émerveiller, apprendre et protéger.</span><br>
+                <span>S'émerveiller, apprendre et protéger</span><br>
                 Au zoo <span>d'ARCADIA</span>, découvrez la beauté du monde animal, émerveillez-vous devant la diversité de la faune, et engagez-vous à protéger les animaux et notre planète pour les générations futures.
             </p>
         </div>
@@ -10,28 +10,33 @@
     <section class="sectionHabitats">
         <h1>habitats et animaux</h1>
         <div class="habitatListDiv">
-            <div class="invisibleDiv habitatDiv">
-            </div>
-            <div class="savaneDiv habitatDiv habitats">
-                <img src="../../../public/pictures/savaneLion.jpg" alt="Savane">
-                Savane
-            </div>
-            <div class="jungleDiv habitatDiv habitats">
+        <?php
+            $habitats = $data['habitats'];
+            foreach($habitats as $habitat) {
+               echo '<div class="invisibleDiv habitatDiv">';
+               echo '</div>';
+               echo '<div class="' . $habitat->getName() . 'Div habitatDiv habitats">';
+                    echo $habitat->getName();
+                   echo '<img src="' . $habitat->getImgPath() . '" alt="' . $habitat->getName() . '">';
+               echo '</div>';
+            }
+        ?>
+<!--            <div class="jungleDiv habitatDiv habitats">
                 Jungle
                 <img src="../../../public/pictures/chimpanzee.jpg" alt="Jungle">
             </div>
             <div class="swampDiv habitatDiv habitats">
                 <img src="../../../public/pictures/swamp.jpg" alt="marais">
                 Marais
-            </div>
+            </div> -->
         </div>
     </section>
     <section class="sectionServices">
         <h1>Nos Services</h1>
         <div class="carroussel">
             <?php
-            //var_dump($data);
-            foreach($data as $service) {
+            $services = $data['services'];
+            foreach($services as $service) {
                echo '<div class="carrousselUnits">';
                     echo '<img src="' . $service->getImgPath() . '" alt="' . $service->getTitle() . '">';
                     echo '<div>';
