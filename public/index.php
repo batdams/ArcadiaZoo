@@ -24,13 +24,20 @@ $router = new \routing\Router();
 $router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
 
 // création de nouvelles routes
+// AnimalController
+$router->addRoute('POST', '/public/addAnimal', 'AnimalController', 'addAnimal');
+//$router->addRoute('POST', '/public/modifAnimal', 'AnimalController', 'modifAnimal');
+//$router->addRoute('POST', '/public/delAnimal', 'AnimalController', 'delAnimal');
 // HabitatController
 $router->addRoute('GET', '/public/habitats', 'HabitatController', 'index');
+$router->addRoute('POST', '/public/addHabitat', 'HabitatController', 'addHabitat');
+$router->addRoute('POST', '/public/modifHabitat', 'HabitatController', 'modifHabitat');
+$router->addRoute('POST', '/public/delHabitat', 'HabitatController', 'delHabitat');
 // ServiceController
+$router->addRoute('GET', '/public/services', 'ServiceController', 'index');
 $router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
 $router->addRoute('POST', '/public/modifService', 'ServiceController', 'modifService');
 $router->addRoute('POST', '/public/delService', 'ServiceController', 'delService');
-$router->addRoute('GET', '/public/services', 'ServiceController', 'index');
 // UserController
 $router->addRoute('POST', '/public/addAccount', 'UserController', 'addUser');
 

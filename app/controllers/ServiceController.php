@@ -39,8 +39,8 @@ class ServiceController extends Controller
      */
     public function index($pdo): void
     {
-    ServiceController::displayService($pdo);
-    $this->viewManager->render('bodies/services.html');
+    $data = ['services' => ServiceController::displayService($pdo)];
+    $this->viewManager->renderData('bodies/services.php', $data);
     }
 
     /**

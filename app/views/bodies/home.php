@@ -9,42 +9,42 @@
     </section>
     <section class="sectionHabitats">
         <h1>habitats et animaux</h1>
-        <div class="habitatListDiv">
-        <?php
-            $habitats = $data['habitats'];
-            foreach($habitats as $habitat) {
-               echo '<div class="invisibleDiv habitatDiv">';
-               echo '</div>';
-               echo '<div class="' . $habitat->getName() . 'Div habitatDiv habitats">';
-                    echo $habitat->getName();
-                   echo '<img src="' . $habitat->getImgPath() . '" alt="' . $habitat->getName() . '">';
-               echo '</div>';
-            }
-        ?>
-<!--            <div class="jungleDiv habitatDiv habitats">
-                Jungle
-                <img src="../../../public/pictures/chimpanzee.jpg" alt="Jungle">
+        <div class="horizontal-scroll-section">
+        <button class="scroll-left">&lt;</button>
+            <div class="scroll-content">
+                <?php
+                    $habitats = $data['habitats'];
+                    foreach($habitats as $habitat) {
+                    echo '<div>';
+                        echo '<h4>' . $habitat->getName() . '</h4>';
+                        echo '<div class="' . $habitat->getName() . 'Div habitatDiv habitats">';
+                            echo '<a href="/public/habitats"><img src="' . $habitat->getImgPath() . '" alt="' . $habitat->getName() . '"></a>';
+                        echo '</div>';
+                    echo '</div>';
+                    }
+                ?>
             </div>
-            <div class="swampDiv habitatDiv habitats">
-                <img src="../../../public/pictures/swamp.jpg" alt="marais">
-                Marais
-            </div> -->
+            <button class="scroll-right">&gt;</button>
         </div>
     </section>
     <section class="sectionServices">
         <h1>Nos Services</h1>
-        <div class="carroussel">
-            <?php
-            $services = $data['services'];
-            foreach($services as $service) {
-               echo '<div class="carrousselUnits">';
-                    echo '<img src="' . $service->getImgPath() . '" alt="' . $service->getTitle() . '">';
-                    echo '<div>';
-                       echo $service->getDescription();
+        <div class="containerCarroussel">
+            <button class="btnLeft btnServices">&lt;</button>
+            <div class="carroussel">
+                <?php
+                $services = $data['services'];
+                foreach($services as $service) {
+                echo '<div class="carrousselUnits">';
+                        echo '<img src="' . $service->getImgPath() . '" alt="' . $service->getTitle() . '">';
+                        echo '<div>';
+                        echo $service->getDescription();
+                        echo '</div>';
                     echo '</div>';
-                echo '</div>';
-            }
-            ?>
+                }
+                ?>
+            </div>
+            <button class="btnRight btnServices">&gt;</button>
         </div>
     </section>
     <section class="sectionEcology">

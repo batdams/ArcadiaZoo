@@ -19,6 +19,7 @@ CREATE TABLE animal (
 	name VARCHAR(50) NOT NULL,
 	breed_id VARCHAR(50) NOT NULL,
 	img_path VARCHAR(255) NOT NULL,
+	diet VARCHAR(50) NOT NULL,
 	habitat VARCHAR(50) NOT NULL
 );
 
@@ -28,7 +29,7 @@ CREATE TABLE breed (
 );
 
 CREATE TABLE habitat (
-	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	habitat_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(50) NOT NULL,
 	img_path VARCHAR(255) NOT NULL,
 	description TEXT
@@ -38,8 +39,8 @@ CREATE TABLE animal_habitat (
     animal_id INT NOT NULL,
     habitat_id INT NOT NULL,
     PRIMARY KEY (animal_id, habitat_id),
-    FOREIGN KEY (animal_id) REFERENCES animal(id),
-    FOREIGN KEY (habitat_id) REFERENCES habitat(id)
+    FOREIGN KEY (animal_id) REFERENCES animal(animal_id) ON DELETE CASCADE,
+    FOREIGN KEY (habitat_id) REFERENCES habitat(habitat_id) ON DELETE CASCADE
 );
 
 /*3ème étape services*/

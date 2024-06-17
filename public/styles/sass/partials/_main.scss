@@ -1,4 +1,5 @@
-// Global Styles -------------------------------------------------------------------------------------------------------------------
+// SECTION 1 Styles -------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------------------------------------
 .section1 {
     background: url("../pictures/fox2.jpg");
     -webkit-background-size: cover; /* pour anciens Chrome et Safari */
@@ -9,106 +10,264 @@
             font-family: 'MaPoliceTexte';
             font-weight: 700;
             span {
-                font-family: 'MaPoliceTexte';
+                font-family: 'MaPolice';
                 text-transform: uppercase;
                 font-weight: 900;
+                color: $color4;    
             }
         }
     }
 }
-.sectionHabitats {
-    h1 {
-        color: $color4;
-        font-family: 'MaPolice';
-        text-transform: uppercase;
-        padding-bottom: 0,8rem;
+@media screen and (min-width: 900px) {
+    .section1 {
+        .presentationArcadia {
+            padding: 2rem 5rem 0rem 30rem;
+            font-size: 1.8rem;
+        }
     }
-    .habitatListDiv {
-        .invisibleDiv {
-            opacity: 0;
+}
+@media screen and (min-width: 480px) and (max-width: 900px) {
+    .section1 {
+        .presentationArcadia {
+            padding: 17rem 2rem 0rem 5rem;
+            font-size: 1.5rem;   
         }
-        .habitatDiv {
-            font-family: 'MaPoliceTexte';
-            img {
-                border-radius: 20px;
-                padding: 0.5rem;
-            }
-        }
-        .habitatTextDiv {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: $color1Transparency;
-            color: $color2;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-            a {
-                text-decoration: none;
-                border : 1px solid $color2;
-                border-radius: 50px;
-                background-color: $color2;
-                color: $color5;
-                font-family: $fontSerif;
-                text-transform: uppercase;
-                width: fit-content;
-                padding: 1rem;
-                font-size: large;
-                font-weight: 700;
-                &:hover {
-                    border : 1px solid $color1Transparency;
-                    background-color: $color1Transparency;
-                }
-            }
+    }
+}
+@media screen and (max-width: 480px) {
+    .section1 {
+        .presentationArcadia {
+            padding: 11rem 2rem 0rem 2rem;
+            font-size: 1.0rem;
             p {
-                padding: 1rem;
-                font-size: larger;
-                font-family: $fontNoSerif;
-            }
-            h4 {
-                text-transform: uppercase;
-            }
-            ul {
-                list-style-type: none;
-                font-family: $fontNoSerif;
-            }
+                margin-bottom: 0.5rem;
+                color: $color2;
+                span {
+                    color: $color3;
+                }
+            }    
         }
     }
-    .pointer {
-        cursor: pointer;
-    }
 }
-.sectionServices {
+// SECTION HABITAT ---------------------------------------------------------------------------------------------------------------------
+.sectionHabitats {
+    background: url("../pictures/giraf.jpg");
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover;
     text-align: center;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1/3 pour la première colonne, 2/3 pour la deuxième */
+    gap: 10px; /* Ajustez selon vos besoins */
+    align-items: center;
+    justify-content: end;
+    flex-grow: 1;
     h1 {
+        grid-column: 1/-1;
         color: $color4;
         font-family: 'MaPolice';
         text-transform: uppercase;
         padding-bottom: 1rem;
     }
-    .carroussel {
+    .horizontal-scroll-section {
+        grid-column: 2;
+        overflow-x: auto;
         display: flex;
-        align-items: start;
-        justify-content: center;
-        overflow: hidden;
-        .carrousselUnits {
-            font-family: 'MaPoliceTexte';
-            margin-left: 3rem;
-            margin-right: 3rem;
-            img, div {
-                min-width: 200px;
-                max-width: 600px;
+        white-space: nowrap;
+        align-items: center;
+        position: relative;
+        .scroll-content {
+        display: flex;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        white-space: nowrap;
+        h4 {
+            font-family: 'MaPolice';
+            color: $color4;
+        }
+            .habitatDiv {
+                min-width: 300px;
+                margin: 0.1rem; 
+                box-sizing: border-box;
+                border-radius: 10px;
+                cursor: pointer;
+                img {
+                border-radius: 10px;
                 width: 100%;
-                height: auto; /* Faire en sorte que l'image prenne 100% de la largeur de la div parente */
-                border-radius: 30px;
+                height: auto;
+                }
+            }
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            z-index: 1;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.scroll-left {
+                left: 0;
+            }
+
+            &.scroll-right {
+                right: 0;
+            }
+        }
+      }
+}
+@media screen and (min-width: 900px) {
+    .sectionHabitats {
+        h1{
+            font-size: 3rem;
+        }
+        .horizontal-scroll-section {
+            .scroll-content {
+            h4 {
+                font-size: 2rem;
+            }
+            .habitatDiv {
+                min-width: 30vw; // Ajustez selon vos besoins
+            }
             }
         }
     }
 }
+@media screen and (min-width: 480px) and (max-width: 900px) {
+    .sectionHabitats {
+        .horizontal-scroll-section {
+            .scroll-content {
+                .habitatDiv {
+                    min-width: 35vw; // Ajustez selon vos besoins
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .sectionHabitats {
+        .horizontal-scroll-section {
+            .scroll-content {
+                .habitatDiv {
+                    min-width: 60vw; // Ajustez selon vos besoins
+                }
+            }
+        }
+    }
+}
+// SECTION SERVICE ---------------------------------------------------------------------------------------------------------------------
+.sectionServices {
+    text-align: center;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    h1 {
+        color: $color4;
+        font-family: 'MaPolice';
+        text-transform: uppercase;
+        padding-bottom: 1rem;
+        margin: 0;
+    }
+    .containerCarroussel {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        .carroussel {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
+            .carrousselUnits {
+                font-family: 'MaPoliceTexte';
+                padding: 1rem;
+                img, div {
+                    min-width: 200px;
+                    max-width: 600px;
+                    width: 100%;
+                    height: auto;
+                    border-radius: 30px;
+                    margin: 0.5rem;
+                }
+            }
+        }
+        .btnServices {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            z-index: 1;
+            margin: 0;
+            &:focus {
+                outline: none;
+            }
+        }
+        .btnLeft {
+            left: 0;
+        }
+        .btnRight {
+            right: 0;
+        }
+    }
+}
+@media screen and (min-width: 900px) {
+    .sectionServices {
+        h1 {
+            font-size: 3rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .carroussel {
+            .carrousselUnits {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 900px) {
+    .sectionServices {
+        h1 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .carroussel {
+            .carrousselUnits {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .sectionServices {
+        h1 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .carroussel {
+            .carrousselUnits {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+// SECTION ECOLOGIE ---------------------------------------------------------------------------------------------------------------------
 .sectionEcology {
     text-align: center;
     h1 {
@@ -204,64 +363,7 @@
 } 
 // Desktop Styles -------------------------------------------------------------------------------------------------------------------
 @media screen and (min-width: 900px) {
-    .section1 {
-        .presentationArcadia {
-            padding: 2rem 5rem 0rem 30rem;
-            font-size: 1.8rem;
-            p {
-                span {
-                    color: $color4;
-                }
-            }
-        }
-    }
-    .sectionHabitats {
-        background: url("../pictures/giraf.jpg");
-        -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-        background-size: cover;
-        text-align: center;
-        height: 100vh;
-        font-size: 2rem;
-        display: grid;
-        grid-template-columns: 1fr 2fr; /* 1/3 pour la première colonne, 2/3 pour la deuxième */
-        gap: 10px; /* Ajustez selon vos besoins */
-        h1 {
-            grid-column: 1 / -1;
-            justify-content: center;
-            padding-top: 3rem;
-        }
-        .habitatListDiv {
-            grid-column: 2;
-            display: flex;
-            align-items: center;
-            justify-content: end;
-            margin-left: 15rem;
-            margin-right: 2rem;
-            .habitatDiv {
-                font-size: 4rem;
-                padding-bottom: 4rem;
-                font-family: 'MaPolice';
-                color: $color4;
-                img {
-                    flex: 1 1 350px;
-                    max-width: 350px;
-                    padding: 0.1rem;
-                }
-            }
-        }
-    }
-    .sectionServices {
-        h1 {
-            font-size: 3rem;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        .carroussel {
-            .carrousselUnits {
-                font-size: 1rem;
-            }
-        }
-    }
+
     .sectionEcology {
         h1 {
             padding-top: 3rem;
@@ -284,49 +386,7 @@
             }
         }
     }
-    .sectionHabitats {
-        background: url("../pictures/giraf.jpg");
-        -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-        background-size: cover;
-        text-align: center;
-        height: 100vh;
-        font-size: 2rem;
-        display: grid;
-        grid-template-columns: 1fr 2fr; /* 1/3 pour la première colonne, 2/3 pour la deuxième */
-        gap: 10px; /* Ajustez selon vos besoins */
-        h1 {
-            padding-top: 1rem;
-            font-size: larger;
-        }
-        .habitatListDiv {
-            grid-column: 2;
-            display: flex;
-            align-items: center;
-            justify-content: end;
-            margin-left: 7rem;
-            margin-right: 2rem;
-            font-size: 2rem;
-            padding-bottom: 4rem;
-            font-family: 'MaPolice';
-            color: $color4;
-            img {
-                flex: 1 1 350px;
-                max-width: 350px;
-                padding: 0.1rem;
-            }
-        }
-    }
-    .sectionServices {
-        h1 {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-        .carroussel {
-            .carrousselUnits {
-                font-size: 0.9rem;
-            }
-        }
-    }
+
 }
 
 // Mobile Styles -------------------------------------------------------------------------------------------------------------------
@@ -483,7 +543,7 @@
                 cursor: pointer;
             }
         }
-        #animalsManager, #animalsReportsManager, #habitatsReportsManager, #servicesManager, #accountsManager, #hoursManager, 
+        #animalsManager, #animalsReportsManager, #habitatsReportsManager, #servicesManager, #habitatsManager, #accountsManager, #hoursManager, 
         #reviewManager, #animalMealManager, #animalReportEditionManager, #habitatReportEditionManager, #animalMealViewManager {
             h4 {
                 font-family: 'MaPolice';
@@ -491,10 +551,10 @@
                 color: $color2;
             }
         }
-        #servicesManagerBody, #accountsManagerBody {
+        #animalsManagerBody, #servicesManagerBody, #habitatsManagerBody, #accountsManagerBody {
             text-align: center;
             font-family: 'MaPoliceTexte';
-            .serviceDIV {
+            .generalDIV {
                 margin: 1rem;
                 padding: 1rem;
                 border: solid 1px $color3;
@@ -557,44 +617,94 @@
 // HABITATS PAGE  ------------------------------------------------------------------------------------------------------------------------
 // Global Styles  -------------------------------------------------------------------------------------------------------------------------
 #habitats {
-    height: calc(100vh - 128px);
+    min-height: calc(100vh - 128px);
     .section1Living {
-        display: flex;
         text-align: center;
-        justify-content: center;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        h4 {
+            font-family: 'MaPolice';
+            font-size: 2rem;
+            color: $color4;
+            padding: 0.5rem;
+        }
         .livingsList {
-            width: 75%;
+            position: relative;
             display: flex;
-            text-align: center;
+            align-items: center;
             justify-content: center;
-            .savaneLiving, .jungleLiving, .swampLiving {
-                flex: 1 1 200px;
-                min-width: 100px;
-                max-width: 150px;
-                padding: 0.5rem;
-                img {
-                    width: 100%;
-                    height: auto;
-                    border-radius: 20px;
+            padding: 0;
+            margin: 0;
+            .livingCarroussel {
+                display: flex;
+                align-items: baseline;
+                justify-content: flex-start;
+                overflow-x: scroll;
+                scroll-behavior: smooth;
+                padding: 0;
+                margin: 0;
+                .livingCarrousselUnits {
+                    font-family: 'MaPoliceTexte';
                     padding: 0.5rem;
-                    transition: transform 0.3s ease;
-                    cursor: pointer;
-                    &:hover {
-                        transform: scale(1.1);
+                    img, div {
+                        min-width: 150px;
+                        max-width: 200px;
+                        width: 100%;
+                        height: auto;
+                        border-radius: 30px;
+                        margin: 0.5rem;
+                        font-size: 1.2rem;
+                    }
+                    img {
+                        cursor: pointer;
+                        transition: transform 0.3s ease;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                    .filterImg {
+                        opacity: 0.5;
                     }
                 }
+            }
+            .btnLivingsPage {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                padding: 1rem;
+                cursor: pointer;
+                margin: 0;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .btnLeftLivings {
+                left: 0;
+            }
+            .btnRightLivings {
+                right: 0;
             }
         }
     }
     .livingDescription {
         text-align: center;
-        h4 {
-            font-family: 'MaPolice';
-            font-size: 2rem;
-            color: $color4;
-        }
         .lvgCorps {
-            display: flex;
+            .presLvg {
+                display: flex;
+                flex-direction: column;
+                h4 {
+                    font-family: 'MaPolice';
+                    font-size: 2rem;
+                    color: $color4;
+                }
+            }
+            .hideLvg {
+                display: none;
+            }
             .lvgAnimalList {
                 font-family: 'MaPoliceTexte';
             }
@@ -604,9 +714,18 @@
 // Mobile Styles  -------------------------------------------------------------------------------------------------------------------------
 @media screen and (max-width: 900px) {
     #habitats {
-        .livingDescription {
+        .section1Living {
             h4 {
                 font-size: 1.2rem;
+            }
+            .livingsList {
+                .livingCarroussel {
+                    .livingCarrousselUnits {
+                        img, div {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
             }
         }
     }
@@ -615,45 +734,90 @@
 // SERVICES PAGE  ------------------------------------------------------------------------------------------------------------------------
 // Global Styles  -------------------------------------------------------------------------------------------------------------------------
 #services {
-    height: calc(100vh - 128px);
+    min-height: calc(100vh - 128px);
     .section1Service {
-        display: flex;
         text-align: center;
-        justify-content: center;
-        .servicesList {
-            width: 75%;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            .service {
-                background-color: $color4;
-                border-radius: 20px;
-                margin: 0.5rem;
-                cursor: pointer;
-                &:hover {
-                    background-color: $color7;
-                }
-                    h6 {
-                        font-family: 'MaPolice';
-                        font-size: 2rem;
-                        color: $color2;
-                        padding: 0.5rem;
-                    }
-            }
-        }
-    }
-    .servicesDescription {
-        text-align: center;
+        position: relative;
+        padding: 0;
+        margin: 0;
         h4 {
             font-family: 'MaPolice';
             font-size: 2rem;
             color: $color4;
+            padding: 0.5rem;
+        }
+        .servicesList {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            .serviceCarroussel {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                overflow-x: scroll;
+                scroll-behavior: smooth;
+                padding: 0;
+                margin: 0;
+                .serviceCarrousselUnits {
+                    font-family: 'MaPoliceTexte';
+                    padding: 1rem;
+                    img, div {
+                        min-width: 200px;
+                        max-width: 600px;
+                        width: 100%;
+                        height: auto;
+                        border-radius: 30px;
+                        margin: 0.5rem;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            .btnServicesPage {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                padding: 1rem;
+                cursor: pointer;
+//                z-index: 1;
+                margin: 0;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .btnLeftServices {
+                left: 0;
+            }
+            .btnRightServices {
+                right: 0;
+            }
         }
     }
 }
 // Mobile Styles  -------------------------------------------------------------------------------------------------------------------------
-@media screen and (max-width: 900px) {
-
+@media screen and (max-width: 480px) {
+    #services {
+        .section1Service {
+            h4 {
+                font-size: 1.2rem;
+            }
+            .servicesList {
+                .serviceCarroussel {
+                    .serviceCarrousselUnits {
+                        img, div {
+                            min-width: 150px;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // CONTACT PAGE  ------------------------------------------------------------------------------------------------------------------------

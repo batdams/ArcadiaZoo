@@ -32,8 +32,10 @@ INSERT INTO habitat (name, img_path, description)
 VALUES ('Marais', '../../../public/pictures/habitats/swamp.jpg', "Le marais est un habitat humide et riche en biodiversité, caractérisé par des eaux stagnantes et une végétation dense. C'est un refuge pour une faune variée, allant des amphibiens et reptiles aux oiseaux et mammifères, qui trouvent nourriture et abri dans ce milieu aquatique.");
 /* Animaux */
 INSERT INTO animal (name, breed_id, img_path, habitat) VALUES ('Lion', 2, 'URLinvalide', 'Savane');
-INSERT INTO animal (name, breed_id, img_path, habitat) VALUES ('Tigre', 2, 'URLinvalide', 'Jungle');
-
+INSERT INTO animal (name, breed_id, img_path, habitat) VALUES ('Jaguar', 2, 'URLinvalide', 'Savane');
+/*Liaison animaux habitats*/
+INSERT INTO animal_habitat (animal_id, habitat_id) VALUES (1, 1); -- Lion -> Savane
+INSERT INTO animal_habitat (animal_id, habitat_id) VALUES (2, 1); -- Jaguar -> Savane
 /* 3ème étape services */
 INSERT INTO service (title, img_path, description) VALUES ('Restaurant', '../../../public/pictures/services/restaurant.jpg', `Une simple halte ? Une pause plus longue ? Profitez d'une expérience culinaire adaptée à votre envie. Que vous optiez pour une collation rapide ou un repas plus complet, <b>notre service de restauration</b> propose une cuisine simple mais délicieuse.`);
 INSERT INTO service (title, img_path, description) VALUES ('Forest', '../../../public/pictures/services/savaneLion.jpg', 'La foret canadienne, majestueuse, pleine de vie');

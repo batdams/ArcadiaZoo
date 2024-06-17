@@ -151,6 +151,7 @@ header .navMenu .hours {
     height: 100%;
     background-color: rgba(18, 38, 56, 0.9);
     font-family: Georgia, "Times New Roman", Times, serif;
+    z-index: 1;
   }
   header .navMenuMobile .navList {
     display: flex;
@@ -232,103 +233,220 @@ header .navMenu .hours {
   font-weight: 700;
 }
 .section1 .presentationArcadia p span {
-  font-family: "MaPoliceTexte";
+  font-family: "MaPolice";
   text-transform: uppercase;
   font-weight: 900;
+  color: rgb(0, 71, 0);
 }
 
+@media screen and (min-width: 900px) {
+  .section1 .presentationArcadia {
+    padding: 2rem 5rem 0rem 30rem;
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 900px) {
+  .section1 .presentationArcadia {
+    padding: 17rem 2rem 0rem 5rem;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section1 .presentationArcadia {
+    padding: 11rem 2rem 0rem 2rem;
+    font-size: 1rem;
+  }
+  .section1 .presentationArcadia p {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  .section1 .presentationArcadia p span {
+    color: #006600;
+  }
+}
+.sectionHabitats {
+  background: url("../pictures/giraf.jpg"); /* pour anciens Chrome et Safari */
+  background-size: cover;
+  text-align: center;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1/3 pour la première colonne, 2/3 pour la deuxième */
+  gap: 10px; /* Ajustez selon vos besoins */
+  align-items: center;
+  justify-content: end;
+  flex-grow: 1;
+}
 .sectionHabitats h1 {
+  grid-column: 1/-1;
   color: rgb(0, 71, 0);
   font-family: "MaPolice";
   text-transform: uppercase;
-  padding-bottom: 0, 8rem;
+  padding-bottom: 1rem;
 }
-.sectionHabitats .habitatListDiv .invisibleDiv {
-  opacity: 0;
-}
-.sectionHabitats .habitatListDiv .habitatDiv {
-  font-family: "MaPoliceTexte";
-}
-.sectionHabitats .habitatListDiv .habitatDiv img {
-  border-radius: 20px;
-  padding: 0.5rem;
-}
-.sectionHabitats .habitatListDiv .habitatTextDiv {
+.sectionHabitats .horizontal-scroll-section {
+  grid-column: 2;
+  overflow-x: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  white-space: nowrap;
   align-items: center;
-  background-color: rgba(18, 38, 56, 0.9);
-  color: #ffffff;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
+  position: relative;
 }
-.sectionHabitats .habitatListDiv .habitatTextDiv a {
-  text-decoration: none;
-  border: 1px solid #ffffff;
-  border-radius: 50px;
-  background-color: #ffffff;
-  color: rgb(0, 102, 102);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  text-transform: uppercase;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 1rem;
-  font-size: large;
-  font-weight: 700;
+.sectionHabitats .horizontal-scroll-section .scroll-content {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
 }
-.sectionHabitats .habitatListDiv .habitatTextDiv a:hover {
-  border: 1px solid rgba(18, 38, 56, 0.9);
-  background-color: rgba(18, 38, 56, 0.9);
+.sectionHabitats .horizontal-scroll-section .scroll-content h4 {
+  font-family: "MaPolice";
+  color: rgb(0, 71, 0);
 }
-.sectionHabitats .habitatListDiv .habitatTextDiv p {
-  padding: 1rem;
-  font-size: larger;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.sectionHabitats .habitatListDiv .habitatTextDiv h4 {
-  text-transform: uppercase;
-}
-.sectionHabitats .habitatListDiv .habitatTextDiv ul {
-  list-style-type: none;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.sectionHabitats .pointer {
+.sectionHabitats .horizontal-scroll-section .scroll-content .habitatDiv {
+  min-width: 300px;
+  margin: 0.1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
   cursor: pointer;
 }
+.sectionHabitats .horizontal-scroll-section .scroll-content .habitatDiv img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+.sectionHabitats .horizontal-scroll-section button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.sectionHabitats .horizontal-scroll-section button:focus {
+  outline: none;
+}
+.sectionHabitats .horizontal-scroll-section button.scroll-left {
+  left: 0;
+}
+.sectionHabitats .horizontal-scroll-section button.scroll-right {
+  right: 0;
+}
 
+@media screen and (min-width: 900px) {
+  .sectionHabitats h1 {
+    font-size: 3rem;
+  }
+  .sectionHabitats .horizontal-scroll-section .scroll-content h4 {
+    font-size: 2rem;
+  }
+  .sectionHabitats .horizontal-scroll-section .scroll-content .habitatDiv {
+    min-width: 30vw;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 900px) {
+  .sectionHabitats .horizontal-scroll-section .scroll-content .habitatDiv {
+    min-width: 35vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sectionHabitats .horizontal-scroll-section .scroll-content .habitatDiv {
+    min-width: 60vw;
+  }
+}
 .sectionServices {
   text-align: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
 .sectionServices h1 {
   color: rgb(0, 71, 0);
   font-family: "MaPolice";
   text-transform: uppercase;
   padding-bottom: 1rem;
+  margin: 0;
 }
-.sectionServices .carroussel {
+.sectionServices .containerCarroussel {
+  position: relative;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
-.sectionServices .carroussel .carrousselUnits {
+.sectionServices .containerCarroussel .carroussel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+.sectionServices .containerCarroussel .carroussel .carrousselUnits {
   font-family: "MaPoliceTexte";
-  margin-left: 3rem;
-  margin-right: 3rem;
+  padding: 1rem;
 }
-.sectionServices .carroussel .carrousselUnits img, .sectionServices .carroussel .carrousselUnits div {
+.sectionServices .containerCarroussel .carroussel .carrousselUnits img, .sectionServices .containerCarroussel .carroussel .carrousselUnits div {
   min-width: 200px;
   max-width: 600px;
   width: 100%;
-  height: auto; /* Faire en sorte que l'image prenne 100% de la largeur de la div parente */
+  height: auto;
   border-radius: 30px;
+  margin: 0.5rem;
+}
+.sectionServices .containerCarroussel .btnServices {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  z-index: 1;
+  margin: 0;
+}
+.sectionServices .containerCarroussel .btnServices:focus {
+  outline: none;
+}
+.sectionServices .containerCarroussel .btnLeft {
+  left: 0;
+}
+.sectionServices .containerCarroussel .btnRight {
+  right: 0;
 }
 
+@media screen and (min-width: 900px) {
+  .sectionServices h1 {
+    font-size: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .sectionServices .carroussel .carrousselUnits {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 900px) {
+  .sectionServices h1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .sectionServices .carroussel .carrousselUnits {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sectionServices h1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .sectionServices .carroussel .carrousselUnits {
+    font-size: 0.8rem;
+  }
+}
 .sectionEcology {
   text-align: center;
 }
@@ -422,55 +540,6 @@ header .navMenu .hours {
 }
 
 @media screen and (min-width: 900px) {
-  .section1 .presentationArcadia {
-    padding: 2rem 5rem 0rem 30rem;
-    font-size: 1.8rem;
-  }
-  .section1 .presentationArcadia p span {
-    color: rgb(0, 71, 0);
-  }
-  .sectionHabitats {
-    background: url("../pictures/giraf.jpg"); /* pour anciens Chrome et Safari */
-    background-size: cover;
-    text-align: center;
-    height: 100vh;
-    font-size: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* 1/3 pour la première colonne, 2/3 pour la deuxième */
-    gap: 10px; /* Ajustez selon vos besoins */
-  }
-  .sectionHabitats h1 {
-    grid-column: 1/-1;
-    justify-content: center;
-    padding-top: 3rem;
-  }
-  .sectionHabitats .habitatListDiv {
-    grid-column: 2;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-left: 15rem;
-    margin-right: 2rem;
-  }
-  .sectionHabitats .habitatListDiv .habitatDiv {
-    font-size: 4rem;
-    padding-bottom: 4rem;
-    font-family: "MaPolice";
-    color: rgb(0, 71, 0);
-  }
-  .sectionHabitats .habitatListDiv .habitatDiv img {
-    flex: 1 1 350px;
-    max-width: 350px;
-    padding: 0.1rem;
-  }
-  .sectionServices h1 {
-    font-size: 3rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  .sectionServices .carroussel .carrousselUnits {
-    font-size: 1rem;
-  }
   .sectionEcology h1 {
     padding-top: 3rem;
     font-size: 3rem;
@@ -486,44 +555,6 @@ header .navMenu .hours {
   }
   .section1 .presentationArcadia p span {
     color: rgb(0, 71, 0);
-  }
-  .sectionHabitats {
-    background: url("../pictures/giraf.jpg"); /* pour anciens Chrome et Safari */
-    background-size: cover;
-    text-align: center;
-    height: 100vh;
-    font-size: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr; /* 1/3 pour la première colonne, 2/3 pour la deuxième */
-    gap: 10px; /* Ajustez selon vos besoins */
-  }
-  .sectionHabitats h1 {
-    padding-top: 1rem;
-    font-size: larger;
-  }
-  .sectionHabitats .habitatListDiv {
-    grid-column: 2;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-left: 7rem;
-    margin-right: 2rem;
-    font-size: 2rem;
-    padding-bottom: 4rem;
-    font-family: "MaPolice";
-    color: rgb(0, 71, 0);
-  }
-  .sectionHabitats .habitatListDiv img {
-    flex: 1 1 350px;
-    max-width: 350px;
-    padding: 0.1rem;
-  }
-  .sectionServices h1 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  .sectionServices .carroussel .carrousselUnits {
-    font-size: 0.9rem;
   }
 }
 @media screen and (max-width: 480px) {
@@ -665,33 +696,33 @@ header .navMenu .hours {
   background-color: #408e2a;
   cursor: pointer;
 }
-.section1Connected .dashboardDIV #animalsManager h4, .section1Connected .dashboardDIV #animalsReportsManager h4, .section1Connected .dashboardDIV #habitatsReportsManager h4, .section1Connected .dashboardDIV #servicesManager h4, .section1Connected .dashboardDIV #accountsManager h4, .section1Connected .dashboardDIV #hoursManager h4,
+.section1Connected .dashboardDIV #animalsManager h4, .section1Connected .dashboardDIV #animalsReportsManager h4, .section1Connected .dashboardDIV #habitatsReportsManager h4, .section1Connected .dashboardDIV #servicesManager h4, .section1Connected .dashboardDIV #habitatsManager h4, .section1Connected .dashboardDIV #accountsManager h4, .section1Connected .dashboardDIV #hoursManager h4,
 .section1Connected .dashboardDIV #reviewManager h4, .section1Connected .dashboardDIV #animalMealManager h4, .section1Connected .dashboardDIV #animalReportEditionManager h4, .section1Connected .dashboardDIV #habitatReportEditionManager h4, .section1Connected .dashboardDIV #animalMealViewManager h4 {
   font-family: "MaPolice";
   font-size: 2rem;
   color: #ffffff;
 }
-.section1Connected .dashboardDIV #servicesManagerBody, .section1Connected .dashboardDIV #accountsManagerBody {
+.section1Connected .dashboardDIV #animalsManagerBody, .section1Connected .dashboardDIV #servicesManagerBody, .section1Connected .dashboardDIV #habitatsManagerBody, .section1Connected .dashboardDIV #accountsManagerBody {
   text-align: center;
   font-family: "MaPoliceTexte";
 }
-.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV {
+.section1Connected .dashboardDIV #animalsManagerBody .generalDIV, .section1Connected .dashboardDIV #servicesManagerBody .generalDIV, .section1Connected .dashboardDIV #habitatsManagerBody .generalDIV, .section1Connected .dashboardDIV #accountsManagerBody .generalDIV {
   margin: 1rem;
   padding: 1rem;
   border: solid 1px #006600;
   border-radius: 10px;
 }
-.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV h4, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV h4 {
+.section1Connected .dashboardDIV #animalsManagerBody .generalDIV h4, .section1Connected .dashboardDIV #servicesManagerBody .generalDIV h4, .section1Connected .dashboardDIV #habitatsManagerBody .generalDIV h4, .section1Connected .dashboardDIV #accountsManagerBody .generalDIV h4 {
   font-family: "MaPolice";
   font-size: 2rem;
   color: #006600;
 }
-.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV form, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV form {
+.section1Connected .dashboardDIV #animalsManagerBody .generalDIV form, .section1Connected .dashboardDIV #servicesManagerBody .generalDIV form, .section1Connected .dashboardDIV #habitatsManagerBody .generalDIV form, .section1Connected .dashboardDIV #accountsManagerBody .generalDIV form {
   text-align: center;
   padding: 0.5rem;
   margin: 0.5rem;
 }
-.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV form input, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV form input {
+.section1Connected .dashboardDIV #animalsManagerBody .generalDIV form input, .section1Connected .dashboardDIV #servicesManagerBody .generalDIV form input, .section1Connected .dashboardDIV #habitatsManagerBody .generalDIV form input, .section1Connected .dashboardDIV #accountsManagerBody .generalDIV form input {
   text-align: center;
   font-family: "MaPoliceTexte";
   background: #f2f2f2;
@@ -703,7 +734,7 @@ header .navMenu .hours {
   box-sizing: border-box;
   font-size: 1rem;
 }
-.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV form textarea, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV form textarea {
+.section1Connected .dashboardDIV #animalsManagerBody .generalDIV form textarea, .section1Connected .dashboardDIV #servicesManagerBody .generalDIV form textarea, .section1Connected .dashboardDIV #habitatsManagerBody .generalDIV form textarea, .section1Connected .dashboardDIV #accountsManagerBody .generalDIV form textarea {
   font-family: "MaPoliceTexte";
   background: #f2f2f2;
   width: 100%;
@@ -715,7 +746,7 @@ header .navMenu .hours {
   box-sizing: border-box;
   font-size: 1rem;
 }
-.section1Connected .dashboardDIV #servicesManagerBody .serviceDIV form button, .section1Connected .dashboardDIV #accountsManagerBody .serviceDIV form button {
+.section1Connected .dashboardDIV #animalsManagerBody .generalDIV form button, .section1Connected .dashboardDIV #servicesManagerBody .generalDIV form button, .section1Connected .dashboardDIV #habitatsManagerBody .generalDIV form button, .section1Connected .dashboardDIV #accountsManagerBody .generalDIV form button {
   font-family: "MaPoliceTexte";
   text-transform: uppercase;
   background: #408e2a;
@@ -733,94 +764,182 @@ header .navMenu .hours {
 }
 
 #habitats {
-  height: calc(100vh - 128px);
+  min-height: calc(100vh - 128px);
 }
 #habitats .section1Living {
-  display: flex;
   text-align: center;
-  justify-content: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+#habitats .section1Living h4 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: rgb(0, 71, 0);
+  padding: 0.5rem;
 }
 #habitats .section1Living .livingsList {
-  width: 75%;
+  position: relative;
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: center;
+  padding: 0;
+  margin: 0;
 }
-#habitats .section1Living .livingsList .savaneLiving, #habitats .section1Living .livingsList .jungleLiving, #habitats .section1Living .livingsList .swampLiving {
-  flex: 1 1 200px;
-  min-width: 100px;
-  max-width: 150px;
+#habitats .section1Living .livingsList .livingCarroussel {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+#habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits {
+  font-family: "MaPoliceTexte";
   padding: 0.5rem;
 }
-#habitats .section1Living .livingsList .savaneLiving img, #habitats .section1Living .livingsList .jungleLiving img, #habitats .section1Living .livingsList .swampLiving img {
+#habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits img, #habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits div {
+  min-width: 150px;
+  max-width: 200px;
   width: 100%;
   height: auto;
-  border-radius: 20px;
-  padding: 0.5rem;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+  border-radius: 30px;
+  margin: 0.5rem;
+  font-size: 1.2rem;
 }
-#habitats .section1Living .livingsList .savaneLiving img:hover, #habitats .section1Living .livingsList .jungleLiving img:hover, #habitats .section1Living .livingsList .swampLiving img:hover {
+#habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits img:hover {
   transform: scale(1.1);
+}
+#habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits .filterImg {
+  opacity: 0.5;
+}
+#habitats .section1Living .livingsList .btnLivingsPage {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  margin: 0;
+}
+#habitats .section1Living .livingsList .btnLivingsPage:focus {
+  outline: none;
+}
+#habitats .section1Living .livingsList .btnLeftLivings {
+  left: 0;
+}
+#habitats .section1Living .livingsList .btnRightLivings {
+  right: 0;
 }
 #habitats .livingDescription {
   text-align: center;
 }
-#habitats .livingDescription h4 {
+#habitats .livingDescription .lvgCorps .presLvg {
+  display: flex;
+  flex-direction: column;
+}
+#habitats .livingDescription .lvgCorps .presLvg h4 {
   font-family: "MaPolice";
   font-size: 2rem;
   color: rgb(0, 71, 0);
 }
-#habitats .livingDescription .lvgCorps {
-  display: flex;
+#habitats .livingDescription .lvgCorps .hideLvg {
+  display: none;
 }
 #habitats .livingDescription .lvgCorps .lvgAnimalList {
   font-family: "MaPoliceTexte";
 }
 
 @media screen and (max-width: 900px) {
-  #habitats .livingDescription h4 {
+  #habitats .section1Living h4 {
     font-size: 1.2rem;
+  }
+  #habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits img, #habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits div {
+    font-size: 0.9rem;
   }
 }
 #services {
-  height: calc(100vh - 128px);
+  min-height: calc(100vh - 128px);
 }
 #services .section1Service {
-  display: flex;
   text-align: center;
-  justify-content: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
-#services .section1Service .servicesList {
-  width: 75%;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-#services .section1Service .servicesList .service {
-  background-color: rgb(0, 71, 0);
-  border-radius: 20px;
-  margin: 0.5rem;
-  cursor: pointer;
-}
-#services .section1Service .servicesList .service:hover {
-  background-color: #408e2a;
-}
-#services .section1Service .servicesList .service h6 {
-  font-family: "MaPolice";
-  font-size: 2rem;
-  color: #ffffff;
-  padding: 0.5rem;
-}
-#services .servicesDescription {
-  text-align: center;
-}
-#services .servicesDescription h4 {
+#services .section1Service h4 {
   font-family: "MaPolice";
   font-size: 2rem;
   color: rgb(0, 71, 0);
+  padding: 0.5rem;
+}
+#services .section1Service .servicesList {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+#services .section1Service .servicesList .serviceCarroussel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+#services .section1Service .servicesList .serviceCarroussel .serviceCarrousselUnits {
+  font-family: "MaPoliceTexte";
+  padding: 1rem;
+}
+#services .section1Service .servicesList .serviceCarroussel .serviceCarrousselUnits img, #services .section1Service .servicesList .serviceCarroussel .serviceCarrousselUnits div {
+  min-width: 200px;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+#services .section1Service .servicesList .btnServicesPage {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  margin: 0;
+}
+#services .section1Service .servicesList .btnServicesPage:focus {
+  outline: none;
+}
+#services .section1Service .servicesList .btnLeftServices {
+  left: 0;
+}
+#services .section1Service .servicesList .btnRightServices {
+  right: 0;
 }
 
+@media screen and (max-width: 480px) {
+  #services .section1Service h4 {
+    font-size: 1.2rem;
+  }
+  #services .section1Service .servicesList .serviceCarroussel .serviceCarrousselUnits img, #services .section1Service .servicesList .serviceCarroussel .serviceCarrousselUnits div {
+    min-width: 150px;
+    font-size: 0.9rem;
+  }
+}
 #contact .section1Contact {
   height: calc(100vh - 128px);
   background: url("../pictures/fox2.jpg"); /* pour anciens Chrome et Safari */

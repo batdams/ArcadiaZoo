@@ -7,8 +7,8 @@ export function initializeHomeBody () {
             element.classList.add('pointer');
         })
     });
-    // Description de l'habitat et liste des animaux
-    habitats.forEach(element => {
+    // Description de l'habitat et liste des animaux OLD
+/*    habitats.forEach(element => {
         element.addEventListener('click', () => {
             const divElt = element.querySelector('.habitatTextDiv');
             if (divElt) {
@@ -92,7 +92,50 @@ export function initializeHomeBody () {
                 divElt.classList.add('habitatTextDiv');
             }
         });
-    });
+    });*/
+
+    // Bouton de scroll sur carroussel habitat
+        const scrollContainer = document.querySelector('.scroll-content');
+        const scrollLeftButton = document.querySelector('.scroll-left');
+        const scrollRightButton = document.querySelector('.scroll-right');
+        if (scrollLeftButton && scrollRightButton && scrollContainer) {
+            scrollLeftButton.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: -100,
+                behavior: 'smooth'
+            });
+        });
+    
+        scrollRightButton.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: 100,
+                behavior: 'smooth'
+            });
+        });
+    } else {
+        console.error('One or more elements not found:', { scrollContainer, scrollLeftButton, scrollRightButton });
+    }
+
+    // Bouton de scroll sur carroussel services
+        const carroussel = document.querySelector('.carroussel');
+        const btnLeft = document.querySelector('.btnLeft');
+        const btnRight = document.querySelector('.btnRight');
+        if (carroussel && btnLeft && btnRight) {
+            btnLeft.addEventListener('click', () => {
+            carroussel.scrollBy({
+                left: -150, 
+                behavior: 'smooth'
+            });
+        });
+        btnRight.addEventListener('click', () => {
+            carroussel.scrollBy({
+                left: 150,
+                behavior: 'smooth'
+            });
+        });
+    } else {
+        console.error('One or more elements not found:', { carroussel, btnLeft, btnRight });
+    }
     // Animer menu Ecologie
     const menuBtn = document.getElementById('menuBtn');
     const itemDiv = document.getElementsByClassName('items')[0];

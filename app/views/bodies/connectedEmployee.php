@@ -42,13 +42,13 @@
             </div>
             <div id="servicesManagerBody" class="managerHide">
             <div class="serviceAddDIV serviceDIV">
-                <div class="serviceModifDIV serviceDIV">
+                <div class="serviceModifDIV generalDIV">
                 <h4>Modification d'un service</h4>
                     <label for="serviceSelect">Liste des services</label>
                     <select name="services" id="serviceSelect">
                         <option value="">Choisissez un service</option>
                     <?php
-                        foreach($data as $service) {
+                        foreach($data['services'] as $service) {
                             $serviceTitle = $service->getTitle();
                             $serviceDescription = $service->getDescription();
                             $serviceImgPath = $service->getImgPath();
