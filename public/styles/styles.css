@@ -771,6 +771,7 @@ header .navMenu .hours {
   position: relative;
   padding: 0;
   margin: 0;
+  border-bottom: solid 2rem rgb(0, 71, 0);
 }
 #habitats .section1Living h4 {
   font-family: "MaPolice";
@@ -840,6 +841,11 @@ header .navMenu .hours {
 }
 #habitats .livingDescription {
   text-align: center;
+  border-top: solid 0.5rem rgba(0, 71, 0, 0.7);
+}
+#habitats .livingDescription .lvgCorps {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 #habitats .livingDescription .lvgCorps .presLvg {
   display: flex;
@@ -850,11 +856,86 @@ header .navMenu .hours {
   font-size: 2rem;
   color: rgb(0, 71, 0);
 }
+#habitats .livingDescription .lvgCorps .presLvg p {
+  font-family: "MaPoliceTexte";
+  font-size: 1.5rem;
+  padding: 0.2rem 1rem 1rem 1rem;
+}
 #habitats .livingDescription .lvgCorps .hideLvg {
   display: none;
 }
-#habitats .livingDescription .lvgCorps .lvgAnimalList {
+#habitats .livingDescription .lvgAnimalsList {
   font-family: "MaPoliceTexte";
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 1rem;
+  overflow: auto;
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: center;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit {
+  max-height: 350px;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit img {
+  min-width: 300px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit img:hover {
+  transform: scale(1.1);
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit .hideImg {
+  display: none;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfos {
+  font-family: "MaPoliceTexte";
+  min-height: 30px;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 71, 0, 0.7);
+  color: white;
+  transition: transform 0.5s ease;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfos h4 {
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfos .hide {
+  display: none;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfos .show {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+  height: 230px;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfosHide {
+  display: none;
+}
+#habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfosExpand {
+  position: relative;
+  transform: translateY(-300px); /* Transformez l'élément vers le haut de 300px */
+  transition: transform 0.5s ease;
 }
 
 @media screen and (max-width: 900px) {
@@ -863,6 +944,36 @@ header .navMenu .hours {
   }
   #habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits img, #habitats .section1Living .livingsList .livingCarroussel .livingCarrousselUnits div {
     font-size: 0.9rem;
+  }
+  #habitats .livingDescription .lvgCorps .presLvg h4 {
+    font-size: 1.2rem;
+  }
+  #habitats .livingDescription .lvgAnimalsList {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  #habitats .livingDescription .lvgAnimalsList .animalUnit {
+    max-height: 250px;
+  }
+  #habitats .livingDescription .lvgAnimalsList .animalUnit img {
+    min-width: 200px;
+    max-width: 200px;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  #habitats .livingDescription .lvgAnimalsList .animalUnit img:hover {
+    transform: scale(1.1);
+  }
+  #habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfos {
+    max-width: 200px;
+    font-size: 0.9rem;
+    overflow: scroll;
+  }
+  #habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfos .show {
+    height: 150px;
+  }
+  #habitats .livingDescription .lvgAnimalsList .animalUnit .animalInfosExpand {
+    transform: translateY(-200px); /* Transformez l'élément vers le haut de 300px */
   }
 }
 #services {

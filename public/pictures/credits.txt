@@ -13,11 +13,7 @@ Photo de <a href="https://unsplash.com/fr/@yannallegre?utm_content=creditCopyTex
 jungle.jpg
 Photo de <a href="https://unsplash.com/fr/@isaacquesada?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Isaac Quesada</a> sur <a href="https://unsplash.com/fr/photos/chemin-de-terre-brun-entre-les-plantes-vertes-pendant-la-journee-6xxxvB72qB0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-savaneLion.jpg
-Photo de <a href="https://unsplash.com/fr/@jwimmerli?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">jean wimmerlin</a> sur <a href="https://unsplash.com/fr/photos/photographie-de-mise-au-point-peu-profonde-de-lion-a-la-faune-FC4GY9nQuu0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-chimpanzee.jpg
-Photo de <a href="https://unsplash.com/fr/@dtrinksrph?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">David Trinks</a> sur <a href="https://unsplash.com/fr/photos/un-singe-noir-assis-sur-une-branche-darbre-pFEKeg4xjUA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 restaurant.jpg
 Photo de <a href="https://unsplash.com/fr/@pinchebesu?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ruben Ramirez</a> sur <a href="https://unsplash.com/fr/photos/table-et-chaises-en-bois-marron-xhKG01FN2uk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

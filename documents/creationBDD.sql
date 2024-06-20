@@ -14,13 +14,11 @@ CREATE TABLE app_user (
 	);
 
 /* 2ème étape animaux, races et habitats */
-CREATE TABLE animal (
-	animal_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE habitat (
+	habitat_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(50) NOT NULL,
-	breed_id VARCHAR(50) NOT NULL,
 	img_path VARCHAR(255) NOT NULL,
-	diet VARCHAR(50) NOT NULL,
-	habitat VARCHAR(50) NOT NULL
+	description TEXT NOT NULL
 );
 
 CREATE TABLE breed (
@@ -28,20 +26,26 @@ CREATE TABLE breed (
 	breed_name VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE habitat (
-	habitat_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE animal (
+	animal_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(50) NOT NULL,
+	breed_id INT(11) NOT NULL,
 	img_path VARCHAR(255) NOT NULL,
-	description TEXT
+	diet VARCHAR(50) NOT NULL,
+	habitat_id INT(11) NOT NULL,
+	description TEXT NOT NULL,
+	FOREIGN KEY (habitat_id) REFERENCES habitat(habitat_id),
+	FOREIGN KEY (breed_id) REFERENCES breed(breed_id)
 );
 
+/* OLD, One-to-many , ø associated table
 CREATE TABLE animal_habitat (
     animal_id INT NOT NULL,
     habitat_id INT NOT NULL,
     PRIMARY KEY (animal_id, habitat_id),
     FOREIGN KEY (animal_id) REFERENCES animal(animal_id) ON DELETE CASCADE,
     FOREIGN KEY (habitat_id) REFERENCES habitat(habitat_id) ON DELETE CASCADE
-);
+);*/
 
 /*3ème étape services*/
 

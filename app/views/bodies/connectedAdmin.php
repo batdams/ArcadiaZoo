@@ -30,17 +30,20 @@
                             <option value="">Choisissez un habitat</option>
                             <?php
                                 foreach($data['habitats'] as $habitat) {
-                                    echo '<option value="' . $habitat->getName() . '">' . $habitat->getName() . '</option>';
+                                    echo '<option value="' . $habitat->getId() . '">' . $habitat->getName() . '</option>';
                                 }
                             ?>
                         </select><br><br>
+                        <label for="descriptionAnimal">Description</label>
+                        <textarea name="descriptionAnimal" id="descriptionAnimal">
+                        </textarea>
                         <label for="imgAnimalAdd">Ajouter une image</label>
                         <input type="file" name="imgAnimalAdd" id="imgAnimalAdd">
                     <button type="submit" class="btnAnimalAdd">Ajouter</button>
                     </form>
                 </div>
                 <div class="animalSuppDIV generalDIV">
-                    <h4>Suppression d'un animalt</h4>
+                    <h4>Suppression d'un animal</h4>
                     <form method="POST" action="/public/delAnimal" enctype="multipart/form-data">
                         <label for="animalSelect">Liste des animaux</label>
                         <select name="delAnimal" id="animalSelect">

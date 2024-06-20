@@ -45,4 +45,45 @@ export function initializeHabitatsBody () {
     habitatList.forEach(element => {
         element.addEventListener('click', showDiv);
     })
+
+    // Affichage des animaux et infos selon l'habitat
+    const animalsList = Array.from(document.querySelectorAll('.imgAnimal'));
+    const animalsUnit = Array.from(document.querySelectorAll('.animalUnit'));
+    const animalsInfos = Array.from(document.querySelectorAll('.animalInfos'));
+    function showImg () {
+        habitatList.forEach(element => {
+            element.addEventListener('click', function () {
+                const habitatId = this.getAttribute('data-value');
+                animalsList.forEach(element => {
+                    if (element.classList.contains('lvg' + habitatId)) {
+                        element.style.display = "block";
+                    } else {
+                        element.style.display = "none";
+                    }
+                });
+                animalsInfos.forEach(element => {
+                    if (element.classList.contains('lvg' + habitatId)) {
+                        element.style.display = "block";
+                    } else {
+                        element.style.display = "none";
+                    }
+                });
+            })
+        });
+    }
+    showImg();
+
+    // Affichage infos animaux quand on clique dessus
+    const animalUnits = Array.from(document.querySelectorAll('.animalUnit'));
+    animalUnits.forEach(element => {
+        element.addEventListener('click', () => {
+        // Trouver l'élément img et div correspondants
+        const textElement = element.querySelector('.animalInfos');
+        const hidedInfos = element.querySelector('.infosSup');
+        textElement.classList.toggle('animalInfosExpand');
+        setTimeout(() => {
+            hidedInfos.classList.toggle('show');
+        }, 500);
+        });
+    });
 }

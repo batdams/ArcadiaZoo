@@ -27,7 +27,7 @@ $router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
 // AnimalController
 $router->addRoute('POST', '/public/addAnimal', 'AnimalController', 'addAnimal');
 //$router->addRoute('POST', '/public/modifAnimal', 'AnimalController', 'modifAnimal');
-//$router->addRoute('POST', '/public/delAnimal', 'AnimalController', 'delAnimal');
+$router->addRoute('POST', '/public/delAnimal', 'AnimalController', 'delAnimal');
 // HabitatController
 $router->addRoute('GET', '/public/habitats', 'HabitatController', 'index');
 $router->addRoute('POST', '/public/addHabitat', 'HabitatController', 'addHabitat');

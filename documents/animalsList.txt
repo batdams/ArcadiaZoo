@@ -1,0 +1,22 @@
+SAVANE
+Lion
+Guépard
+Léopard
+Éléphant d'Afrique
+Girafe
+Zèbre
+Gnou (ou Antilope à queue noire)
+Hyène
+Gazelle
+
+JUNGLE
+Chimpanzé
+<li>Tigre</li>
+<li>Perroquet</li>
+<li>Panthère</li>
+<li>Crocodile</li>
+<li>Paresseux</li>
+<li>Serpent</li>
+<li>Gorille</li>
+<li>Faucon</li>
+<li>Orang-outan</li>

@@ -41,6 +41,7 @@ class HabitatController extends Controller
     {
     $data = ['habitats' => HabitatController::displayHabitat($pdo)];
     $data['animals'] = AnimalController::displayAnimal($pdo);
+    $data['breeds'] = AnimalController::displayBreed($pdo);
     $this->viewManager->renderData('bodies/habitats.php', $data);
     }
 
