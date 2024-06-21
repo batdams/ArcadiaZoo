@@ -57,3 +57,12 @@ CREATE TABLE service (
 	create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+/*4ème étape horaires*/
+
+CREATE TABLE zoo_hours (
+	hours_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	day_of_week INT NOT NULL,
+	opening_time TIME NOT NULL,
+	closing_time TIME NOT NULL
+);

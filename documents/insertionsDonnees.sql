@@ -77,3 +77,12 @@ INSERT INTO animal (name, breed_id, img_path, diet, habitat_id, description) VAL
 /* 3ème étape services */
 INSERT INTO service (title, img_path, description) VALUES ('Restaurant', '../../../public/pictures/services/restaurant.jpg', `Une simple halte ? Une pause plus longue ? Profitez d'une expérience culinaire adaptée à votre envie. Que vous optiez pour une collation rapide ou un repas plus complet, <b>notre service de restauration</b> propose une cuisine simple mais délicieuse.`);
 INSERT INTO service (title, img_path, description) VALUES ('Forest', '../../../public/pictures/services/savaneLion.jpg', 'La foret canadienne, majestueuse, pleine de vie');
+
+/* 4ème étape horaires */
+INSERT INTO zoo_hours (day_of_week, opening_time, closing_time) VALUES (0, '09:00:00', '19:00:00');
+INSERT INTO zoo_hours (day_of_week, opening_time, closing_time) VALUES (1, '09:00:00', '19:00:00');
+INSERT INTO zoo_hours (day_of_week, opening_time, closing_time) VALUES (2, '09:00:00', '19:00:00');
+INSERT INTO zoo_hours (day_of_week, opening_time, closing_time) VALUES (3, '09:00:00', '19:00:00');
+INSERT INTO zoo_hours (day_of_week, opening_time, closing_time) VALUES (4, '09:00:00', '19:00:00');
+INSERT INTO zoo_hours (day_of_week, opening_time, closing_time) VALUES (5, '09:00:00', '19:00:00');
+INSERT INTO zoo_hours (day_of_week, opening_time, closing_time) VALUES (6, '09:00:00', '19:00:00');

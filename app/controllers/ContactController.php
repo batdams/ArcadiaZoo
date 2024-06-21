@@ -61,21 +61,4 @@ class ContactController extends Controller
         $this->viewManager->renderData('bodies/contact.php', $data);
         }
     }
-
-    /*
-    public function sendMail(): void
-    { 
-        global $configMail;
-
-        if (isset($_POST['titleContactForm']) && isset($_POST['descriptionContactForm']) && isset($_POST['mailContactForm'])) {
-            $formTitle = htmlspecialchars($_POST['titleContactForm']);
-            $formDescription = htmlspecialchars($_POST['descriptionContactForm']);
-            $formMail = htmlspecialchars($_POST['mailContactForm']);
-            
-            $message = [$formDescription];
-            $this->viewManager->renderData('bodies/contact.php', $message);
-        } else {
-            
-        }
-    }*/
 }

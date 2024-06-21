@@ -25,6 +25,7 @@
                             <option value="granivore">Granivore</option>
                             <option value="omnivore">Omnivore</option>
                             <option value="frugivore">Frugivore</option>
+                            <option value="frugivore">Piscivore</option>
                         </select>
                         <select name="habitatAnimal" id="habitatAnimal">
                             <option value="">Choisissez un habitat</option>
@@ -196,7 +197,53 @@
                 <h4>Horaires Arcadia</h4>
             </div>
             <div id="hoursManagerBody" class="managerHide">
-                Voici l'espace de gestion des horaires
+            <div class="actualHours">
+                <h4>Horaires actuels</h4>
+                <?php
+                    $daysOfWeek = [
+                        0 => 'Lundi',
+                        1 => 'Mardi',
+                        2 => 'Mercredi',
+                        3 => 'Jeudi',
+                        4 => 'Vendredi',
+                        5 => 'Samedi',
+                        6 => 'Dimanche'
+                    ];
+                    foreach($data['hours'] as $hour) {
+                        // Mapper le numero du jour avec la journée correspondante
+                        $dayNumber = $hour->getDayOfWeek();
+                        $dayName = $daysOfWeek[$dayNumber];
+                        // Formater l'horaire sans les secondes
+                        $openingTime = new DateTime($hour->getOpeningTime());
+                        $formattedOpeningTime = $openingTime->format('H:i');
+                        $closingTime = new DateTime($hour->getClosingTime());
+                        $formattedClosingTime = $closingTime->format('H:i');
+                        echo  $dayName . ' : ' . $formattedOpeningTime . ' - ' . $formattedClosingTime .  '<br/>';
+                    }
+                ?>
+            </div>
+            <div class="modifHours">
+                <h4>Espace modification</h4>
+                <form action="/public/hoursModif" method="POST">
+                        <label for="day_of_week">Jour de la semaine:</label>
+                        <select id="day_of_week" name="day_of_week">
+                            <option value="0">Lundi</option>
+                            <option value="1">Mardi</option>
+                            <option value="2">Mercredi</option>
+                            <option value="3">Jeudi</option>
+                            <option value="4">Vendredi</option>
+                            <option value="5">Samedi</option>
+                            <option value="6">Dimanche</option>
+                        </select><br>                    
+                        <label for="opening_time">Heure d'ouverture:</label>
+                        <input type="time" id="opening_time" name="opening_time"><br>
+                        
+                        <label for="closing_time">Heure de fermeture:</label>
+                        <input type="time" id="closing_time" name="closing_time"><br>
+
+                        <input type="submit" value="Mettre à jour">
+                    </form>
+                </div>
             </div>
         </div>
         <?php 

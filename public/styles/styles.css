@@ -1130,6 +1130,25 @@ header .navMenu .hours {
     padding: 0.7rem;
   }
 }
+#infos {
+  min-height: calc(100vh - 128px);
+  text-align: center;
+}
+#infos .section1Infos {
+  display: grid;
+}
+#infos .section1Infos h4 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: rgb(0, 71, 0);
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  #infos .section1Infos h4 {
+    font-size: 1.2rem;
+  }
+}
 footer {
   background-color: #122638;
   color: #ffffff;

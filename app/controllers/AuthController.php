@@ -22,10 +22,6 @@ class AuthController extends Controller
    */
   public function userConnect($pdo)
   {
-    $data = ['services' => ServiceController::displayService($pdo)];
-    $data['habitats'] = HabitatController::displayHabitat($pdo);
-    $data['breeds'] = AnimalController::displayBreed($pdo);
-    $data['animals'] = AnimalController::displayAnimal($pdo);
     $sql = 'SELECT * FROM app_user WHERE email = :email';
     $stmt = $pdo->prepare($sql);
     $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
@@ -42,15 +38,15 @@ class AuthController extends Controller
           if($_SESSION['mail'] === "josebu@arcadia.com"){
             $_SESSION['role'] = 'superAdmin';
             setcookie("user", "administrateur", time() + 3600, '/'); // création cookie superAdmin
-          $this->viewManager->renderData('bodies/connectedAdmin.php', $data);
+          $this->viewManager->renderData('bodies/connectedAdmin.php', $this->data);
           } else if ($_SESSION['role'] === 2){
             $_SESSION['role'] = 'vet';
             setcookie("user", "vet", time() + 3600, '/'); // création cookie vet
-            $this->viewManager->renderData('bodies/connectedVet.php', $data);
+            $this->viewManager->renderData('bodies/connectedVet.php', $this->data);
           } else if ($_SESSION['role'] === 3){
             $_SESSION['role'] = 'employee';
             setcookie("user", "employee", time() + 3600, '/'); // création cookie vet
-            $this->viewManager->renderData('bodies/connectedEmployee.php', $data);
+            $this->viewManager->renderData('bodies/connectedEmployee.php', $this->data);
           }        
         } else {
           echo 'Utilisateur non inscrit ou erreur dans l\'adresse mail';
@@ -83,18 +79,14 @@ class AuthController extends Controller
    * @param PDO $pdo Une instance de PDO pour la connexion à la base de données.
    * @return void
    */
-  public function userVerifConnect($pdo)
+  public function userVerifConnect()
   { 
-    $data = ['services' => ServiceController::displayService($pdo)];
-    $data['habitats'] = HabitatController::displayHabitat($pdo);
-    $data['breeds'] = AnimalController::displayBreed($pdo);
-    $data['animals'] = AnimalController::displayAnimal($pdo);
     if($_SESSION['role'] === 'superAdmin') {
-      $this->viewManager->renderData('bodies/connectedAdmin.php', $data);
+      $this->viewManager->renderData('bodies/connectedAdmin.php', $this->data);
     } else if ($_SESSION['role'] === 'vet'){
-      $this->viewManager->render('bodies/connectedVet.php');
+      $this->viewManager->renderData('bodies/connectedVet.php', $this->data);
     } else if ($_SESSION['role'] === 'employee'){
-      $this->viewManager->renderData('bodies/connectedEmployee.php', $data);
+      $this->viewManager->renderData('bodies/connectedEmployee.php', $this->data);
     } else {
           echo 'Utilisateur non inscrit ou erreur dans l\'adresse mail';
     };
