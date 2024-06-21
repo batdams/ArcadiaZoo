@@ -1,0 +1,56 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => 'cf44fb642526cef4bbeb0c963ba190a73df6dce7',
+        'name' => '__root__',
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'cf44fb642526cef4bbeb0c963ba190a73df6dce7',
+            'dev_requirement' => false,
+        ),
+        'sendgrid/php-http-client' => array(
+            'pretty_version' => '4.1.1',
+            'version' => '4.1.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sendgrid/php-http-client',
+            'aliases' => array(),
+            'reference' => 'ec09bcfccabeb21d69e245a1e1c0e51f2813fc35',
+            'dev_requirement' => false,
+        ),
+        'sendgrid/sendgrid' => array(
+            'pretty_version' => '8.1.2',
+            'version' => '8.1.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sendgrid/sendgrid',
+            'aliases' => array(),
+            'reference' => '6700d2cf50df38915fa2d9a03affbca58c48599f',
+            'dev_requirement' => false,
+        ),
+        'sendgrid/sendgrid-php' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'starkbank/ecdsa' => array(
+            'pretty_version' => '0.0.5',
+            'version' => '0.0.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../starkbank/ecdsa',
+            'aliases' => array(),
+            'reference' => '484bedac47bac4012dc73df91da221f0a66845cb',
+            'dev_requirement' => false,
+        ),
+    ),
+);

@@ -3,7 +3,7 @@
         <div class="contactDIV">
             <h1>CONTACT</h1>
             <div class="contactFormDIV">
-                <form method="POST" action="/public/contact">
+                <form method="POST" action="/public/form">
                     <label for="titleContactForm">Objet</label>
                     <input type="text" name="titleContactForm" id="titleContactForm">
                     <label for="descriptionContactForm">Description</label>
@@ -14,5 +14,8 @@
                     <button type="submit">Envoyer</button>
                 </form>
             </div>
+            <?php
+            // APPERCU MESSAGE
+            ?>
         </div>
     </section>

@@ -38,6 +38,8 @@ $router->addRoute('GET', '/public/services', 'ServiceController', 'index');
 $router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
 $router->addRoute('POST', '/public/modifService', 'ServiceController', 'modifService');
 $router->addRoute('POST', '/public/delService', 'ServiceController', 'delService');
+// ContactController
+$router->addRoute('POST', '/public/form', 'ContactController', 'sendMail');
 // UserController
 $router->addRoute('POST', '/public/addAccount', 'UserController', 'addUser');
 
