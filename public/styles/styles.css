@@ -1149,6 +1149,38 @@ header .navMenu .hours {
     font-size: 1.2rem;
   }
 }
+#about {
+  min-height: calc(100vh - 128px);
+  text-align: center;
+}
+#about .section1About .aboutDIV h4, #about .section1About .aboutDIV h5 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: rgb(0, 71, 0);
+  padding: 0.5rem;
+}
+#about .section1About .aboutDIV .legalsInfos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+#about .section1About .CGUDIV h4 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: rgb(0, 71, 0);
+  padding: 0.5rem;
+}
+#about .section1About .imgCredits h4 {
+  font-family: "MaPolice";
+  font-size: 2rem;
+  color: rgb(0, 71, 0);
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  #about .section1About h4 {
+    font-size: 1.2rem;
+  }
+}
 footer {
   background-color: #122638;
   color: #ffffff;

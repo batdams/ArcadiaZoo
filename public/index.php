@@ -50,6 +50,7 @@ $router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
 $router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnect');
 // InfoController
 $router->addRoute('GET', '/public/hours', 'InfoController', 'index');
+$router->addRoute('GET', '/public/about', 'InfoController', 'indexAbout');
 $router->addRoute('POST', '/public/hoursModif', 'InfoController', 'modifService');
 
 // Récupération des informations de la requête via la super variable $_SERVER 

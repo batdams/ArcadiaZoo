@@ -1052,3 +1052,51 @@
         }
     }
 }
+
+// CGU PAGE  ------------------------------------------------------------------------------------------------------------------------
+// Global Styles  -------------------------------------------------------------------------------------------------------------------------
+#about {
+    min-height: calc(100vh - 128px);
+    text-align: center;
+    .section1About {
+        .aboutDIV {
+            h4, h5 {
+                font-family: 'MaPolice';
+                font-size: 2rem;
+                color: $color4;
+                padding: 0.5rem;
+            } 
+            .legalsInfos {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            }
+        }
+        .CGUDIV {
+            h4 {
+                font-family: 'MaPolice';
+                font-size: 2rem;
+                color: $color4;
+                padding: 0.5rem;
+            }
+        }
+        .imgCredits {
+            h4 {
+                font-family: 'MaPolice';
+                font-size: 2rem;
+                color: $color4;
+                padding: 0.5rem;
+            }
+        }
+    }
+}
+// Mobile Styles  -------------------------------------------------------------------------------------------------------------------------
+@media screen and (max-width: 480px) {
+    #about {
+        .section1About {
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

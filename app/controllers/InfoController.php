@@ -43,6 +43,18 @@ class InfoController extends Controller
     }
 
     /**
+     * Affiche la page CGU
+     * 
+     * Cette méthode affiche la page CGU de l'application.
+     * 
+     * @return void
+     */
+    public function indexAbout($pdo): void
+    {
+    $this->viewManager->renderData('bodies/about.php', $this->data);
+    }
+
+    /**
      * Modifie un horaire
      * 
      * Cette méthode modifie un horaire.
