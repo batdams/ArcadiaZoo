@@ -54,22 +54,23 @@
                 <button class="menuBtn" id="menuBtn" title="showMenu">Cliquez pour découvrir nos actions</button>
                 <div class="items">
                     <div class="menuItem item1">
-                        <button class="itemBtn"><img src="../../../public/pictures/bolt-solid.svg" alt="bolt"></button>
+                        <button class="itemBtn" id="btnBolt"><img src="../../../public/pictures/bolt-solid.svg" alt="bolt"></button>
                     </div>
                     <div class="menuItem item2">
-                        <button class="itemBtn"><img src="../../../public/pictures/water-solid.svg" alt="water"></button>
+                        <button class="itemBtn" id="btnWater"><img src="../../../public/pictures/water-solid.svg" alt="water"></button>
                     </div>
                     <div class="menuItem item3">
-                        <button class="itemBtn"><img src="../../../public/pictures/seedling-solid.svg" alt="seedling"></button>
+                        <button class="itemBtn" id="btnFood"><img src="../../../public/pictures/seedling-solid.svg" alt="seedling"></button>
                     </div>
                     <div class="menuItem item4">
-                        <button class="itemBtn"><img src="../../../public/pictures/recycle-solid.svg" alt="recycle"></button>
+                        <button class="itemBtn" id="btnWaste"><img src="../../../public/pictures/recycle-solid.svg" alt="recycle"></button>
                     </div>
                 </div>
             </div>
             <div class="encart">
-                <p class="ecological">
-                    Le zoo Arcadia se distingue par son engagement écologique exemplaire, étant entièrement autonome en énergie grâce à l'utilisation de panneaux solaires et d'éoliennes. La gestion de l'eau y est également 100% verte, avec un système innovant de récupération des eaux de pluie et de filtration naturelle à travers des bassins plantés de roseaux. Tous les déchets produits sont soit recyclés, soit valorisés en compost pour nos jardins. Enfin, la nourriture destinée aux animaux est exclusivement locale, provenant de fermes partenaires qui pratiquent une agriculture durable. Arcadia incarne ainsi une harmonie parfaite entre préservation de la biodiversité et respect de l'environnement.
+                <h6 id="titleAjax">Les 4 axes écologiques</h6>
+                <p class="ecological" id="corpsAjax">
+                    <img src="" alt="">
                 </p>
             </div>
     </div>

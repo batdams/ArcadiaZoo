@@ -142,4 +142,28 @@ export function initializeHomeBody () {
     menuBtn.addEventListener('click', () => {
         itemDiv.classList.toggle('itemsShow');
     })
+    // Afficher les encarts environmentaux
+    // Requete AJAX
+    function loadEcoContent(type) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+            const data = JSON.parse(this.responseText);
+            let content = data.find(item => item.type === type);
+            if (content) {
+                document.getElementById('titleAjax').innerText = content.title;
+                document.getElementById('corpsAjax').innerText = content.corps;
+            }
+        };
+        xhttp.open("GET", "json/data.json", true);
+        xhttp.send();
+    }
+
+    const btnElec = document.getElementById('btnBolt');
+    const btnWater = document.getElementById('btnWater');
+    const btnFood = document.getElementById('btnFood');
+    const btnWaste = document.getElementById('btnWaste');
+    btnElec.addEventListener('click', () => {loadEcoContent('electric');});
+    btnWater.addEventListener('click', () => {loadEcoContent('water');});
+    btnFood.addEventListener('click', () => {loadEcoContent('food');});
+    btnWaste.addEventListener('click', () => {loadEcoContent('waste');});
 }

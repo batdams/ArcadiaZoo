@@ -277,11 +277,11 @@
         padding-bottom: 4rem;
     }
     .ecologyMenu {
-        padding-left: 6rem;
         text-align:left;
         display: flex;
         justify-content: center;
         #menu {
+            padding-left: 6rem;
             .menuBtn {
                 background-color: $color4;
                 color: $color2;
@@ -358,6 +358,12 @@
             font-family: 'MaPoliceTexte';
             font-size: 1.2rem;
             font-weight: 600;
+            h6 {
+                color: $color4;
+                font-family: 'MaPolice';
+                text-transform: uppercase;
+                font-size: 1.4rem;
+            }
         }      
     }
 } 
@@ -427,6 +433,7 @@
             padding-bottom: 4rem;
         }
         .ecologyMenu {
+            display: block;
             #menu {
                 .menuBtn {
                     font-size: 0.9rem;
@@ -470,7 +477,11 @@
                 }
             }
             .encart {
-                display: none;
+                margin-top: -6rem;
+                padding: 0.5rem;
+                width: 100%;
+                font-size: 1rem;
+                font-weight: 600;
             }
         }
     }
