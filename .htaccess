@@ -1,0 +1,12 @@
+# Activer la réécriture d'URL
+RewriteEngine On
+
+# Règle pour rediriger tout le trafic vers index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+
+# Autoriser l'accès aux fichiers index
+<FilesMatch "^(index\.php|index\.html)$">
+    Require all granted
+</FilesMatch>
