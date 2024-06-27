@@ -3,10 +3,3 @@ RewriteEngine On
 
 # Règle pour rediriger tout le trafic vers index.php
 RewriteRule ^(.*)$ public/$1 [L]
-
-# Autoriser l'accès aux fichiers index
-<Directory /public>
-    Options Indexes FollowSymLinks
-    AllowOverride All
-    Require all granted
-</Directory>
