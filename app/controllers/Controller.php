@@ -23,5 +23,7 @@ class Controller
         $this->data['breeds'] = AnimalController::displayBreed($this->pdo);
         $this->data['animals'] = AnimalController::displayAnimal($this->pdo);
         $this->data['hours'] = InfoController::displayHours($this->pdo);
+        $this->data['views'] = HomeController::displayViews($this->pdo);
+        $this->data['validViews'] = HomeController::displayViewsValid($this->pdo);
     }
 }

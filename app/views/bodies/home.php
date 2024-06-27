@@ -68,10 +68,38 @@
                 </div>
             </div>
             <div class="encart">
-                <h6 id="titleAjax">Les 4 axes écologiques</h6>
+                <h6 id="titleAjax">Un parc durable, local et autonome</h6>
                 <p class="ecological" id="corpsAjax">
-                    <img src="" alt="">
+                    Découvrez l'approche écologique de notre parc à travers 4 axes majeurs : <br>
+                    - La production Electrique<br>
+                    - La gestion de l'eau<br>
+                    - L'alimentation des animaux<br>
+                    - La gestion des déchets<br>
                 </p>
             </div>
-    </div>
+        </div>
+    </section>
+    <section class="sectionView">
+        <h1>Arcadia, ils racontent leur expérience</h1>
+        <div class="viewList">
+        <?php
+            foreach($data['validViews'] as $view) {
+                echo '<div class="viewUnit">';
+                echo $view['view_message'] . '<br>';
+                echo '<span class="nickname">' . $view['nickname'] . '</span>';
+                echo '</div>';
+            }
+        ?>
+        </div>
+        <div class="viewForm">
+            <h4>Partagez votre expérience</h4>
+            <form action="/public/leaveView" method="POST">
+                <label for="nickname">NOM</label>
+                <input type="text" name="nickname" id="nickname">
+                <label for="viewMessage">VOTRE AVIS</label>
+                <textarea name="viewMessage" id="viewMessage">
+                </textarea>
+                <button class="viewSubmit" type="submit">Envoyer</button>
+            </form>
+        </div>
     </section>

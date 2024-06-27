@@ -66,3 +66,11 @@ CREATE TABLE zoo_hours (
 	opening_time TIME NOT NULL,
 	closing_time TIME NOT NULL
 );
+
+/*5ème étapes avis*/
+CREATE TABLE view (
+	view_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nickname VARCHAR(100) NOT NULL,
+	view_message TEXT NOT NULL,
+	is_valide BOOLEAN
+);

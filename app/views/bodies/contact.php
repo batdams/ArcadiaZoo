@@ -7,8 +7,7 @@
                     <label for="titleContactForm">Objet</label>
                     <input type="text" name="titleContactForm" id="titleContactForm">
                     <label for="descriptionContactForm">Description</label>
-                    <textarea name="descriptionContactForm" id="descriptionContactForm">
-                    </textarea>
+                    <textarea name="descriptionContactForm" id="descriptionContactForm"></textarea>
                     <label for="mailContactForm">Email</label>
                     <input type="mail" name="mailContactForm" id="mailContactForm">
                     <button type="submit">Envoyer</button>

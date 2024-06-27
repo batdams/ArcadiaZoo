@@ -10,6 +10,7 @@ require_once '../app/controllers/ServiceController.php';
 require_once '../app/controllers/UserController.php';
 require_once '../app/controllers/ContactController.php';
 require_once '../app/controllers/InfoController.php';
+require_once '../app/controllers/ReviewController.php';
 
 require_once '../app/views/ViewManager.php';
 require_once '../app/controllers/AuthController.php';
@@ -25,6 +26,8 @@ $router = new \routing\Router();
 $router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
 
 // création de nouvelles routes
+// HomeController
+$router->addRoute('POST', '/public/leaveView', 'HomeController', 'addView');
 // AnimalController
 $router->addRoute('POST', '/public/addAnimal', 'AnimalController', 'addAnimal');
 $router->addRoute('POST', '/public/modifAnimal', 'AnimalController', 'modifAnimal');
@@ -52,6 +55,9 @@ $router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnec
 $router->addRoute('GET', '/public/hours', 'InfoController', 'index');
 $router->addRoute('GET', '/public/about', 'InfoController', 'indexAbout');
 $router->addRoute('POST', '/public/hoursModif', 'InfoController', 'modifService');
+// ReviewController
+$router->addRoute('POST', '/public/confirmReview', 'ReviewController', 'confirmReview');
+$router->addRoute('POST', '/public/deleteReview', 'ReviewController', 'deleteReview');
 
 // Récupération des informations de la requête via la super variable $_SERVER 
 $method = $_SERVER['REQUEST_METHOD'];

@@ -5,7 +5,17 @@
                 <h4>Modération Avis</h4>
             </div>
             <div id="reviewManagerBody" class="managerHide">
-                Voici l'espace de validation ou refus des avis
+                <div class="viewList">
+                    <?php
+                        foreach ($data['views'] as $view) {
+                            echo '<div class="viewUnit view' . $view['view_id'] . '">';
+                            echo $view['view_message'] . '<br>';
+                            echo '<span class="nickname">' . $view['nickname'] . '</span><br>';
+                            echo '<button class="confirmView" data-id="' . $view['view_id'] . '"> Valider </button> <button class="deleteView" data-id="' . $view['view_id'] . '"> supprimer </button>';
+                            echo '</div>';
+                        }
+                    ?>
+                </div>
             </div>
             
             <div id="animalMealManager" class="managerDIV">

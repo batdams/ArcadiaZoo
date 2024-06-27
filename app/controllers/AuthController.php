@@ -62,13 +62,11 @@ class AuthController extends Controller
    * 
    * @return void
    */
-  public function userDisconnect($pdo)
+  public function userDisconnect()
   {
     unset($_SESSION['role']);
     setcookie("user", "", time() - 3600, '/');
-    $data = ['services' => ServiceController::displayService($pdo)];
-    $data['habitats'] = HabitatController::displayHabitat($pdo);
-    $this->viewManager->renderData('bodies/home.php', $data);
+    $this->viewManager->renderData('bodies/home.php', $this->data);
   }
 
     /**
