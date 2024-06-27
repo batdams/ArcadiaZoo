@@ -2,11 +2,11 @@
 RewriteEngine On
 
 # Règle pour rediriger tout le trafic vers index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [L]
+RewriteRule ^(.*)$ public/$1 [L]
 
 # Autoriser l'accès aux fichiers index
-<FilesMatch "^(index\.php|index\.html)$">
+<Directory /public>
+    Options Indexes FollowSymLinks
+    AllowOverride All
     Require all granted
-</FilesMatch>
+</Directory>
