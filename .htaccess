@@ -5,4 +5,6 @@ RewriteBase /ArcadiaZoo/public
 # Règle pour rediriger tout le trafic vers index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [QSA,L]
+RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
+
+# OLD RewriteRule ^ index.php [QSA,L]
