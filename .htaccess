@@ -2,4 +2,6 @@
 RewriteEngine On
 
 # Règle pour rediriger tout le trafic vers index.php
-RewriteRule ^(.*)$ public/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php [QSA,L]
