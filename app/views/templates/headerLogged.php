@@ -9,17 +9,17 @@
 <body>
     <header>
         <div class="navMenu" id="navMenu">
-            <div class="logo"><a href="index.php"><img src="pictures/logo.png" alt="Logo Arcadia"></a></div>
+            <div class="logo"><a href="<?php echo BASE_URL;?>/accueil"><img src="../../public/pictures/logo.png" alt="Logo Arcadia"></a></div>
             <nav class="navList">
                 <ul class="linkList">
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="/public/habitats">habitats</a></li>
-                    <li><a href="/public/services">services</a></li>
-                    <li><a href="/public/contact">contact</a></li>
-                    <li><a href="/public/connected">Votre Espace</a></li>
+                <li><a href="<?php echo BASE_URL;?>/accueil">accueil</a></li>
+                    <li><a href="<?php echo BASE_URL;?>/habitats">habitats</a></li>
+                    <li><a href="<?php echo BASE_URL;?>/services">services</a></li>
+                    <li><a href="<?php echo BASE_URL;?>/contact">contact</a></li>
+                    <li><a href="<?php echo BASE_URL;?>/connected">Votre Espace</a></li>
                 </ul>
             </nav>
-            <div class="hours"><img src="pictures/clock-regular.svg" alt="clock"> 9h-17h</div>
+            <div class="hours"><img src="../../public/pictures/clock-regular.svg" alt="clock"> 9h-17h</div>
             <a href="/public/logout" class="connexion" id="connexion"><img src="../../public/pictures/lock-open-solid.svg" alt="unlock" id="connexionImg"></a>
         </div>
         <button class="burgerMenu" id="burgerMenu"></button>

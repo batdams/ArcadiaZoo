@@ -20,7 +20,7 @@ class ViewManager
      */
     public function loadHeaderLogged()
     {
-        include_once 'app/views/templates/headerLogged.html';
+        include_once 'app/views/templates/headerLogged.php';
     }
 
     /**

@@ -60,7 +60,7 @@ $router->addRoute('GET', BASE_URL . '/contact', 'ContactController', 'index');
 $router->addRoute('GET', '/public/connexion', 'HomeController', 'connexion');
 $router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
 $router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
-$router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnect');
+$router->addRoute('GET', BASE_URL . '/connected', 'AuthController', 'userVerifConnect');
 // InfoController
 $router->addRoute('GET', '/public/hours', 'InfoController', 'index');
 $router->addRoute('GET', '/public/about', 'InfoController', 'indexAbout');
