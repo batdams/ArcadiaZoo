@@ -36,6 +36,7 @@ $router->addRoute('GET','/', 'HomeController', 'index');
 
 // création de nouvelles routes
 // HomeController
+$router->addRoute('GET',BASE_URL . '/accueil', 'HomeController', 'index');
 $router->addRoute('POST', '/public/leaveView', 'HomeController', 'addView');
 // AnimalController
 $router->addRoute('POST', '/public/addAnimal', 'AnimalController', 'addAnimal');
@@ -47,12 +48,12 @@ $router->addRoute('POST', '/public/addHabitat', 'HabitatController', 'addHabitat
 $router->addRoute('POST', '/public/modifHabitat', 'HabitatController', 'modifHabitat');
 $router->addRoute('POST', '/public/delHabitat', 'HabitatController', 'delHabitat');
 // ServiceController
-$router->addRoute('GET', '/public/services', 'ServiceController', 'index');
+$router->addRoute('GET', BASE_URL . '/services', 'ServiceController', 'index');
 $router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
 $router->addRoute('POST', '/public/modifService', 'ServiceController', 'modifService');
 $router->addRoute('POST', '/public/delService', 'ServiceController', 'delService');
 // ContactController
-$router->addRoute('POST', '/public/form', 'ContactController', 'sendMail');
+$router->addRoute('POST', BASE_URL . '/form', 'ContactController', 'sendMail');
 // UserController
 $router->addRoute('POST', '/public/addAccount', 'UserController', 'addUser');
 $router->addRoute('GET', '/public/contact', 'ContactController', 'index');
