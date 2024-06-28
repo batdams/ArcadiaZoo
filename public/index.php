@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo 'TEST';
 
 // Affichage des erreurs pour le débogage
 ini_set('display_errors', 1);
@@ -30,7 +29,7 @@ require_once '../app/models/Router.php';
 $router = new \routing\Router();
 
 // Définition de la route initiale
-$router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
+$router->addRoute('GET', '/', 'HomeController', 'index');
 
 // création de nouvelles routes
 // HomeController
