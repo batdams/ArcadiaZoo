@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_start();
+echo 'TEST';
 
 // Affichage des erreurs pour le débogage
 ini_set('display_errors', 1);
