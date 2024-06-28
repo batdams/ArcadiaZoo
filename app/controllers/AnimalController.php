@@ -3,8 +3,8 @@
 namespace controllers;
 
 // Inclusion des classes
-require_once '../app/controllers/Controller.php';
-require_once '../app/models/Animal.php';
+require_once 'app/controllers/Controller.php';
+require_once 'app/models/Animal.php';
 
 class AnimalController extends Controller {
 

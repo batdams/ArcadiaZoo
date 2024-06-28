@@ -11,7 +11,7 @@ class ViewManager
      */
     public function loadHeader()
     {
-        include_once '../app/views/templates/header.html';
+        include_once '../app/views/templates/header.php';
     }
 
     /**

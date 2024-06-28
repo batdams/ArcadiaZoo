@@ -3,9 +3,9 @@
 namespace controllers;
 
 // Inclusion des classes
-require_once '../app/controllers/Controller.php';
-require_once '../app/controllers/ServiceController.php';
-require_once '../app/models/User.php';
+require_once 'app/controllers/Controller.php';
+require_once 'app/controllers/ServiceController.php';
+require_once 'app/models/User.php';
 
 use \PDO; // Ajout de l'utilisation de la classe PDO
 use \models\User;

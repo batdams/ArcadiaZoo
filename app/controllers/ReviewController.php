@@ -3,7 +3,7 @@
 namespace controllers;
 
 // Inclusion des classes
-require_once '../app/controllers/Controller.php';
+require_once 'app/controllers/Controller.php';
 
 class ReviewController extends Controller
 {

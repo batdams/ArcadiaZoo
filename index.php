@@ -7,26 +7,26 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Récupération de la config pour la connexion à la BDD
-require_once '../app/config/config.php';
+require_once 'app/config/config.php';
 
 // Définition de la constante pour l'URL
 define("BASE_URL", '/ArcadiaZoo');
 
 // Inclusion des classes
-require_once '../app/controllers/HomeController.php';
-require_once '../app/controllers/HabitatController.php';
-require_once '../app/controllers/ServiceController.php';
-require_once '../app/controllers/UserController.php';
-require_once '../app/controllers/ContactController.php';
-require_once '../app/controllers/InfoController.php';
-require_once '../app/controllers/ReviewController.php';
+require_once 'app/controllers/HomeController.php';
+require_once 'app/controllers/HabitatController.php';
+require_once 'app/controllers/ServiceController.php';
+require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/ContactController.php';
+require_once 'app/controllers/InfoController.php';
+require_once 'app/controllers/ReviewController.php';
 
-require_once '../app/views/ViewManager.php';
-require_once '../app/controllers/AuthController.php';
-require_once '../app/controllers/AnimalController.php';
+require_once 'app/views/ViewManager.php';
+require_once 'app/controllers/AuthController.php';
+require_once 'app/controllers/AnimalController.php';
 
 // Ajout du routeur
-require_once '../app/models/Router.php';
+require_once 'app/models/Router.php';
 
 // Instanciation du routeur
 $router = new \routing\Router();
