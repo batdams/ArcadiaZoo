@@ -16,6 +16,7 @@
                     <li><a href="<?php echo BASE_URL;?>/habitats">habitats</a></li>
                     <li><a href="/public/services">services</a></li>
                     <li><a href="/public/contact">contact</a></li>
+                    <?php var_dump(BASE_URL . '/habitats');?>
                 </ul>
             </nav>
             <div class="hours"><img src="pictures/clock-regular.svg" alt="clock"> 9h-17h</div>
