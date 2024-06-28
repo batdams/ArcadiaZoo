@@ -32,7 +32,7 @@ require_once 'app/models/Router.php';
 $router = new \routing\Router();
 
 // Définition de la route initiale
-$router->addRoute('GET', BASE_URL . '/', 'HomeController', 'index');
+$router->addRoute('GET','/', 'HomeController', 'index');
 
 // création de nouvelles routes
 // HomeController
