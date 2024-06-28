@@ -9,6 +9,9 @@ error_reporting(E_ALL);
 // Récupération de la config pour la connexion à la BDD
 require_once '../app/config/config.php';
 
+// Définition de la constante pour l'URL
+define("BASE_URL", '/ArcadiaZoo');
+
 // Inclusion des classes
 require_once '../app/controllers/HomeController.php';
 require_once '../app/controllers/HabitatController.php';
@@ -29,7 +32,7 @@ require_once '../app/models/Router.php';
 $router = new \routing\Router();
 
 // Définition de la route initiale
-$router->addRoute('GET', '/', 'HomeController', 'index');
+$router->addRoute('GET', BASE_URL . '/', 'HomeController', 'index');
 
 // création de nouvelles routes
 // HomeController
@@ -39,7 +42,7 @@ $router->addRoute('POST', '/public/addAnimal', 'AnimalController', 'addAnimal');
 $router->addRoute('POST', '/public/modifAnimal', 'AnimalController', 'modifAnimal');
 $router->addRoute('POST', '/public/delAnimal', 'AnimalController', 'delAnimal');
 // HabitatController
-$router->addRoute('GET', '/public/habitats', 'HabitatController', 'index');
+$router->addRoute('GET', BASE_URL . '/habitats', 'HabitatController', 'index');
 $router->addRoute('POST', '/public/addHabitat', 'HabitatController', 'addHabitat');
 $router->addRoute('POST', '/public/modifHabitat', 'HabitatController', 'modifHabitat');
 $router->addRoute('POST', '/public/delHabitat', 'HabitatController', 'delHabitat');
