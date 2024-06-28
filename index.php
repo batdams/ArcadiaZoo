@@ -56,7 +56,7 @@ $router->addRoute('POST', '/public/delService', 'ServiceController', 'delService
 $router->addRoute('POST', BASE_URL . '/form', 'ContactController', 'sendMail');
 // UserController
 $router->addRoute('POST', '/public/addAccount', 'UserController', 'addUser');
-$router->addRoute('GET', '/public/contact', 'ContactController', 'index');
+$router->addRoute('GET', BASE_URL . '/contact', 'ContactController', 'index');
 $router->addRoute('GET', '/public/connexion', 'HomeController', 'connexion');
 $router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
 $router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
