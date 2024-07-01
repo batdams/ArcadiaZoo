@@ -58,9 +58,6 @@ export function initializeHomeBody () {
     })
     // Afficher les encarts environmentaux
     // Requete AJAX
-    const BASE_URL = "<?php echo BASE_URL; ?>";
-    console.log(BASE_URL);
-    console.log('Hello');
     function loadEcoContent(type) {
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function () {

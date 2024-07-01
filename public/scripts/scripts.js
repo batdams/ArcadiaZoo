@@ -6,6 +6,10 @@ import {initializeConnectedAdminBody} from "./connectedAdminBody.js";
 import {initializeConnectedVetBody} from "./connectedVetBody.js";
 import {initializeConnectedEmployeeBody} from "./connectedEmployeeBody.js";
 
+const BASE_URL = "<?php echo BASE_URL; ?>";
+console.log(BASE_URL);
+console.log('Hello');
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeHeader();
     // Identification page actuelle
