@@ -154,7 +154,7 @@ export function initializeHomeBody () {
                 document.getElementById('corpsAjax').innerText = content.corps;
             }
         };
-        xhttp.open("GET", "json/data.json", true);
+        xhttp.open("GET", "public/json/data.json", true);
         xhttp.send();
     }
 
