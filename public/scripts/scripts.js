@@ -6,10 +6,8 @@ import {initializeConnectedAdminBody} from "./connectedAdminBody.js";
 import {initializeConnectedVetBody} from "./connectedVetBody.js";
 import {initializeConnectedEmployeeBody} from "./connectedEmployeeBody.js";
 
-const BASE_URL = "<?php echo BASE_URL; ?>";
-console.log(BASE_URL);
-console.log('Hello');
-
+let BASE_URL = '/ArcadiaZoo';
+console.log (BASE_URL);
 document.addEventListener('DOMContentLoaded', () => {
     initializeHeader();
     // Identification page actuelle
