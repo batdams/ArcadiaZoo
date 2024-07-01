@@ -6,6 +6,11 @@
     background-size: cover;
     height: calc(100vh - 64px);
     .presentationArcadia {
+        backdrop-filter: blur(180px) saturate(180%);
+        -webkit-backdrop-filter: blur(180px) saturate(180%);
+        background-color: $color2Transparency;
+        border-radius: 12px;
+        position: absolute;
         p {
             font-family: 'MaPoliceTexte';
             font-weight: 700;
@@ -15,37 +20,6 @@
                 font-weight: 900;
                 color: $color4;    
             }
-        }
-    }
-}
-@media screen and (min-width: 900px) {
-    .section1 {
-        .presentationArcadia {
-            padding: 2rem 5rem 0rem 30rem;
-            font-size: 1.8rem;
-        }
-    }
-}
-@media screen and (min-width: 480px) and (max-width: 900px) {
-    .section1 {
-        .presentationArcadia {
-            padding: 17rem 2rem 0rem 5rem;
-            font-size: 1.5rem;   
-        }
-    }
-}
-@media screen and (max-width: 480px) {
-    .section1 {
-        .presentationArcadia {
-            padding: 11rem 2rem 0rem 2rem;
-            font-size: 1.0rem;
-            p {
-                margin-bottom: 0.5rem;
-                color: $color2;
-                span {
-                    color: $color3;
-                }
-            }    
         }
     }
 }
@@ -457,7 +431,15 @@
 }
 // Desktop Styles -------------------------------------------------------------------------------------------------------------------
 @media screen and (min-width: 900px) {
-
+    .section1 {
+        .presentationArcadia {
+            width: 35%;
+            right: 3rem;
+            top: 6rem;
+            padding: 4rem;
+            font-size: 1.8rem;
+        }
+    }
     .sectionEcology {
         h1 {
             padding-top: 3rem;
@@ -476,14 +458,11 @@
 @media screen and (min-width: 480px) and (max-width: 900px) {
     .section1 {
         .presentationArcadia {
-            padding: 17rem 2rem 0rem 5rem;
+            width: 50%;
+            right: 3rem;
+            top: 6rem;
+            padding: 4rem;
             font-size: 1.5rem;
-            p {
-                color: $color2;
-                span {
-                    color: $color4;
-            }      
-            }
         }
     }
 
@@ -493,15 +472,10 @@
 @media screen and (max-width: 480px) {
     .section1 {
         .presentationArcadia {
-            padding: 11rem 2rem 0rem 2rem;
-            font-size: 1.0rem;
-            p {
-                margin-bottom: 0.5rem;
-                color: $color2;
-                span {
-                    color: $color3;
-                }
-            }    
+            width: 100%;
+            top: 15rem;
+            padding: 0.5rem;
+            font-size: 1rem;   
         }
     }
     .sectionHabitats {
