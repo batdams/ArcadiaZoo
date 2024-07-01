@@ -1,14 +1,14 @@
-import {initializeHeader} from "./header.js";
+/*import {initializeHeader} from "./header.js";
 import {initializeHomeBody} from "./homeBody.js";
 import {initializeHabitatsBody} from "./habitatsBody.js";
 import {initializeServicesBody} from "./servicesBody.js";
 import {initializeConnectedAdminBody} from "./connectedAdminBody.js";
 import {initializeConnectedVetBody} from "./connectedVetBody.js";
 import {initializeConnectedEmployeeBody} from "./connectedEmployeeBody.js";
-
+*/
 let BASE_URL = '/ArcadiaZoo';
 console.log (BASE_URL);
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
     initializeHeader();
     // Identification page actuelle
@@ -39,4 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('No specific initialization for this page.');
         }
     }
-});
+});*/
