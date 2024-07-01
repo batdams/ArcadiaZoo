@@ -10,22 +10,21 @@ ARCADIA ZOO APP
                                        - Profil employé : Modération des avis visiteurs, modifier services du zoo, création de rapports alimentations 
 
  Instructions pour le déploiement en local :
-   Prérequis : PHP 8 ou +
-   Instructions : cloner repository git
-                  commande shell : php -S localhost:5000     
-                  navigateur : ouvrir "localhost:5000/public/index.php"
-   Les étapes nécessaires pour installer et configurer votre projet localement. Incluez les dépendances et les prérequis, ainsi que les commandes spécifiques à exécuter pour installer et démarrer le projet.
+Prérequis : XAMPP (Apache, MariaDB, PHP 8+)
+Instructions : cloner repository git
+installer le dossier dans votre fichier htdocs.
+navigateur : ouvrir "localhost/ArcadiaZoo
+Dépendances nécessaires : sendgrid version 8.1
+    Contributions: Allowed
 
-    Utilisation: Des instructions sur la façon d'utiliser votre projet une fois qu'il est installé. Cela peut inclure des exemples de commandes à exécuter, des configurations à ajuster, etc.
+    Licence: MIT
 
-    Contributions: Des directives sur la manière dont les autres peuvent contribuer à votre projet. Cela peut inclure des informations sur la façon de signaler des bogues, de proposer des fonctionnalités, et comment soumettre des pull requests.
+    Crédits: crédits photos sur l’application web (mentions crédits)
 
-    Licence: La licence sous laquelle votre projet est publié. Cela peut être une licence open source comme MIT, GPL, Apache, etc. Assurez-vous de fournir une copie de la licence dans le fichier LICENSE de votre projet.
+    Contact: damienbilliau@gmail.com
 
-    Crédits: Reconnaissance des personnes ou des organisations qui ont contribué au projet, ainsi que des bibliothèques tierces utilisées.
+    Statut du Projet: Développement actif
 
-    Contact: Un moyen de contacter les mainteneurs du projet, que ce soit par e-mail, sur les réseaux sociaux ou via d'autres canaux de communication.
-
-    Statut du Projet: Informations sur l'état actuel du projet, comme sa stabilité, s'il est encore en développement actif, etc.
-
-    Exemples: Des exemples d'utilisation ou de résultats pour aider les utilisateurs à comprendre comment le projet fonctionne dans différents cas d'utilisation.
+    Exemples:
+- Visiteurs : Utilisation de l’application pour visualiser le zoo, ses services, infos, habitats et animaux.
+- Espace connecté : Gestion de fonctionnalités
