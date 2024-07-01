@@ -8,6 +8,7 @@ import {initializeConnectedEmployeeBody} from "./connectedEmployeeBody.js";
 
 let BASE_URL = '/ArcadiaZoo';
 console.log (BASE_URL);
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeHeader();
     // Identification page actuelle
