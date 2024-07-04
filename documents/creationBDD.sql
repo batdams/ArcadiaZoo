@@ -1,3 +1,6 @@
+/* Création de la Base de données */
+CREATE DATABASE IF NOT EXISTS arcadia_zoo;
+
 /* 1ere étape, roles et users (admin employee vet */
 CREATE TABLE role (
 	role_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -37,15 +40,6 @@ CREATE TABLE animal (
 	FOREIGN KEY (habitat_id) REFERENCES habitat(habitat_id),
 	FOREIGN KEY (breed_id) REFERENCES breed(breed_id)
 );
-
-/* OLD, One-to-many , ø associated table
-CREATE TABLE animal_habitat (
-    animal_id INT NOT NULL,
-    habitat_id INT NOT NULL,
-    PRIMARY KEY (animal_id, habitat_id),
-    FOREIGN KEY (animal_id) REFERENCES animal(animal_id) ON DELETE CASCADE,
-    FOREIGN KEY (habitat_id) REFERENCES habitat(habitat_id) ON DELETE CASCADE
-);*/
 
 /*3ème étape services*/
 
