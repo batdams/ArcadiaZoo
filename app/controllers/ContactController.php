@@ -6,9 +6,9 @@ use PDOException;
 use \SendGrid\Mail\Mail;
 
 // Inclusion des classes
-require '../vendor/autoload.php';
-require_once '../app/config/config.php';
-require_once '../app/controllers/Controller.php';
+require 'vendor/autoload.php';
+require_once 'app/config/config.php';
+require_once 'app/controllers/Controller.php';
 
 class ContactController extends Controller
 {

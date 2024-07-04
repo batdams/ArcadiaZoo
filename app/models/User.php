@@ -2,7 +2,7 @@
 
 class User
 {
-    private int $id;
+    private int $user_id;
     private string $email;
     private string $password;
     private string $firstname;
@@ -12,7 +12,7 @@ class User
     // GETTERS
     public function getId() : int
     {
-        return $this->id;
+        return $this->user_id;
     }
     public function getEmail() : string
     {

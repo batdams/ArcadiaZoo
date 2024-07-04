@@ -5,13 +5,13 @@ INSERT INTO role (role) VALUES
 ('employee');
 
 INSERT INTO app_user (email, password, firstname, lastname, role_id)
-VALUES ('josebu@arcadia.com', '$2y$10$zS62lQI46h0yryQ6riYDDehZvGqMwWKUD8gktKxm.Y4.jK18/09rm', 'jose', 'bu', 1);
+VALUES ('josebu@arcadia.com', '$2y$10$AaD99M2usfGPXYtbX1q3Ze0PBdPJKO3eIWbzu.cOSCugShAozoUrW', 'jose', 'bu', 1);
 
 INSERT INTO app_user (email, password, firstname, lastname, role_id)
-VALUES ('vetTest@arcadia.com', '$2y$10$dOKz7KHZH6S1PXACs0UME.x/3cjvtBnWrSOehQQSocDeXAuNEqAfi', 'alba', 'tros', 2);
+VALUES ('vetTest@arcadia.com', '$2y$10$0rVMvharbfTw5IwqsXpP7eFEvKr/kRrLY3PT8uN4KRZne6GB1CVSC', 'alba', 'tros', 2);
 
 INSERT INTO app_user (email, password, firstname, lastname, role_id)
-VALUES ('employeeTest@arcadia.com', '$2y$10$dOKz7KHZH6S1PXACs0UME.x/3cjvtBnWrSOehQQSocDeXAuNEqAfi', 'benji', 'rafe', 3);
+VALUES ('employeeTest@arcadia.com', '$2y$10$4D7mE6qBj3eUOcSDcS5P3eV5q6PTU18T2GF//J3jaBRSI6v5e4bWS', 'benji', 'rafe', 3);
 
 /* 2ème étape habitats, races & animaux */
 /* Race */
@@ -36,7 +36,6 @@ INSERT INTO breed (breed_name) VALUES ('Myocastoridés'); -- Ragondin
 INSERT INTO breed (breed_name) VALUES ('Ranidés'); -- Grenouille taureau
 INSERT INTO breed (breed_name) VALUES ('Cyprinidés'); -- Carpe commune
 INSERT INTO breed (breed_name) VALUES ('Suidés'); -- Sanglier
-
 
 /* Habitat */
 INSERT INTO habitat (name, img_path, description)
@@ -70,10 +69,6 @@ INSERT INTO animal (name, breed_id, img_path, diet, habitat_id, description) VAL
 --INSERT INTO animal (name, breed_id, img_path, diet, habitat_id, description) VALUES ('Carpe commune', 23, '../../../public/pictures/animals/carpe_commune.jpg', 'Omnivore', 3, 'La carpe commune est un poisson d''eau douce très répandu dans les marais et les rivières, se nourrissant principalement de plantes et d''insectes.');
 INSERT INTO animal (name, breed_id, img_path, diet, habitat_id, description) VALUES ('Sanglier', 24, '../../../public/pictures/animals/sanglier.jpg', 'Omnivore', 3, 'Le sanglier est un mammifère robuste que l''on trouve parfois dans les marais, où il se nourrit de racines, de plantes et de petits animaux.');
 
-
-/*Liaison animaux habitats OLD*/
---INSERT INTO animal_habitat (animal_id, habitat_id) VALUES (1, 1); -- Lion -> Savane
---INSERT INTO animal_habitat (animal_id, habitat_id) VALUES (2, 1); -- Jaguar -> Savane
 /* 3ème étape services */
 INSERT INTO service (title, img_path, description) VALUES ('Restaurant', '../../../public/pictures/services/restaurant.jpg', `Une simple halte ? Une pause plus longue ? Profitez d'une expérience culinaire adaptée à votre envie. Que vous optiez pour une collation rapide ou un repas plus complet, <b>notre service de restauration</b> propose une cuisine simple mais délicieuse.`);
 INSERT INTO service (title, img_path, description) VALUES ('Forest', '../../../public/pictures/services/savaneLion.jpg', 'La foret canadienne, majestueuse, pleine de vie');

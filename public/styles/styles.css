@@ -228,6 +228,13 @@ header .navMenu .hours {
   background-size: cover;
   height: calc(100vh - 64px);
 }
+.section1 .presentationArcadia {
+  backdrop-filter: blur(180px) saturate(180%);
+  -webkit-backdrop-filter: blur(180px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  position: absolute;
+}
 .section1 .presentationArcadia p {
   font-family: "MaPoliceTexte";
   font-weight: 700;
@@ -239,31 +246,6 @@ header .navMenu .hours {
   color: rgb(0, 71, 0);
 }
 
-@media screen and (min-width: 900px) {
-  .section1 .presentationArcadia {
-    padding: 2rem 5rem 0rem 30rem;
-    font-size: 1.8rem;
-  }
-}
-@media screen and (min-width: 480px) and (max-width: 900px) {
-  .section1 .presentationArcadia {
-    padding: 17rem 2rem 0rem 5rem;
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .section1 .presentationArcadia {
-    padding: 11rem 2rem 0rem 2rem;
-    font-size: 1rem;
-  }
-  .section1 .presentationArcadia p {
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-  }
-  .section1 .presentationArcadia p span {
-    color: #006600;
-  }
-}
 .sectionHabitats {
   background: url("../pictures/giraf.jpg"); /* pour anciens Chrome et Safari */
   background-size: cover;
@@ -635,6 +617,13 @@ header .navMenu .hours {
 }
 
 @media screen and (min-width: 900px) {
+  .section1 .presentationArcadia {
+    width: 35%;
+    right: 3rem;
+    top: 6rem;
+    padding: 4rem;
+    font-size: 1.8rem;
+  }
   .sectionEcology h1 {
     padding-top: 3rem;
     font-size: 3rem;
@@ -646,27 +635,19 @@ header .navMenu .hours {
 }
 @media screen and (min-width: 480px) and (max-width: 900px) {
   .section1 .presentationArcadia {
-    padding: 17rem 2rem 0rem 5rem;
+    width: 50%;
+    right: 3rem;
+    top: 6rem;
+    padding: 4rem;
     font-size: 1.5rem;
-  }
-  .section1 .presentationArcadia p {
-    color: #ffffff;
-  }
-  .section1 .presentationArcadia p span {
-    color: rgb(0, 71, 0);
   }
 }
 @media screen and (max-width: 480px) {
   .section1 .presentationArcadia {
-    padding: 11rem 2rem 0rem 2rem;
+    width: 100%;
+    top: 15rem;
+    padding: 0.5rem;
     font-size: 1rem;
-  }
-  .section1 .presentationArcadia p {
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-  }
-  .section1 .presentationArcadia p span {
-    color: #006600;
   }
   .sectionHabitats {
     text-align: center;

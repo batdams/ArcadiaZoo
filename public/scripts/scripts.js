@@ -6,6 +6,7 @@ import {initializeConnectedAdminBody} from "./connectedAdminBody.js";
 import {initializeConnectedVetBody} from "./connectedVetBody.js";
 import {initializeConnectedEmployeeBody} from "./connectedEmployeeBody.js";
 
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeHeader();
     // Identification page actuelle

@@ -2,7 +2,7 @@
     <section class="section1">
         <div class="presentationArcadia">
             <p>
-                <span>S'émerveiller, apprendre et protéger</span><br>
+                <span>S'émerveiller, apprendre et protéger</span><br><br>
                 Au zoo <span>d'ARCADIA</span>, découvrez la beauté du monde animal, émerveillez-vous devant la diversité de la faune, et engagez-vous à protéger les animaux et notre planète pour les générations futures.
             </p>
         </div>

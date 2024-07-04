@@ -1,56 +1,66 @@
 <?php
 session_start();
+
+// Affichage des erreurs pour le débogage
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Récupération de la config pour la connexion à la BDD
-require_once '../app/config/config.php';
+require_once 'app/config/config.php';
+
+// Définition de la constante pour l'URL
+define("BASE_URL", '/ArcadiaZoo');
 
 // Inclusion des classes
-require_once '../app/controllers/HomeController.php';
-require_once '../app/controllers/HabitatController.php';
-require_once '../app/controllers/ServiceController.php';
-require_once '../app/controllers/UserController.php';
-require_once '../app/controllers/ContactController.php';
-require_once '../app/controllers/InfoController.php';
-require_once '../app/controllers/ReviewController.php';
+require_once 'app/controllers/HomeController.php';
+require_once 'app/controllers/HabitatController.php';
+require_once 'app/controllers/ServiceController.php';
+require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/ContactController.php';
+require_once 'app/controllers/InfoController.php';
+require_once 'app/controllers/ReviewController.php';
 
-require_once '../app/views/ViewManager.php';
-require_once '../app/controllers/AuthController.php';
-require_once '../app/controllers/AnimalController.php';
+require_once 'app/views/ViewManager.php';
+require_once 'app/controllers/AuthController.php';
+require_once 'app/controllers/AnimalController.php';
 
 // Ajout du routeur
-require_once '../app/models/Router.php';
+require_once 'app/models/Router.php';
 
 // Instanciation du routeur
 $router = new \routing\Router();
 
 // Définition de la route initiale
-$router->addRoute('GET', '/public/index.php', 'HomeController', 'index');
+$router->addRoute('GET','/', 'HomeController', 'index');
 
 // création de nouvelles routes
 // HomeController
+$router->addRoute('GET',BASE_URL . '/accueil', 'HomeController', 'index');
 $router->addRoute('POST', '/public/leaveView', 'HomeController', 'addView');
 // AnimalController
 $router->addRoute('POST', '/public/addAnimal', 'AnimalController', 'addAnimal');
 $router->addRoute('POST', '/public/modifAnimal', 'AnimalController', 'modifAnimal');
 $router->addRoute('POST', '/public/delAnimal', 'AnimalController', 'delAnimal');
 // HabitatController
-$router->addRoute('GET', '/public/habitats', 'HabitatController', 'index');
+$router->addRoute('GET', BASE_URL . '/habitats', 'HabitatController', 'index');
 $router->addRoute('POST', '/public/addHabitat', 'HabitatController', 'addHabitat');
 $router->addRoute('POST', '/public/modifHabitat', 'HabitatController', 'modifHabitat');
 $router->addRoute('POST', '/public/delHabitat', 'HabitatController', 'delHabitat');
 // ServiceController
-$router->addRoute('GET', '/public/services', 'ServiceController', 'index');
+$router->addRoute('GET', BASE_URL . '/services', 'ServiceController', 'index');
 $router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
 $router->addRoute('POST', '/public/modifService', 'ServiceController', 'modifService');
 $router->addRoute('POST', '/public/delService', 'ServiceController', 'delService');
 // ContactController
-$router->addRoute('POST', '/public/form', 'ContactController', 'sendMail');
+$router->addRoute('POST', BASE_URL . '/form', 'ContactController', 'sendMail');
 // UserController
 $router->addRoute('POST', '/public/addAccount', 'UserController', 'addUser');
-$router->addRoute('GET', '/public/contact', 'ContactController', 'index');
+$router->addRoute('GET', BASE_URL . '/contact', 'ContactController', 'index');
 $router->addRoute('GET', '/public/connexion', 'HomeController', 'connexion');
 $router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
 $router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
-$router->addRoute('GET', '/public/connected', 'AuthController', 'userVerifConnect');
+$router->addRoute('GET', BASE_URL . '/connected', 'AuthController', 'userVerifConnect');
 // InfoController
 $router->addRoute('GET', '/public/hours', 'InfoController', 'index');
 $router->addRoute('GET', '/public/about', 'InfoController', 'indexAbout');

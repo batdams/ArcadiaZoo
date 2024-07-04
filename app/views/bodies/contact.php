@@ -3,7 +3,7 @@
         <div class="contactDIV">
             <h1>CONTACT</h1>
             <div class="contactFormDIV">
-                <form method="POST" action="/public/form">
+                <form method="POST" action="<?php echo BASE_URL;?>/form">
                     <label for="titleContactForm">Objet</label>
                     <input type="text" name="titleContactForm" id="titleContactForm">
                     <label for="descriptionContactForm">Description</label>

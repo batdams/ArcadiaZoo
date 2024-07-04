@@ -1,2 +1,4 @@
-app/config/config.php
+app/config/configOLD.php
+app/config/configOLDLocal.php
 /vendor/
+/documents/creationAdminBDD.sql

@@ -3,8 +3,8 @@
 namespace controllers;
 
 // Inclusion des classes
-require_once '../app/controllers/Controller.php';
-require_once "../app/models/Service.php";
+require_once 'app/controllers/Controller.php';
+require_once "app/models/Service.php";
 
 class ServiceController extends Controller
 {

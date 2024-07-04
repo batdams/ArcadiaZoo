@@ -11,7 +11,7 @@ class ViewManager
      */
     public function loadHeader()
     {
-        include_once '../app/views/templates/header.html';
+        include_once 'app/views/templates/header.php';
     }
 
     /**
@@ -20,7 +20,7 @@ class ViewManager
      */
     public function loadHeaderLogged()
     {
-        include_once '../app/views/templates/headerLogged.html';
+        include_once 'app/views/templates/headerLogged.php';
     }
 
     /**
@@ -29,7 +29,7 @@ class ViewManager
      */
     public function loadFooter()
     {
-        include_once '../app/views/templates/footer.html';
+        include_once 'app/views/templates/footer.html';
     }
 
     /**
@@ -39,7 +39,7 @@ class ViewManager
      */
     public function loadContent($view)
     {
-        include_once '../app/views/' . $view;
+        include_once 'app/views/' . $view;
     }
 
     /**
@@ -55,7 +55,7 @@ class ViewManager
      */
     public function loadContentData($view, $data)
     {
-        include_once '../app/views/' . $view;
+        include_once 'app/views/' . $view;
     }
 
     /**

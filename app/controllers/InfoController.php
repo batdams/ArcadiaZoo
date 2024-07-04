@@ -3,8 +3,8 @@
 namespace controllers;
 
 // Inclusion des classes
-require_once '../app/controllers/Controller.php';
-require_once "../app/models/Hour.php";
+require_once 'app/controllers/Controller.php';
+require_once "app/models/Hour.php";
 
 class InfoController extends Controller
 {
