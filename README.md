@@ -9,22 +9,27 @@ ARCADIA ZOO APP
                                        - Profil Vétérinaire : Création de rapports vétérinaires (qu'ils transmettent lors de leur passage auprès des animaux)
                                        - Profil employé : Modération des avis visiteurs, modifier services du zoo, création de rapports alimentations 
 
- Instructions pour le déploiement en local :
+- Instructions pour le déploiement en local :
 Prérequis : XAMPP (Apache, MariaDB, PHP 8+)
 Instructions : cloner repository git
 installer le dossier dans votre fichier htdocs.
 navigateur : ouvrir "localhost/ArcadiaZoo
 Dépendances nécessaires : sendgrid version 8.1
-    Contributions: Allowed
 
-    Licence: MIT
+- Contributions: Allowed
 
-    Crédits: crédits photos sur l’application web (mentions crédits)
+- Licence: MIT
 
-    Contact: damienbilliau@gmail.com
+- Crédits: crédits photos sur l’application web (mentions crédits)
 
-    Statut du Projet: Développement actif
+- Contact: damienbilliau@gmail.com
 
-    Exemples:
+- Statut du Projet: Développement actif
+
+- Exemples:
 - Visiteurs : Utilisation de l’application pour visualiser le zoo, ses services, infos, habitats et animaux.
-- Espace connecté : Gestion de fonctionnalités
+Espace connecté : Gestion des fonctionnalités
+-	Administrateur : Gestion des animaux (CRUD), lectures des rapports vétérinaires sur les animaux et habitats. Gestion des comptes utilisateurs (CRUD). Gestion des services (CRUD). Gestion des habitats (CRUD). Modification des horaires du zoo.
+-	Employés : Modération des avis des visiteurs. Renseigner les repas quotidiens des animaux. Modification d’un service.
+-	Vétérinaires : Editer les rapports sur les animaux. Editer les rapports sur les habitats. Visualiser les rapports des repas des animaux.
+
