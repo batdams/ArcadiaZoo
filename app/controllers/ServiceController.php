@@ -163,7 +163,7 @@ class ServiceController extends Controller
                 $this->viewManager->render('bodies/connectedAdmin.php');
             } else {
                 // En cas d'erreur lors de l'execution
-                echo 'ERREUR INSERTION SERVICE';
+                echo 'ERREUR SUPPRESSION SERVICE';
             }
         }
     }

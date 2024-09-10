@@ -22,30 +22,48 @@ class AuthController extends Controller
    */
   public function userConnect($pdo)
   {
-    $sql = 'SELECT * FROM app_user WHERE email = :email';
-    $stmt = $pdo->prepare($sql);
-    $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
     if (isset($_POST["email"]) && isset($_POST["password"])) {
       $email = $_POST['email'];
       $password = $_POST['password'];
+
+      // Validation de l'email
+      if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo 'Adresse email invalide';
+        return;
+      }
+      // Préparation de la requête SQL
+      $sql = 'SELECT * FROM app_user WHERE email = :email';
+      $stmt = $pdo->prepare($sql);
+      $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
       $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+
+      // Execution de la requête
       if ($stmt->execute()) {
         $user = $stmt->fetch();
+
+        // Verification MDP et existence utilisateur
         if ($user !== false && password_verify($password, $user->getPassword())) {
-          $_SESSION['mail'] = $user->getEmail();
+
+          // Régénération de l'ID de session (prevent hijacking)
+          session_regenerate_id(true);
+
+          // Stockage sécurisé des informations utilisateurs dans la session
+          $_SESSION['mail'] = htmlspecialchars( $user->getEmail(), ENT_QUOTES, 'UTF-8');
           $_SESSION['role'] = $user->getRole_id();
-          $_SESSION['name'] = $user->getFirstname();
+          $_SESSION['name'] = htmlspecialchars( $user->getFirstname(), ENT_QUOTES, 'UTF-8');
+
+          // Gestion des rôles utilisateurs
           if($_SESSION['mail'] === "josebu@arcadia.com"){
             $_SESSION['role'] = 'superAdmin';
-            setcookie("user", "administrateur", time() + 3600, '/'); // création cookie superAdmin
+            setcookie("user", "administrateur", time() + 3600, '/', '', true, true); // création cookie sécurisé superAdmin
           $this->viewManager->renderData('bodies/connectedAdmin.php', $this->data);
           } else if ($_SESSION['role'] === 2){
             $_SESSION['role'] = 'vet';
-            setcookie("user", "vet", time() + 3600, '/'); // création cookie vet
-            $this->viewManager->renderData('bodies/connectedVet.php', $this->data);
+            setcookie("user", "vet", time() + 3600, '/', '', true, true); // création cookie vet
+            $this->viewManager->renderData('bodies/connectedVet.php', $this->data);            
           } else if ($_SESSION['role'] === 3){
             $_SESSION['role'] = 'employee';
-            setcookie("user", "employee", time() + 3600, '/'); // création cookie vet
+            setcookie("user", "employee", time() + 3600, '/', '', true, true); // création cookie vet
             $this->viewManager->renderData('bodies/connectedEmployee.php', $this->data);
           }        
         } else {
