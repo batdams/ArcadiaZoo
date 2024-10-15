@@ -17,7 +17,7 @@ class HomeController extends Controller
      * @return void
      */
     public function index($pdo): void
-    { 
+    {
     // Utilisation de la fct static displayService()
     $this->viewManager->renderData('bodies/home.php', $this->data);
     }
@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function connexion(): void
     { 
-    $this->viewManager->render('bodies/connexion.html');
+    $this->viewManager->render('bodies/connexion.php');
     }
 
     /**

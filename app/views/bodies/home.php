@@ -18,7 +18,7 @@
                     echo '<div>';
                         echo '<h4>' . $habitat->getName() . '</h4>';
                         echo '<div class="' . $habitat->getName() . 'Div habitatDiv habitats">';
-                            echo '<a href="/public/habitats"><img src="' . $habitat->getImgPath() . '" alt="' . $habitat->getName() . '"></a>';
+                            echo '<a href="' . BASE_URL . '/habitats"><img src="' . BASE_URL . $habitat->getImgPath() . '" alt="' . $habitat->getName() . '"></a>';
                         echo '</div>';
                     echo '</div>';
                     }
@@ -36,7 +36,7 @@
                 $services = $data['services'];
                 foreach($services as $service) {
                 echo '<div class="carrousselUnits">';
-                        echo '<img src="' . $service->getImgPath() . '" alt="' . $service->getTitle() . '">';
+                        echo '<img src="' . BASE_URL . $service->getImgPath() . '" alt="' . $service->getTitle() . '">';
                         echo '<div>';
                         echo $service->getDescription();
                         echo '</div>';
@@ -54,16 +54,16 @@
                 <button class="menuBtn" id="menuBtn" title="showMenu">Cliquez pour découvrir nos actions</button>
                 <div class="items">
                     <div class="menuItem item1">
-                        <button class="itemBtn" id="btnBolt"><img src="../../../public/pictures/bolt-solid.svg" alt="bolt"></button>
+                        <button class="itemBtn" id="btnBolt"><img src="<?php echo BASE_URL; ?>/public/pictures/bolt-solid.svg" alt="bolt"></button>
                     </div>
                     <div class="menuItem item2">
-                        <button class="itemBtn" id="btnWater"><img src="../../../public/pictures/water-solid.svg" alt="water"></button>
+                        <button class="itemBtn" id="btnWater"><img src="<?php echo BASE_URL; ?>/public/pictures/water-solid.svg" alt="water"></button>
                     </div>
                     <div class="menuItem item3">
-                        <button class="itemBtn" id="btnFood"><img src="../../../public/pictures/seedling-solid.svg" alt="seedling"></button>
+                        <button class="itemBtn" id="btnFood"><img src="<?php echo BASE_URL; ?>/public/pictures/seedling-solid.svg" alt="seedling"></button>
                     </div>
                     <div class="menuItem item4">
-                        <button class="itemBtn" id="btnWaste"><img src="../../../public/pictures/recycle-solid.svg" alt="recycle"></button>
+                        <button class="itemBtn" id="btnWaste"><img src="<?php echo BASE_URL; ?>/public/pictures/recycle-solid.svg" alt="recycle"></button>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
         </div>
         <div class="viewForm">
             <h4>Partagez votre expérience</h4>
-            <form action="/public/leaveView" method="POST">
+            <form action="<?php echo BASE_URL;?>/leaveView" method="POST">
                 <label for="nickname">NOM</label>
                 <input type="text" name="nickname" id="nickname">
                 <label for="viewMessage">VOTRE AVIS</label>

@@ -47,6 +47,7 @@ class Router
     */
     public function getHandler(string $method, string $uri) { 
     foreach($this->routes as $route) {
+//        var_dump($route);
         if($route['method'] === $method && $route['path'] === $uri) {
             return [
             'method' => $route['method'],

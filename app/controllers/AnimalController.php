@@ -74,16 +74,16 @@ class AnimalController extends Controller {
         $imgName = $_FILES['imgAnimalAdd']['name']; // Nom du fichier
         $imgTempName = $_FILES['imgAnimalAdd']['tmp_name']; // Dossier temporaire
         $imgError = $_FILES['imgAnimalAdd']['error']; // Valeur d'erreur de l'image
-        //Enregistrement image dans dossier services
+        //Enregistrement image dans dossier animals
         if($imgError === 0) {
-            $destination = '../public/pictures/animals/' . $imgName;
+            $destination =  dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . 'animals' . DIRECTORY_SEPARATOR . $imgName;
             move_uploaded_file($imgTempName, $destination);
         } else {
             echo "Erreur lors de l'enregistrement de l'image";
         }
         $name = $_POST['animalNameAdd'];
         $breed_id = $_POST['breedAnimal'];
-        $img_path = '../public/pictures/animals/' . $imgName;
+        $img_path = '/public/pictures/animals/' . $imgName;
         $diet = $_POST['dietAnimal'];
         $habitat_id = $_POST['habitatAnimal'];
         $description = $_POST['descriptionAnimal'];

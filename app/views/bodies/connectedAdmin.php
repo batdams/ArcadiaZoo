@@ -7,7 +7,7 @@
             <div id="animalsManagerBody" class="managerHide">
             <div class="animalAddDIV generalDIV">
                     <h4>Ajout d'un animal</h4>
-                    <form method="POST" action="/public/addAnimal" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo BASE_URL;?>/addAnimal" enctype="multipart/form-data">
                         <label for="animalNameAdd">nom de l'animal</label>
                         <input type="text" name="animalNameAdd" id="animalNameAdd">
                         <select name="breedAnimal" id="breedAnimal">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="animalSuppDIV generalDIV">
                     <h4>Suppression d'un animal</h4>
-                    <form method="POST" action="/public/delAnimal" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo BASE_URL;?>/delAnimal" enctype="multipart/form-data">
                         <label for="animalSelect">Liste des animaux</label>
                         <select name="delAnimal" id="animalSelect">
                             <option value="">Choisissez un animal</option>
@@ -80,7 +80,7 @@
             <div id="accountsManagerBody" class="managerHide">
                 <div class="accountAddDIV generalDIV">
                     <h4>Ajout d'un compte</h4>
-                    <form method="POST" action="/public/addAccount" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo BASE_URL;?>/addAccount" enctype="multipart/form-data">
                         <label for="firstnameAccount">Prénom</label>
                         <input type="text" name="firstnameAccount" id="firstnameAccount">
                         <label for="lastnameAccount">Nom</label>
@@ -105,7 +105,7 @@
             <div id="servicesManagerBody" class="managerHide">
                 <div class="serviceAddDIV generalDIV">
                     <h4>Ajout d'un service</h4>
-                    <form method="POST" action="/public/addService" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo BASE_URL;?>/addService" enctype="multipart/form-data">
                         <label for="titleAdd">Titre du service</label>
                         <input type="text" name="titleAdd" id="titleAdd">
                         <label for="descriptionAdd">Description</label>
@@ -130,7 +130,7 @@
                         }
                     ?>
                     </select>
-                    <form method="POST" action="/public/modifService" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo BASE_URL;?>/modifService" enctype="multipart/form-data">
                         <label for="titleModif">Titre du service</label>
                         <input type="text" name="titleModif" id="titleModif">
                         <label for="descriptionModif">Description</label>
@@ -144,7 +144,7 @@
                 </div>
                 <div class="serviceSuppDIV generalDIV">
                     <h4>Suppression d'un service</h4>
-                    <form method="POST" action="/public/delService" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo BASE_URL;?>/delService" enctype="multipart/form-data">
                         <label for="serviceSelect">Liste des services</label>
                         <select name="delItem" id="serviceSelect">
                             <option value="">Choisissez un service</option>
@@ -165,7 +165,7 @@
             <div id="habitatsManagerBody" class="managerHide">
                 <div class="habitatAddDIV generalDIV">
                     <h4>Ajout d'un habitat</h4>
-                    <form method="POST" action="/public/addHabitat" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo BASE_URL;?>/addHabitat" enctype="multipart/form-data">
                         <label for="nameAdd">nom de l'habitat</label>
                         <input type="text" name="nameAdd" id="nameAdd">
                         <label for="habitatDescriptionAdd">Description de l'habitat</label>
@@ -178,7 +178,7 @@
                 </div>
                 <div class="habitatSuppDIV generalDIV">
                     <h4>Suppression d'un habitat</h4>
-                    <form method="POST" action="/public/delHabitat" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo BASE_URL;?>/delHabitat" enctype="multipart/form-data">
                         <label for="habitatSelect">Liste des habitats</label>
                         <select name="delHabitat" id="habitatSelect">
                             <option value="">Choisissez un habitat</option>
@@ -224,7 +224,7 @@
             </div>
             <div class="modifHours">
                 <h4>Espace modification</h4>
-                <form action="/public/hoursModif" method="POST">
+                <form action="<?php echo BASE_URL;?>/hoursModif" method="POST">
                         <label for="day_of_week">Jour de la semaine:</label>
                         <select id="day_of_week" name="day_of_week">
                             <option value="0">Lundi</option>
@@ -246,14 +246,4 @@
                 </div>
             </div>
         </div>
-        <?php 
-        /*
-                        foreach($data as $service) {
-                            echo $service->getTitle() . '<br>';
-                            echo $service->getDescription() . '<br>';
-                            echo $service->getImgPath() . '<br>';
-                            // echo '<option value="' . $serviceTitle . '">' . $serviceTitle . '</option>';
-                            // echo '<option value="' . $serviceTitle . '" data-description="' . htmlspecialchars($serviceDescription) . '" data-img="' . htmlspecialchars($serviceImgPath) . '">' . $serviceTitle . '</option>';
-                        }
-                    */?>
     </section>

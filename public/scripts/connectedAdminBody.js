@@ -1,3 +1,5 @@
+const BASE_URL = '/ArcadiaZoo';
+
 export function initializeConnectedAdminBody () {
     // Show manager
         document.querySelectorAll('.managerDIV').forEach(managerDIV => {
@@ -16,10 +18,9 @@ export function initializeConnectedAdminBody () {
         var serviceTitle = selectedOption.value;
         var serviceDescription = selectedOption.getAttribute('data-description');
         var serviceImgPath = selectedOption.getAttribute('data-img');
-        
         // Remplir les champs du formulaire
         document.getElementById('titleModif').value = serviceTitle;
         document.getElementById('descriptionModif').value = serviceDescription;
-        document.getElementById('actualImg').setAttribute('src', serviceImgPath);
+        document.getElementById('actualImg').setAttribute('src', BASE_URL + serviceImgPath);
     });
 }

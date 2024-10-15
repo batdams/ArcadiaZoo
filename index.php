@@ -7,7 +7,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Récupération de la config pour la connexion à la BDD
-require_once 'app/config/config.php';
+require_once 'app/config/configOLDLOCAL.php';
 
 // Définition de la constante pour l'URL
 define("BASE_URL", '/ArcadiaZoo');
@@ -32,42 +32,42 @@ require_once 'app/models/Router.php';
 $router = new \routing\Router();
 
 // Définition de la route initiale
-$router->addRoute('GET','/', 'HomeController', 'index');
+$router->addRoute('GET',BASE_URL . '/', 'HomeController', 'index');
 
 // création de nouvelles routes
 // HomeController
-$router->addRoute('GET',BASE_URL . '/accueil', 'HomeController', 'index');
-$router->addRoute('POST', '/public/leaveView', 'HomeController', 'addView');
+$router->addRoute('GET', BASE_URL . '/accueil', 'HomeController', 'index');
+$router->addRoute('POST', BASE_URL .  '/leaveView', 'HomeController', 'addView');
 // AnimalController
-$router->addRoute('POST', '/public/addAnimal', 'AnimalController', 'addAnimal');
-$router->addRoute('POST', '/public/modifAnimal', 'AnimalController', 'modifAnimal');
-$router->addRoute('POST', '/public/delAnimal', 'AnimalController', 'delAnimal');
+$router->addRoute('POST',  BASE_URL . '/addAnimal', 'AnimalController', 'addAnimal');
+$router->addRoute('POST',  BASE_URL . '/modifAnimal', 'AnimalController', 'modifAnimal');
+$router->addRoute('POST', BASE_URL . '/delAnimal', 'AnimalController', 'delAnimal');
 // HabitatController
 $router->addRoute('GET', BASE_URL . '/habitats', 'HabitatController', 'index');
-$router->addRoute('POST', '/public/addHabitat', 'HabitatController', 'addHabitat');
-$router->addRoute('POST', '/public/modifHabitat', 'HabitatController', 'modifHabitat');
-$router->addRoute('POST', '/public/delHabitat', 'HabitatController', 'delHabitat');
+$router->addRoute('POST', BASE_URL . '/addHabitat', 'HabitatController', 'addHabitat');
+$router->addRoute('POST',  BASE_URL . '/modifHabitat', 'HabitatController', 'modifHabitat');
+$router->addRoute('POST',  BASE_URL . '/delHabitat', 'HabitatController', 'delHabitat');
 // ServiceController
 $router->addRoute('GET', BASE_URL . '/services', 'ServiceController', 'index');
-$router->addRoute('POST', '/public/addService', 'ServiceController', 'addService');
-$router->addRoute('POST', '/public/modifService', 'ServiceController', 'modifService');
-$router->addRoute('POST', '/public/delService', 'ServiceController', 'delService');
+$router->addRoute('POST',  BASE_URL . '/addService', 'ServiceController', 'addService');
+$router->addRoute('POST',  BASE_URL . '/modifService', 'ServiceController', 'modifService');
+$router->addRoute('POST',  BASE_URL . '/delService', 'ServiceController', 'delService');
 // ContactController
 $router->addRoute('POST', BASE_URL . '/form', 'ContactController', 'sendMail');
 // UserController
-$router->addRoute('POST', '/public/addAccount', 'UserController', 'addUser');
+$router->addRoute('POST', BASE_URL . '/addAccount', 'UserController', 'addUser');
 $router->addRoute('GET', BASE_URL . '/contact', 'ContactController', 'index');
-$router->addRoute('GET', '/public/connexion', 'HomeController', 'connexion');
-$router->addRoute('POST', '/public/login', 'AuthController', 'userConnect');
-$router->addRoute('GET', '/public/logout', 'AuthController', 'userDisconnect');
+$router->addRoute('GET', BASE_URL . '/connexion', 'HomeController', 'connexion');
+$router->addRoute('POST', BASE_URL . '/login', 'AuthController', 'userConnect');
+$router->addRoute('GET', BASE_URL . '/logout', 'AuthController', 'userDisconnect');
 $router->addRoute('GET', BASE_URL . '/connected', 'AuthController', 'userVerifConnect');
 // InfoController
-$router->addRoute('GET', '/public/hours', 'InfoController', 'index');
-$router->addRoute('GET', '/public/about', 'InfoController', 'indexAbout');
-$router->addRoute('POST', '/public/hoursModif', 'InfoController', 'modifService');
+$router->addRoute('GET', BASE_URL . '/hours', 'InfoController', 'index');
+$router->addRoute('GET', BASE_URL . '/about', 'InfoController', 'indexAbout');
+$router->addRoute('POST', BASE_URL . '/hoursModif', 'InfoController', 'modifService');
 // ReviewController
-$router->addRoute('POST', '/public/confirmReview', 'ReviewController', 'confirmReview');
-$router->addRoute('POST', '/public/deleteReview', 'ReviewController', 'deleteReview');
+$router->addRoute('POST', BASE_URL . '/confirmReview', 'ReviewController', 'confirmReview');
+$router->addRoute('POST', BASE_URL . '/deleteReview', 'ReviewController', 'deleteReview');
 
 // Récupération des informations de la requête via la super variable $_SERVER 
 $method = $_SERVER['REQUEST_METHOD'];
@@ -86,12 +86,13 @@ $viewManager = new \views\ViewManager();
 // Appel du contrôleur associé à la requête
 $controllerClassName = $handler['controller'];
 $controllerClassName = '\controllers\\' . $controllerClassName;
-$pdo = new PDO($mySQLDSN, $config['username'], $config['password']);
+
+try {
+    $pdo = new PDO($mySQLDSN, 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
+}
 $controller = new $controllerClassName($viewManager, $pdo);
 $action = $handler['action'];
 $controller->$action($pdo);
-/*if ($controllerClassName == 'HomeController') {
-    $controller->$action();
-} else {
-    $controller->$action($pdo);
-}*/

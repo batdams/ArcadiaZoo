@@ -8,7 +8,7 @@
                     $habitats = $data['habitats'];
                     foreach($habitats as $habitat) {
                     echo '<div class="livingCarrousselUnits">';
-                            echo '<img class="imgUnits" src="' . $habitat->getImgPath() . '" alt="' . $habitat->getName() . '" id="' . $habitat->getName() . '"  data-value="' . $habitat->getId() . '">';
+                            echo '<img class="imgUnits" src="' . BASE_URL . $habitat->getImgPath() . '" alt="' . $habitat->getName() . '" id="' . $habitat->getName() . '"  data-value="' . $habitat->getId() . '">';
                             echo '<div class="unitText">';
                             echo $habitat->getName();
                             echo '</div>';
@@ -28,7 +28,6 @@
                     echo '<p>' . $habitat->getDescription() . '</p>';
                 echo '</div>';
                 }
-//                var_dump($data['animals']);
             ?>
         </div>
         <div class="lvgAnimalsList">
@@ -37,7 +36,7 @@
                 $breeds = $data['breeds'];
                 foreach($animals as $animal) {
                     echo '<div class=animalUnit>';
-                        echo '<img src="' . $animal->getImgPath() . '" alt="'. $animal->getName() .'" class="imgAnimal hideImg lvg'. $animal->getHabitat() .'">';
+                        echo '<img src="' . BASE_URL . $animal->getImgPath() . '" alt="'. $animal->getName() .'" class="imgAnimal hideImg lvg'. $animal->getHabitat() .'">';
                         echo '<div class="animalInfos animalInfosHide lvg'. $animal->getHabitat() .'">';
                             echo '<h4>' . $animal->getName(). '</h4>';
                             echo '<div class="infosSup hide">';

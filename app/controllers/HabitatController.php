@@ -68,13 +68,13 @@ class HabitatController extends Controller
         $imgError = $_FILES['imgHabitatAdd']['error']; // Valeur d'erreur de l'image
         //Enregistrement image dans dossier services
         if($imgError === 0) {
-            $destination = '../public/pictures/habitats/' . $imgName;
+            $destination =  dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . 'habitats' . DIRECTORY_SEPARATOR . $imgName;
             move_uploaded_file($imgTempName, $destination);
         } else {
             echo "Erreur lors de l'enregistrement de l'image";
         }
         $name = $_POST['nameAdd'];
-        $img_path = '../public/pictures/habitats/' . $imgName;
+        $img_path = '/public/pictures/habitats/' . $imgName;
         $description = $_POST['habitatDescriptionAdd'];
         // Liaison des données aux marqueurs nommés
         $stmt->bindValue(':name', $name, \PDO::PARAM_STR);

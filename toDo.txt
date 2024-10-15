@@ -1,7 +1,12 @@
+Reprendre BASE_URL
+Revoir css et liens
+
 Git - une branche main
     - une branch dev -> test -> merge to main
 
 Réorganiser header.scss
+
+fct modifService, cas avec ou sans image (bug si pas d'image lors de la modif actuellement)
 
 Manuel utilisation en pdf
 

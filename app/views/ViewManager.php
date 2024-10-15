@@ -29,7 +29,7 @@ class ViewManager
      */
     public function loadFooter()
     {
-        include_once 'app/views/templates/footer.html';
+        include_once 'app/views/templates/footer.php';
     }
 
     /**

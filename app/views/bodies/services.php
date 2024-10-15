@@ -8,7 +8,7 @@
                     $services = $data['services'];
                     foreach($services as $service) {
                     echo '<div class="serviceCarrousselUnits">';
-                            echo '<img src="' . $service->getImgPath() . '" alt="' . $service->getTitle() . '">';
+                            echo '<img src="' . BASE_URL . $service->getImgPath() . '" alt="' . $service->getTitle() . '">';
                             echo '<div class="unitText">';
                             echo $service->getDescription();
                             echo '</div>';

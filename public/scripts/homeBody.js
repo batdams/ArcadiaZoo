@@ -1,3 +1,5 @@
+const BASE_URL = '/ArcadiaZoo';
+
 export function initializeHomeBody () {
 
     const habitats = Array.from(document.getElementsByClassName('habitats')); // Array.from car habitats est une collection d'elements HTML, pas un tableau!
@@ -68,7 +70,7 @@ export function initializeHomeBody () {
                 document.getElementById('corpsAjax').innerText = content.corps;
             }
         };
-        xhttp.open("GET", `/public/json/data.json`, true);
+        xhttp.open("GET", BASE_URL + `/public/json/data.json`, true);
         xhttp.send();
     }
 

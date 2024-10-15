@@ -1,10 +1,12 @@
 # Activer la réécriture d'URL
-RewriteEngine On
-RewriteBase /ArcadiaZoo/public
+ RewriteEngine On
+ RewriteBase /ArcadiaZoo
+# RewriteBase /ArcadiaZoo/public
 
 # Règle pour rediriger tout le trafic vers index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
 
+RewriteRule ^(.*)$ index.php?path=$1 [L,QSA]
 # OLD RewriteRule ^ index.php [QSA,L]

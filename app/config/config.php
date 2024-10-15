@@ -6,7 +6,7 @@ $dbUser = getenv('DB_USERNAME');
 $dbPwd = getenv('DB_PWD');
 $dbName = getenv('DB_NAME');
 
-$config = [
+$config1 = [
     'host' => $dbHost,
     'username' => $dbUser,
     'password' => $dbPwd,

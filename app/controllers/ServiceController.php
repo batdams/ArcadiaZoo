@@ -66,13 +66,13 @@ class ServiceController extends Controller
         $imgError = $_FILES['imgAdd']['error']; // Valeur d'erreur de l'image
         //Enregistrement image dans dossier services
         if($imgError === 0) {
-            $destination = '../public/pictures/services/' . $imgName;
+            $destination =  dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . 'services' . DIRECTORY_SEPARATOR . $imgName;
             move_uploaded_file($imgTempName, $destination);
         } else {
             echo "Erreur lors de l'enregistrement de l'image";
         }
         $title = $_POST['titleAdd'];
-        $img_path = '../public/pictures/services/' . $imgName;
+        $img_path = '/public/pictures/services/' . $imgName;
         $description = $_POST['descriptionAdd'];
         // Liaison des données aux marqueurs nommés
         $stmt->bindValue(':title', $title, \PDO::PARAM_STR);
@@ -115,13 +115,13 @@ class ServiceController extends Controller
             $imgError = $_FILES['imgModif']['error']; // Valeur d'erreur de l'image
             //Enregistrement image dans dossier services
             if($imgError === 0) {
-                $destination = '../public/pictures/services/' . $imgName;
+                $destination =  dirname(__DIR__, 2) . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR . 'pictures' . DIRECTORY_SEPARATOR . 'services' . DIRECTORY_SEPARATOR . $imgName;
                 move_uploaded_file($imgTempName, $destination);
             } else {
                 echo "Erreur lors de l'enregistrement de l'image";
             }
             $title = $_POST['titleModif'];
-            $img_path = '../public/pictures/services/' . $imgName;
+            $img_path = '/public/pictures/services/' . $imgName;
             $description = $_POST['descriptionModif'];
             // Liaison des données aux marqueurs nommés
             $stmt->bindValue(':title', $title, \PDO::PARAM_STR);
@@ -133,7 +133,7 @@ class ServiceController extends Controller
                 $this->viewManager->render('bodies/connectedAdmin.php');
             } else {
                 // En cas d'erreur lors de l'execution
-                echo 'ERREUR INSERTION SERVICE';
+                echo 'ERREUR MODIFICATION SERVICE';
             }
         }
     }
